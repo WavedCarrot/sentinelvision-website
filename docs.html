@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Documentation — SentinelVision Pro</title>
+
+  <meta name="description" content="Setup guides, camera RTSP configuration, feature guides and troubleshooting for SentinelVision Pro.">
+
+  <link rel="canonical" href="https://sentinelvision.net.za/docs.html">
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SentinelVision Pro">
+  <meta property="og:title"       content="Documentation — SentinelVision Pro">
+  <meta property="og:description" content="Setup guides, camera RTSP configuration, feature guides and troubleshooting for SentinelVision Pro.">
+  <meta property="og:url"         content="https://sentinelvision.net.za/docs.html">
+  <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.svg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Documentation — SentinelVision Pro">
+  <meta name="twitter:description" content="Setup guides, camera RTSP configuration, feature guides and troubleshooting for SentinelVision Pro.">
+  <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.svg">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 3L4 10v10c0 9.9 6.9 19.1 16 21.5C29.1 39.1 36 29.9 36 20V10L20 3z' fill='%233b82f6' fill-opacity='.2' stroke='%233b82f6' stroke-width='2'/><path d='M14 20l4 4 8-8' stroke='%233b82f6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+
+<nav class="navbar" id="navbar">
+
+  <div class="container nav-inner">
+
+    <a href="index.html" class="brand">
+
+      <img src="img/logo.svg" alt="SentinelVision Pro" class="brand-logo">
+
+      <div class="brand-text">
+
+        <strong>SentinelVision</strong>
+
+        <span>Pro Security Platform</span>
+
+      </div>
+
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+
+      <li><a href="platform.html">Platform</a></li>
+
+      <li><a href="gallery.html">Gallery</a></li>
+
+      <li><a href="docs.html">Docs</a></li>
+
+      <li><a href="pricing.html">Pricing</a></li>
+
+      <li><a href="about.html">About</a></li>
+
+      <li><a href="order.html" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
+
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+
+      <span></span><span></span><span></span>
+
+    </button>
+
+  </div>
+
+</nav>
+
+
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <div class="section-badge">Documentation</div>
+
+    <h1>Setup &amp; Configuration Guide</h1>
+
+    <p>Everything you need to get SentinelVision Pro running and configured correctly.</p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ═══════════ DOCS BODY ═══════════ -->
+
+<section class="section" style="padding-top:2rem">
+
+  <div class="container">
+
+    <div class="docs-layout">
+
+
+
+      <!-- Sidebar -->
+
+      <aside class="docs-sidebar">
+
+        <ul class="docs-nav">
+
+          <li class="nav-section">Getting Started</li>
+
+          <li><a href="#install"><i class="fas fa-download"></i> Installation</a></li>
+
+          <li><a href="#first-login"><i class="fas fa-sign-in-alt"></i> First Login</a></li>
+
+          <li><a href="#license"><i class="fas fa-key"></i> Activating a License</a></li>
+
+          <li class="nav-section">Camera Setup</li>
+
+          <li><a href="#cameras"><i class="fas fa-camera"></i> Adding Cameras</a></li>
+
+          <li><a href="#rtsp"><i class="fas fa-link"></i> RTSP URL Guide</a></li>
+
+          <li><a href="#hardware"><i class="fas fa-server"></i> Supported Hardware</a></li>
+
+          <li class="nav-section">Features</li>
+
+          <li><a href="#zone-detection"><i class="fas fa-draw-polygon"></i> Zone Detection</a></li>
+
+          <li><a href="#loitering"><i class="fas fa-user-clock"></i> Loitering Detection</a></li>
+
+          <li><a href="#weapon"><i class="fas fa-gun"></i> Weapon Detection</a></li>
+
+          <li><a href="#people"><i class="fas fa-chart-bar"></i> People Counting</a></li>
+
+          <li><a href="#telegram"><i class="fab fa-telegram"></i> Telegram Alerts</a></li>
+
+          <li class="nav-section">Help</li>
+
+          <li><a href="#troubleshooting"><i class="fas fa-wrench"></i> Troubleshooting</a></li>
+
+          <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+
+        </ul>
+
+      </aside>
+
+
+
+      <!-- Content -->
+
+      <div class="docs-content">
+
+
+
+        <!-- INSTALLATION -->
+
+        <section id="install">
+
+          <h2><i class="fas fa-plug" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Getting Started</h2>
+
+          <p>Your SentinelVision device arrives fully pre-installed and configured. There is no software to install. Simply connect it to your network and you are ready to go.</p>
+
+
+
+          <h3>Step 1 — Power On &amp; Connect to Your Network</h3>
+
+          <p>Connect your SentinelVision device to your router using an Ethernet cable, then plug in the power supply. The system boots automatically and is ready within 60 seconds.</p>
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>A wired Ethernet connection is strongly recommended for stable camera streams. Wi-Fi can be used but may affect performance with multiple cameras.</p>
+
+          </div>
+
+
+
+          <h3>Step 2 — Find Your Device IP Address</h3>
+
+          <p>From your laptop or PC, open any browser and go to your router’s admin page (usually <strong>192.168.1.1</strong> or <strong>192.168.0.1</strong>). Log in and look for a <strong>Connected Devices</strong> or <strong>DHCP Client List</strong> section. Find the device named <strong>sentinelvision</strong> and note its IP address.</p>
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>Not sure which address your router uses? On your laptop, open <strong>Settings &rarr; Network</strong> and check your <strong>Default Gateway</strong> — that is your router’s address. Enter it in your browser to reach the admin panel.</p>
+
+          </div>
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>We recommend assigning a <strong>static IP</strong> to your SentinelVision device in your router settings so the web interface address never changes after a reboot.</p>
+
+          </div>
+
+
+
+          <h3>Step 3 — Access the Web Interface</h3>
+
+          <p>Open a browser on any device on the same network and navigate to:</p>
+
+          <div class="code-block">http://&lt;device-ip&gt;:5000</div>
+
+        </section>
+
+
+
+        <!-- FIRST LOGIN -->
+
+        <section id="first-login">
+
+          <h2><i class="fas fa-sign-in-alt" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>First Login</h2>
+
+          <p>The default login credentials after a fresh installation are:</p>
+
+          <div class="code-block">Username: admin
+
+Password: Admin123</div>
+
+          <div class="callout callout-warn">
+
+            <i class="fas fa-exclamation-triangle"></i>
+
+            <p><strong>Change your password immediately</strong> after first login. Go to <strong>Settings → Change Password</strong>. Using the default password on a network-accessible device is a security risk.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ACTIVATING LICENSE -->
+
+        <section id="license">
+
+          <h2><i class="fas fa-key" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Activating a License</h2>
+
+          <p>After ordering a license and completing payment, you will receive a license key via email within 24 hours.</p>
+
+          <ol>
+
+            <li>Log into SentinelVision Pro.</li>
+
+            <li>Navigate to <strong>Settings → License Management</strong>.</li>
+
+            <li>Paste your license key into the activation field.</li>
+
+            <li>Click <strong>Activate</strong>. The feature will be enabled immediately — no restart required.</li>
+
+          </ol>
+
+          <div class="callout callout-success">
+
+            <i class="fas fa-check-circle"></i>
+
+            <p>License keys are tied to your installation. If you reinstall on the same hardware, your key will continue to work. Contact us if you need to transfer to a new device.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ADDING CAMERAS -->
+
+        <section id="cameras">
+
+          <h2><i class="fas fa-camera" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Adding Cameras</h2>
+
+          <p>SentinelVision connects to your cameras via their RTSP stream URL. All cameras that support RTSP are compatible.</p>
+
+          <ol>
+
+            <li>Go to <strong>Cameras → Add Camera</strong>.</li>
+
+            <li>Enter the camera name, RTSP URL, and optionally a location description.</li>
+
+            <li>Click <strong>Test Connection</strong> to verify the stream is reachable.</li>
+
+            <li>Save the camera. It will appear on your dashboard immediately.</li>
+
+          </ol>
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>Ensure your cameras are on the same local network as your SentinelVision device, or accessible via a static IP if on a different subnet.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- RTSP URLS -->
+
+        <section id="rtsp">
+
+          <h2><i class="fas fa-link" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>RTSP URL Guide</h2>
+
+          <p>Below are the standard RTSP URL formats for common camera brands. Replace the values in angle brackets with your camera's actual IP address, username and password.</p>
+
+
+
+          <h3>Hikvision</h3>
+
+          <div class="code-block">Main stream: rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/Streaming/Channels/101
+
+Sub stream:  rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/Streaming/Channels/102</div>
+
+
+
+          <h3>Provision ISR</h3>
+
+          <div class="code-block">rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/stream1</div>
+
+
+
+          <h3>Dahua</h3>
+
+          <div class="code-block">Main stream: rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/cam/realmonitor?channel=1&amp;subtype=0
+
+Sub stream:  rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/cam/realmonitor?channel=1&amp;subtype=1</div>
+
+
+
+          <h3>CP Plus</h3>
+
+          <div class="code-block">rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/stream0</div>
+
+
+
+          <h3>Generic / Other Brands</h3>
+
+          <div class="code-block">rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/stream</div>
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>If you are unsure of the RTSP URL for your specific camera model, check the camera's manual, the manufacturer's website, or search for "<em>brand + model + RTSP URL</em>" — it usually takes less than a minute to find.</p>
+
+          </div>
+
+          <div class="callout callout-warn">
+
+            <i class="fas fa-exclamation-triangle"></i>
+
+            <p><strong>Performance tip:</strong> Use the sub-stream (lower resolution) URL where possible. It greatly reduces CPU usage while still providing accurate AI detection.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- SUPPORTED HARDWARE -->
+
+        <section id="hardware">
+
+          <h2><i class="fas fa-server" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Supported Camera Hardware</h2>
+
+          <p>SentinelVision Pro works with any camera or NVR that exposes an RTSP stream. Here are the brands we have tested and confirmed working:</p>
+
+          <div class="hardware-grid">
+
+            <div class="hardware-card">
+
+              <div class="hw-badge hw-badge-ok">Fully Tested</div>
+
+              <h4>Hikvision</h4>
+
+              <p>All modern IP cameras and NVRs. Both direct camera and NVR channel streams supported.</p>
+
+            </div>
+
+            <div class="hardware-card">
+
+              <div class="hw-badge hw-badge-ok">Fully Tested</div>
+
+              <h4>Provision ISR</h4>
+
+              <p>IP cameras and Provision NVRs. Sub-stream and main stream both confirmed.</p>
+
+            </div>
+
+            <div class="hardware-card">
+
+              <div class="hw-badge hw-badge-ok">Fully Tested</div>
+
+              <h4>Dahua</h4>
+
+              <p>IP cameras and standalone NVRs. Use the <code style="font-size:0.78rem">cam/realmonitor</code> URL format.</p>
+
+            </div>
+
+            <div class="hardware-card">
+
+              <div class="hw-badge hw-badge-ok">Fully Tested</div>
+
+              <h4>CP Plus</h4>
+
+              <p>IP cameras confirmed working. Check your model's manual for the exact RTSP path.</p>
+
+            </div>
+
+            <div class="hardware-card">
+
+              <div class="hw-badge hw-badge-partial">Community Tested</div>
+
+              <h4>Reolink</h4>
+
+              <p>Most Reolink cameras support RTSP. Enable it in the camera settings first.</p>
+
+            </div>
+
+            <div class="hardware-card">
+
+              <div class="hw-badge hw-badge-partial">RTSP Required</div>
+
+              <h4>Any Brand</h4>
+
+              <p>If your camera supports RTSP, it will work. Check the camera settings to enable RTSP if it is not on by default.</p>
+
+            </div>
+
+          </div>
+
+          <div class="callout callout-info" style="margin-top:1.25rem">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>Not sure if your camera is compatible? <a href="index.html#contact">Send us the make and model</a> and we'll confirm within a few hours.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ZONE DETECTION -->
+
+        <section id="zone-detection">
+
+          <h2><i class="fas fa-draw-polygon" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Zone Detection</h2>
+
+          <p>Zone Detection triggers an alert whenever a person enters a defined area on the camera feed.</p>
+
+          <ol>
+
+            <li>Go to <strong>Cameras</strong> and click <strong>Configure Zones</strong> on a camera.</li>
+
+            <li>Click on the live feed to draw a detection zone polygon. Close it by clicking the starting point.</li>
+
+            <li>Name the zone, set the armed schedule (always-on or time-of-day), and choose the sensitivity level.</li>
+
+            <li>Save. Detections in that zone will now trigger Telegram alerts with a snapshot.</li>
+
+          </ol>
+
+          <div class="callout callout-success">
+
+            <i class="fas fa-check-circle"></i>
+
+            <p>You can create <strong>multiple zones per camera</strong>, each with independent schedules and sensitivity settings. For example, Zone A always-armed, Zone B only armed after hours.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- LOITERING -->
+
+        <section id="loitering">
+
+          <h2><i class="fas fa-user-clock" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Loitering Detection</h2>
+
+          <p>Loitering Detection fires an alert when a person remains within a zone longer than a configured time threshold — even when the system is otherwise disarmed.</p>
+
+          <ol>
+
+            <li>Configure a detection zone as described above.</li>
+
+            <li>In the zone settings, enable <strong>Loitering Detection</strong>.</li>
+
+            <li>Set the time threshold in seconds (e.g. 30 seconds, 2 minutes).</li>
+
+            <li>Save. If a person lingers beyond that threshold, you'll receive an alert.</li>
+
+          </ol>
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>Loitering detection is particularly useful for shop fronts, ATM areas, and parking lots where casual passing is normal but prolonged presence is suspicious.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- WEAPON DETECTION -->
+
+        <section id="weapon">
+
+          <h2><i class="fas fa-gun" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Weapon Detection <span class="beta-tag">Beta</span></h2>
+
+          <p>Weapon Detection uses a dedicated AI model to identify firearms and threatening postures in the camera field of view. Alerts bypass standard cooldowns for fastest possible response.</p>
+
+          <ol>
+
+            <li>Ensure the Weapon Detection license is active under <strong>Settings → License Management</strong>.</li>
+
+            <li>Go to <strong>Cameras → Settings</strong> for a camera and enable <strong>Weapon Detection</strong>.</li>
+
+            <li>Set the confidence threshold (default: 70%  — lower increases sensitivity but may increase false positives).</li>
+
+            <li>Save. Weapon detections generate a high-priority Telegram alert immediately.</li>
+
+          </ol>
+
+          <div class="callout callout-warn">
+
+            <i class="fas fa-exclamation-triangle"></i>
+
+            <p>Weapon Detection is a <strong>Beta</strong> feature. Detection accuracy depends on camera angle, resolution and lighting. It is intended as an early-warning tool and should be used alongside other security measures.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- PEOPLE COUNTING -->
+
+        <section id="people">
+
+          <h2><i class="fas fa-chart-bar" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>People Counting</h2>
+
+          <p>People Counting tracks entries, exits and live occupancy for zones, with historical trend data accessible from the analytics dashboard.</p>
+
+          <ol>
+
+            <li>Ensure the People Counting license is active.</li>
+
+            <li>Define an entry/exit line in the <strong>Zone Configuration</strong> for the camera covering your entrance.</li>
+
+            <li>View live occupancy and historical data under <strong>Analytics → People Counting</strong>.</li>
+
+            <li>Export reports as CSV for any date range.</li>
+
+          </ol>
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>For accuracy, position the camera above the entrance looking straight down or at a slight angle. Avoid positioning where people could enter the frame from the side without crossing the line.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- TELEGRAM -->
+
+        <section id="telegram">
+
+          <h2><i class="fab fa-telegram" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Telegram Alerts Setup</h2>
+
+          <p>SentinelVision has a built-in Telegram bot ready to use. You do not need to create your own bot. Setup takes under 2 minutes.</p>
+
+
+
+          <h3>Step 1 — Get Your Chat ID</h3>
+
+          <ol>
+
+            <li>Open your SentinelVision web interface and go to <strong>Settings → Telegram</strong>.</li>
+
+            <li>You will see the SentinelVision bot link. Open it in Telegram and click <strong>Start</strong>.</li>
+
+            <li>Back in Settings, click <strong>Get Chat ID</strong>. Your Chat ID will be fetched automatically.</li>
+
+          </ol>
+
+
+
+          <h3>Step 2 — Save &amp; Test</h3>
+
+          <ol>
+
+            <li>Click <strong>Save</strong> to confirm your Chat ID.</li>
+
+            <li>Click <strong>Send Test Message</strong> to confirm alerts are arriving in Telegram.</li>
+
+          </ol>
+
+          <div class="callout callout-success">
+
+            <i class="fas fa-check-circle"></i>
+
+            <p>You can add multiple Telegram Chat IDs — for example, send alerts to both a personal account and a group shared with staff or family members.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- TROUBLESHOOTING -->
+
+        <section id="troubleshooting">
+
+          <h2><i class="fas fa-wrench" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Troubleshooting</h2>
+
+
+
+          <h3>Camera stream not connecting</h3>
+
+          <ul>
+
+            <li>Verify the RTSP URL is correct using a tool like VLC (Media → Open Network Stream).</li>
+
+            <li>Make sure the camera and SentinelVision device are on the same network.</li>
+
+            <li>Check that the camera's RTSP port (usually 554) is not blocked by a firewall.</li>
+
+            <li>Try the sub-stream URL instead of the main stream — it uses fewer resources.</li>
+
+          </ul>
+
+
+
+          <h3>No Telegram alerts being received</h3>
+
+          <ul>
+
+            <li>Send a <strong>Test Message</strong> from Settings → Telegram to confirm the token and Chat ID are correct.</li>
+
+            <li>Ensure your SentinelVision device has internet access.</li>
+
+            <li>Check that the zone is set to <strong>Armed</strong> and the schedule includes the current time.</li>
+
+            <li>Check the alert cooldown setting — if set to a long value, alerts may be suppressed.</li>
+
+          </ul>
+
+
+
+          <h3>High CPU usage</h3>
+
+          <ul>
+
+            <li>Switch cameras to use the sub-stream (lower resolution) RTSP URL.</li>
+
+            <li>Reduce the number of simultaneously active detection zones.</li>
+
+            <li>Increase the detection frame interval in <strong>Settings → Detection</strong>.</li>
+
+          </ul>
+
+
+
+          <h3>Detection not triggering</h3>
+
+          <ul>
+
+            <li>Verify the zone is armed and the current time falls within the schedule.</li>
+
+            <li>Lower the confidence threshold in the zone settings.</li>
+
+            <li>Check that the camera stream is not frozen or disconnected on the dashboard.</li>
+
+            <li>Ensure the license for that feature is active under <strong>Settings → License Management</strong>.</li>
+
+          </ul>
+
+
+
+          <div class="callout callout-info">
+
+            <i class="fas fa-info-circle"></i>
+
+            <p>If you're stuck, <a href="index.html#contact">email us</a> or message on WhatsApp with the error message from the logs above. We usually have a fix within a few hours.</p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- FAQ -->
+
+        <section id="faq">
+
+          <h2><i class="fas fa-question-circle" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Frequently Asked Questions</h2>
+
+
+
+          <div class="faq-list">
+
+            <div class="faq-item">
+
+              <button class="faq-question">How many cameras can I connect? <i class="fas fa-chevron-down"></i></button>
+
+              <div class="faq-answer">There is no hard limit on the number of cameras. Practical limits depend on your hardware — specifically its CPU and RAM. Most setups handle 4–8 cameras comfortably on modest hardware. Running more cameras at sub-stream resolution extends this significantly.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+              <button class="faq-question">Does the license cover multiple cameras? <i class="fas fa-chevron-down"></i></button>
+
+              <div class="faq-answer">Yes. A single license covers all cameras connected to your SentinelVision installation. There are no per-camera fees. Zone Detection licensed for one installation works across all cameras in that installation.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+              <button class="faq-question">Does it work without internet? <i class="fas fa-chevron-down"></i></button>
+
+              <div class="faq-answer">Mostly yes. AI detection, zone monitoring, logging and local storage all work without internet. Telegram alerts require internet to send notifications, but they resume automatically when connectivity is restored. Outgoing alerts are queued and not lost.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+              <button class="faq-question">What happens when my license expires? <i class="fas fa-chevron-down"></i></button>
+
+              <div class="faq-answer">You will receive warning notifications in the dashboard and via Telegram as the expiry date approaches (30 days, 7 days, 1 day). When expired, the licensed feature stops running but the rest of the system continues normally. Simply renew your license to reactivate.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+              <button class="faq-question">Can I update SentinelVision myself? <i class="fas fa-chevron-down"></i></button>
+
+              <div class="faq-answer">Yes. Updates are applied from the dashboard under <strong>Settings → System Update</strong>. Upload the update package and click Apply — no SSH or command line required. Your configuration and data are preserved across updates.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+              <button class="faq-question">Are my recordings stored in the cloud? <i class="fas fa-chevron-down"></i></button>
+
+              <div class="faq-answer">No. SentinelVision stores all data — alerts, snapshots, analytics — locally on your device. Nothing is sent to or stored by us. Your footage stays on your hardware at all times.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+              <button class="faq-question">What if I need help with setup? <i class="fas fa-chevron-down"></i></button>
+
+              <div class="faq-answer">Email us at <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a> or message us on WhatsApp. We're happy to walk you through the setup process at no extra charge.</div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+      </div><!-- end docs-content -->
+
+    </div><!-- end docs-layout -->
+
+  </div>
+
+</section>
+
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+
+<footer class="footer">
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+
+      <img src="img/logo.svg" alt="SentinelVision Pro" class="brand-logo-footer" loading="lazy">
+
+    </div>
+
+    <nav class="footer-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="gallery.html">Gallery</a>
+
+      <a href="docs.html">Docs</a>
+
+      <a href="pricing.html">Pricing</a>
+
+      <a href="about.html">About</a>
+
+      <a href="changelog.html">Changelog</a>
+
+      <a href="platform.html">Platform</a>
+
+      <a href="quote.html">Get a Quote</a>
+
+      <a href="privacy.html">Privacy</a>
+
+      <a href="terms.html">Terms</a>
+
+    </nav>
+
+    <p class="footer-copy">&copy; 2026 SentinelVision Pro &mdash; <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a></p>
+
+  </div>
+
+</footer>
+
+
+
+<!-- WhatsApp Float — replace 27XXXXXXXXX with your WhatsApp number e.g. 27821234567 -->
+
+<a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
+
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+
+  <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+

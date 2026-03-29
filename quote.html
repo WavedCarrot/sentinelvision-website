@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Get a Hardware Quote — SentinelVision Pro</title>
+
+  <meta name="description" content="Get a quote for the SentinelVision hardware unit. Choose your bundle, fill in your details, and we'll respond within 24 hours.">
+
+  <link rel="canonical" href="https://sentinelvision.net.za/quote.html">
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SentinelVision Pro">
+  <meta property="og:title"       content="Get a Hardware Quote — SentinelVision Pro">
+  <meta property="og:description" content="Get a quote for the SentinelVision hardware unit. Choose your bundle, fill in your details, and we'll respond within 24 hours.">
+  <meta property="og:url"         content="https://sentinelvision.net.za/quote.html">
+  <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.svg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Get a Hardware Quote — SentinelVision Pro">
+  <meta name="twitter:description" content="Get a quote for the SentinelVision hardware unit. Choose your bundle, fill in your details, and we'll respond within 24 hours.">
+  <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.svg">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 3L4 10v10c0 9.9 6.9 19.1 16 21.5C29.1 39.1 36 29.9 36 20V10L20 3z' fill='%233b82f6' fill-opacity='.2' stroke='%233b82f6' stroke-width='2'/><path d='M14 20l4 4 8-8' stroke='%233b82f6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+
+<nav class="navbar" id="navbar">
+
+  <div class="container nav-inner">
+
+    <a href="index.html" class="brand">
+
+      <img src="img/logo.svg" alt="SentinelVision Pro" class="brand-logo">
+
+      <div class="brand-text">
+
+        <strong>SentinelVision</strong>
+
+        <span>Pro Security Platform</span>
+
+      </div>
+
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+
+      <li><a href="platform.html">Platform</a></li>
+
+      <li><a href="gallery.html">Gallery</a></li>
+
+      <li><a href="docs.html">Docs</a></li>
+
+      <li><a href="pricing.html">Pricing</a></li>
+
+      <li><a href="about.html">About</a></li>
+
+      <li><a href="order.html" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
+
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+
+      <span></span><span></span><span></span>
+
+    </button>
+
+  </div>
+
+</nav>
+
+
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <div class="section-badge">Hardware Quote</div>
+
+    <h1>Get a Hardware Quote</h1>
+
+    <p>Fill in the form below with your bundle preference and contact details. We'll send you pricing and payment information within 24 hours.</p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ═══════════ QUOTE FORM ═══════════ -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="order-layout">
+
+
+
+      <!-- Left: Form -->
+
+      <div class="order-form-box">
+
+        <h2>Hardware Quote Request</h2>
+
+        <p class="subtitle">All fields marked as required must be filled in. We'll respond to the email address you provide.</p>
+
+
+
+        <form id="quote-form" action="https://api.web3forms.com/submit" method="POST">
+
+          <!-- Honeypot: bots fill this, humans don't -->
+          <input type="text" name="website_url" style="display:none;position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <input type="hidden" name="access_key"  value="6f8c3403-e63d-49b1-ad5d-f709cec8c85e">
+
+          <input type="hidden" name="subject"     value="SentinelVision — Hardware Quote Request">
+
+          <input type="hidden" name="from_name"   value="SentinelVision Website">
+
+          <input type="checkbox" name="botcheck"  style="display:none">
+
+
+
+          <!-- Personal details -->
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="q-fname">First Name</label>
+
+              <input type="text" id="q-fname" name="first_name" placeholder="Jane" required autocomplete="given-name">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="q-lname">Last Name</label>
+
+              <input type="text" id="q-lname" name="last_name" placeholder="Smith" required autocomplete="family-name">
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="q-email">Email Address</label>
+
+            <input type="email" id="q-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="q-phone">Phone Number <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+
+            <input type="tel" id="q-phone" name="phone" placeholder="+27 82 123 4567" autocomplete="tel">
+
+          </div>
+
+
+
+          <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0">
+
+
+
+          <!-- Bundle selection -->
+
+          <div class="form-group">
+
+            <label for="q-bundle">Hardware Bundle</label>
+
+            <select id="q-bundle" name="bundle" required>
+
+              <option value="" disabled>— Select a bundle —</option>
+
+              <option value="Unit Only — R7 500">Unit Only — R7 500 (use your own cameras)</option>
+
+              <option value="Starter Bundle — R13 700">Starter Bundle — R13 700 (Unit + 2 Cameras)</option>
+
+              <option value="Pro Bundle — R20 300">Pro Bundle — R20 300 (Unit + 4 Cameras)</option>
+
+              <option value="Business Bundle — R28 300">Business Bundle — R28 300 (Unit + 6 Cameras)</option>
+
+              <option value="Custom / Still deciding">Custom / I'm not sure yet — tell me more</option>
+
+            </select>
+
+          </div>
+
+
+
+          <!-- Property type -->
+
+          <div class="form-group">
+
+            <label for="q-property">Property Type <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+
+            <select id="q-property" name="property_type">
+
+              <option value="" disabled selected>— Select property type —</option>
+
+              <option value="Home / Residence">Home / Residence</option>
+
+              <option value="Small Office">Small Office</option>
+
+              <option value="Retail / Shop">Retail / Shop</option>
+
+              <option value="Warehouse / Industrial">Warehouse / Industrial</option>
+
+              <option value="Complex / Multi-unit">Complex / Multi-unit</option>
+
+              <option value="Other">Other</option>
+
+            </select>
+
+          </div>
+
+
+
+          <!-- Notes -->
+
+          <div class="form-group">
+
+            <label for="q-notes">Additional Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+
+            <textarea id="q-notes" name="notes" rows="3" placeholder="e.g. number of cameras needed, site details, specific questions..." data-wordlimit="100"></textarea>
+
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary btn-full" id="q-submit">
+
+            <i class="fas fa-paper-plane"></i> Submit Quote Request
+
+          </button>
+
+          <div id="quote-result" class="form-result"></div>
+
+        </form>
+
+      </div>
+
+
+
+      <!-- Right: Sidebar -->
+
+      <div class="order-sidebar">
+
+
+
+        <!-- Bundle summary boxes -->
+
+        <div class="price-display-box">
+
+          <div class="pd-label">Selected Bundle</div>
+
+          <div id="qd-bundle" class="pd-none">Select a bundle above</div>
+
+        </div>
+
+
+
+        <!-- What happens next -->
+
+        <div class="order-info-box">
+
+          <h4><i class="fas fa-list-check" style="color:var(--accent);margin-right:.5rem"></i>What Happens Next</h4>
+
+          <ol class="order-steps">
+
+            <li><span class="step-num">1</span>Submit this form with your bundle preference</li>
+
+            <li><span class="step-num">2</span>We email you a detailed quote with EFT / bank transfer payment details</li>
+
+            <li><span class="step-num">3</span>You make payment in ZAR</li>
+
+            <li><span class="step-num">4</span>We configure and ship your unit — or arrange onsite setup</li>
+
+            <li><span class="step-num">5</span>You're fully protected within 30 minutes of delivery</li>
+
+          </ol>
+
+        </div>
+
+
+
+        <div class="payment-note">
+
+          <strong><i class="fas fa-info-circle"></i> No upfront payment needed:</strong>
+
+          This is just a quote request. We'll send full pricing and banking details by email before anything is due.
+
+        </div>
+
+
+
+        <div class="order-info-box" style="margin-top:1.25rem">
+
+          <h4><i class="fas fa-cube" style="color:var(--accent);margin-right:.5rem"></i>Bundle Overview</h4>
+
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;font-size:0.88rem;color:var(--muted)">
+
+            <li><strong style="color:var(--text)">Unit Only — R7 500</strong><br>Use your own existing IP cameras</li>
+
+            <li><strong style="color:var(--text)">Starter — R13 700</strong><br>Unit + 2 IP cameras</li>
+
+            <li><strong style="color:var(--text)">Pro — R20 300</strong><br>Unit + 4 IP cameras</li>
+
+            <li><strong style="color:var(--text)">Business — R28 300</strong><br>Unit + 6 IP cameras + custom zone setup</li>
+
+          </ul>
+
+          <p style="margin-top:0.85rem;font-size:0.82rem;color:var(--muted)">All prices include VAT. Custom configurations available.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+
+<footer class="footer">
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+
+      <img src="img/logo.svg" alt="SentinelVision Pro" class="brand-logo-footer" loading="lazy">
+
+    </div>
+
+    <nav class="footer-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="gallery.html">Gallery</a>
+
+      <a href="docs.html">Docs</a>
+
+      <a href="pricing.html">Pricing</a>
+
+      <a href="about.html">About</a>
+
+      <a href="changelog.html">Changelog</a>
+
+      <a href="platform.html">Platform</a>
+
+      <a href="quote.html">Get a Quote</a>
+
+      <a href="privacy.html">Privacy</a>
+
+      <a href="terms.html">Terms</a>
+
+    </nav>
+
+    <p class="footer-copy">
+
+      &copy; 2026 SentinelVision Pro &mdash;
+
+      <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+<!-- WhatsApp Float -->
+
+<a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
+
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+
+  <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+
+<script src="js/main.js"></script>
+
+<script>
+
+// Pre-fill bundle from URL query parameter e.g. quote.html?bundle=pro
+
+(function () {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const bundleMap = {
+
+    'unit-only': 'Unit Only — R7 500',
+
+      'starter':   'Starter Bundle — R13 700',
+
+      'pro':       'Pro Bundle — R20 300',
+
+      'business':  'Business Bundle — R28 300'
+
+  };
+
+  const key = (params.get('bundle') || '').toLowerCase();
+
+  if (bundleMap[key]) {
+
+    const sel = document.getElementById('q-bundle');
+
+    if (sel) sel.value = bundleMap[key];
+
+    updateBundleDisplay(bundleMap[key]);
+
+  }
+
+
+
+  // Update sidebar label when selection changes
+
+  const bundleSel = document.getElementById('q-bundle');
+
+  if (bundleSel) {
+
+    bundleSel.addEventListener('change', function () {
+
+      updateBundleDisplay(this.value);
+
+    });
+
+  }
+
+
+
+  function updateBundleDisplay(val) {
+
+    const el = document.getElementById('qd-bundle');
+
+    if (!el) return;
+
+    if (val) {
+
+      el.textContent = val;
+
+      el.classList.remove('pd-none');
+
+      el.style.fontSize = '1rem';
+
+      el.style.fontWeight = '600';
+
+      el.style.color = 'var(--text)';
+
+    } else {
+
+      el.textContent = 'Select a bundle above';
+
+      el.classList.add('pd-none');
+
+    }
+
+  }
+
+
+
+  // Form submission via fetch (same pattern as order form)
+
+  const form = document.getElementById('quote-form');
+
+  const resultEl = document.getElementById('quote-result');
+
+  const submitBtn = document.getElementById('q-submit');
+
+  if (form) {
+
+    form.addEventListener('submit', async function (e) {
+
+      e.preventDefault();
+
+      // Honeypot — discard silently if filled by a bot
+      const hp = form.querySelector('input[name="website_url"]');
+      if (hp && hp.value.trim() !== '') return;
+
+      submitBtn.disabled = true;
+
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+      try {
+
+        const data = new FormData(form);
+
+        const res = await fetch(form.action, { method: 'POST', body: data });
+
+        const json = await res.json();
+
+        if (json.success) {
+
+          resultEl.textContent = 'Quote request sent! We\'ll be in touch within 24 hours.';
+
+          resultEl.className = 'form-result success';
+
+          form.reset();
+
+          document.getElementById('qd-bundle').textContent = 'Select a bundle above';
+
+          document.getElementById('qd-bundle').classList.add('pd-none');
+
+        } else {
+
+          throw new Error(json.message || 'Submission failed');
+
+        }
+
+      } catch (err) {
+
+        resultEl.textContent = 'Something went wrong. Please try again or email info.sentinelvision@gmail.com';
+
+        resultEl.className = 'form-result error';
+
+      }
+
+      submitBtn.disabled = false;
+
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Quote Request';
+
+    });
+
+  }
+
+})();
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+

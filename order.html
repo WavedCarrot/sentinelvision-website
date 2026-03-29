@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Order License — SentinelVision Pro</title>
+
+  <meta name="description" content="Order a SentinelVision Pro license. Select your feature and duration, submit your details and receive your activation key within 24 hours.">
+
+  <link rel="canonical" href="https://sentinelvision.net.za/order.html">
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SentinelVision Pro">
+  <meta property="og:title"       content="Order License — SentinelVision Pro">
+  <meta property="og:description" content="Order a SentinelVision Pro license. Select your feature and duration, submit your details and receive your activation key within 24 hours.">
+  <meta property="og:url"         content="https://sentinelvision.net.za/order.html">
+  <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.svg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Order License — SentinelVision Pro">
+  <meta name="twitter:description" content="Order a SentinelVision Pro license. Select your feature and duration, submit your details and receive your activation key within 24 hours.">
+  <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.svg">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 3L4 10v10c0 9.9 6.9 19.1 16 21.5C29.1 39.1 36 29.9 36 20V10L20 3z' fill='%233b82f6' fill-opacity='.2' stroke='%233b82f6' stroke-width='2'/><path d='M14 20l4 4 8-8' stroke='%233b82f6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+
+<nav class="navbar" id="navbar">
+
+  <div class="container nav-inner">
+
+    <a href="index.html" class="brand">
+
+      <img src="img/logo.svg" alt="SentinelVision Pro" class="brand-logo">
+
+      <div class="brand-text">
+
+        <strong>SentinelVision</strong>
+
+        <span>Pro Security Platform</span>
+
+      </div>
+
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+
+      <li><a href="platform.html">Platform</a></li>
+
+      <li><a href="gallery.html">Gallery</a></li>
+
+      <li><a href="docs.html">Docs</a></li>
+
+      <li><a href="pricing.html">Pricing</a></li>
+
+      <li><a href="about.html">About</a></li>
+
+      <li><a href="order.html" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
+
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+
+      <span></span><span></span><span></span>
+
+    </button>
+
+  </div>
+
+</nav>
+
+
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <div class="section-badge">Order</div>
+
+    <h1>Order Your License</h1>
+
+    <p>Fill in the form below. We'll email you payment details and your activation key within 24 hours.</p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ═══════════ ORDER FORM ═══════════ -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="order-layout">
+
+
+
+      <!-- Left: Form -->
+
+      <div class="order-form-box">
+
+        <h2>License Order Form</h2>
+
+        <p class="subtitle">All fields are required. We'll respond to the email address you provide.</p>
+
+
+
+        <!-- Web3Forms: sign up free at https://web3forms.com to get your access key -->
+
+        <form id="order-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Honeypot: bots fill this, humans don't -->
+          <input type="text" name="website_url" style="display:none;position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <input type="hidden" name="access_key"  value="6f8c3403-e63d-49b1-ad5d-f709cec8c85e">
+
+          <input type="hidden" name="subject"     value="SentinelVision Pro — New License Order">
+
+          <input type="hidden" name="from_name"   value="SentinelVision Website">
+
+          <input type="checkbox" name="botcheck"  style="display:none">
+
+          <!-- Hidden computed price field (filled by JS) -->
+
+          <input type="hidden" name="order_price" id="hidden-price" value="">
+
+          <input type="hidden" name="order_summary" id="hidden-summary" value="">
+
+
+
+          <!-- Personal details -->
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="o-fname">First Name</label>
+
+              <input type="text" id="o-fname" name="first_name" placeholder="Jane" required autocomplete="given-name">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="o-lname">Last Name</label>
+
+              <input type="text" id="o-lname" name="last_name" placeholder="Smith" required autocomplete="family-name">
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="o-email">Email Address</label>
+
+            <input type="email" id="o-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="o-phone">Phone Number <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+
+            <input type="tel" id="o-phone" name="phone" placeholder="+27 82 123 4567" autocomplete="tel">
+
+          </div>
+
+
+
+          <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0">
+
+
+
+          <!-- License selection -->
+
+          <div class="form-group">
+
+            <label for="o-license">License Type</label>
+
+            <select id="o-license" name="license_type" required>
+
+              <option value="" disabled selected>— Select a license —</option>
+
+              <option value="Zone Detection — R150/month">Zone Detection (from R150/month)</option>
+
+              <option value="Loitering Detection — R100/month">Loitering Detection (from R100/month)</option>
+
+              <option value="Weapon Detection — R200/month">Weapon Detection (from R200/month)</option>
+
+              <option value="People Counting &amp; Analytics — R150/month">People Counting &amp; Analytics (from R150/month)</option>
+
+              <option value="Full Feature Bundle — R500/month">Full Feature Bundle — ALL features (from R500/month)</option>
+
+            </select>
+
+          </div>
+
+
+
+          <!-- Duration -->
+
+          <div class="form-group">
+
+            <label>Subscription Duration</label>
+
+            <div class="radio-group">
+
+              <div class="radio-option">
+
+                <input type="radio" name="duration" id="dur-1" value="1 month" checked>
+
+                <label for="dur-1">
+
+                  1 Month
+
+                  <span class="radio-caption" id="cap-1">&nbsp;</span>
+
+                </label>
+
+              </div>
+
+              <div class="radio-option">
+
+                <input type="radio" name="duration" id="dur-3" value="3 months">
+
+                <label for="dur-3">
+
+                  3 Months
+
+                  <span class="radio-caption" id="cap-3">Save ~11%</span>
+
+                </label>
+
+              </div>
+
+              <div class="radio-option">
+
+                <input type="radio" name="duration" id="dur-12" value="12 months">
+
+                <label for="dur-12">
+
+                  12 Months
+
+                  <span class="radio-caption" id="cap-12">Save up to 33%</span>
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Notes -->
+
+          <div class="form-group">
+
+            <label for="o-notes">Additional Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+
+            <textarea id="o-notes" name="notes" rows="3" placeholder="e.g. number of cameras, specific requirements, questions..." data-wordlimit="100"></textarea>
+
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary btn-full" id="o-submit">
+
+            <i class="fas fa-paper-plane"></i> Submit Order
+
+          </button>
+
+          <div id="order-result" class="form-result"></div>
+
+        </form>
+
+      </div>
+
+
+
+      <!-- Right: Sidebar -->
+
+      <div class="order-sidebar">
+
+
+
+        <!-- Live price display -->
+
+        <div class="price-display-box">
+
+          <div class="pd-label">Order Total</div>
+
+          <div id="pd-amount" class="pd-none">Select license &amp; duration</div>
+
+          <div id="pd-name" class="pd-name"></div>
+
+        </div>
+
+
+
+        <!-- What happens next -->
+
+        <div class="order-info-box">
+
+          <h4><i class="fas fa-list-check" style="color:var(--accent);margin-right:.5rem"></i>What Happens Next</h4>
+
+          <ol class="order-steps">
+
+            <li><span class="step-num">1</span>Submit this form with your details</li>
+
+            <li><span class="step-num">2</span>We email you EFT / bank transfer payment details</li>
+
+            <li><span class="step-num">3</span>You make payment in ZAR</li>
+
+            <li><span class="step-num">4</span>We generate and email your unique license key — within 24 hours of payment</li>
+
+            <li><span class="step-num">5</span>Enter the key in SentinelVision Pro → License Management and activate</li>
+
+          </ol>
+
+        </div>
+
+
+
+        <div class="payment-note">
+
+          <strong><i class="fas fa-info-circle"></i> Payment method:</strong>
+
+          EFT / Bank Transfer (ZAR only). Banking details will be emailed to you after your order is received.
+
+          No online payment is required to submit this form.
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+
+<footer class="footer">
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+
+      <img src="img/logo.svg" alt="SentinelVision Pro" class="brand-logo-footer" loading="lazy">
+
+    </div>
+
+    <nav class="footer-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="gallery.html">Gallery</a>
+
+      <a href="docs.html">Docs</a>
+
+      <a href="pricing.html">Pricing</a>
+
+      <a href="about.html">About</a>
+
+      <a href="changelog.html">Changelog</a>
+
+      <a href="platform.html">Platform</a>
+
+      <a href="quote.html">Get a Quote</a>
+
+      <a href="privacy.html">Privacy</a>
+
+      <a href="terms.html">Terms</a>
+
+    </nav>
+
+    <p class="footer-copy">
+
+      &copy; 2026 SentinelVision Pro &mdash;
+
+      <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+<!-- WhatsApp Float — replace 27XXXXXXXXX with your WhatsApp number e.g. 27821234567 -->
+
+<a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
+
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+
+  <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
