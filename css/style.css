@@ -599,6 +599,7 @@ img { max-width: 100%; }
 .changelog-date   { font-size: 0.8rem; color: var(--muted); margin-left: auto; }
 .changelog-badge  { font-size: 0.66rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px; }
 .cl-latest   { background: rgba(59,130,246,0.15);  color: var(--accent); border: 1px solid rgba(59,130,246,0.3); }
+.cl-new      { background: rgba(16,185,129,0.15);  color: var(--green);  border: 1px solid rgba(16,185,129,0.25); }
 .cl-feature  { background: rgba(16,185,129,0.15);  color: var(--green);  border: 1px solid rgba(16,185,129,0.25); }
 .cl-fix      { background: rgba(245,158,11,0.15);  color: var(--orange); border: 1px solid rgba(245,158,11,0.25); }
 .cl-security { background: rgba(239,68,68,0.15);   color: var(--red);    border: 1px solid rgba(239,68,68,0.25); }
