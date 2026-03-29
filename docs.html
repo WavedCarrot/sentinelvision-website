@@ -124,6 +124,8 @@
 
           <li class="nav-section">Getting Started</li>
 
+          <li><a href="#quickstart"><i class="fas fa-bolt" style="color:#f59e0b"></i> Quick Start (5 min)</a></li>
+
           <li><a href="#install"><i class="fas fa-download"></i> Installation</a></li>
 
           <li><a href="#first-login"><i class="fas fa-sign-in-alt"></i> First Login</a></li>
@@ -166,6 +168,67 @@
 
       <div class="docs-content">
 
+
+        <!-- QUICK START -->
+        <section id="quickstart" style="background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(16,185,129,.05));border:1px solid rgba(59,130,246,.2);border-radius:16px;padding:2rem 2rem 1.75rem;margin-bottom:2.5rem">
+
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;flex-wrap:wrap">
+            <span style="background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:.06em">&#9889; QUICK START</span>
+            <span style="color:var(--muted);font-size:0.9rem">From box to live alerts in under 5 minutes</span>
+          </div>
+
+          <h2 style="font-size:1.3rem;margin-bottom:1.5rem;margin-top:0.75rem">Everything you need to go live</h2>
+
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">1</div>
+              <div>
+                <strong>Plug in &amp; connect to your router</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Connect your SentinelVision device via Ethernet and plug in the power supply. The system boots and is ready in about 60 seconds.</p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">2</div>
+              <div>
+                <strong>Find your device IP and open the dashboard</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Log into your router and look for a device named <strong>sentinelvision</strong> in the connected device list. Open <code>http://&lt;device-ip&gt;:5000</code> in any browser on the same network.</p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">3</div>
+              <div>
+                <strong>Log in and change your password</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Default credentials are <code>admin</code> / <code>Admin123</code>. Go to <strong>Settings &rarr; Change Password</strong> and update it immediately.</p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">4</div>
+              <div>
+                <strong>Add your first camera</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Go to <strong>Cameras &rarr; Add Camera</strong>, paste your camera&rsquo;s RTSP URL, and click <strong>Test Connection</strong>. The live feed appears on your dashboard immediately. Not sure of the URL? See the <a href="#rtsp">RTSP URL guide</a>.</p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <div style="min-width:30px;height:30px;border-radius:50%;background:#10b981;color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">5</div>
+              <div>
+                <strong>Connect Telegram and receive your first alert</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Open Telegram and message <code>@BotFather</code> to create a bot and get your token. Then go to <strong>Settings &rarr; Telegram</strong>, paste your bot token and chat ID, and press <strong>Send Test Alert</strong>. Your phone should buzz within seconds. See the <a href="#telegram">full Telegram guide</a>.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(59,130,246,.15);display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+            <span style="color:var(--muted);font-size:0.9rem"><i class="fas fa-check-circle" style="color:#10b981;margin-right:0.4rem"></i>That&rsquo;s it &mdash; you&rsquo;re live. The sections below cover advanced configuration.</span>
+            <a href="order.html" class="btn btn-primary btn-sm" style="margin-left:auto"><i class="fas fa-key"></i> Get a License</a>
+          </div>
+
+        </section>
 
 
         <!-- INSTALLATION -->

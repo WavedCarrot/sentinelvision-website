@@ -32,6 +32,34 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+  <style>
+    .hero-split{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;position:relative}
+    .tg-phone{width:252px;background:#1c1c1e;border-radius:40px;padding:10px;box-shadow:0 0 0 1.5px #3a3a3c,0 32px 80px rgba(0,0,0,.75),0 0 60px rgba(59,130,246,.14);position:relative}
+    .tg-screen{background:#0e1621;border-radius:32px;overflow:hidden}
+    .tg-statusbar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 4px;font-size:9px;color:#8e8e93;font-weight:600;letter-spacing:.03em}
+    .tg-header{display:flex;align-items:center;gap:10px;padding:8px 12px 9px;background:#17212b;border-bottom:1px solid #1f2d3d}
+    .tg-bot-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#2563eb);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;flex-shrink:0}
+    .tg-bot-name{font-size:12px;font-weight:600;color:#e5e7eb;line-height:1.2}
+    .tg-bot-online{font-size:9.5px;color:#34d399}
+    .tg-messages{padding:10px 10px 12px;display:flex;flex-direction:column;gap:8px;background:#0e1621}
+    .tg-msg{background:#17212b;border-radius:12px 12px 12px 3px;padding:7px 10px;font-size:10.5px;color:#d1d5db;max-width:94%}
+    .tg-msg-time{font-size:8.5px;color:#4b5563;text-align:right;margin-top:3px}
+    .tg-alert{background:#1b1f2f;border-left:2px solid #ef4444;border-radius:12px 12px 12px 3px;padding:8px 10px;font-size:10.5px;color:#d1d5db;max-width:94%;opacity:0;transform:translateY(10px) scale(.98);animation:tgIn .55s cubic-bezier(.34,1.56,.64,1) 2s forwards}
+    .tg-alert-lbl{font-weight:700;color:#f87171;font-size:11px;margin-bottom:6px}
+    .tg-snap{border-radius:6px;overflow:hidden;margin-bottom:6px;display:block;width:100%}
+    .tg-alert-info{font-size:9.5px;color:#9ca3af;line-height:1.65}
+    .tg-notif{position:absolute;top:7px;right:7px;background:#ef4444;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;animation:tgBadge .35s cubic-bezier(.34,1.56,.64,1) 2.65s forwards}
+    .tg-typing{display:flex;gap:4px;align-items:center;padding:9px 11px;background:#17212b;border-radius:12px 12px 12px 3px;width:48px;opacity:0;animation:tgFadeIn .4s ease 4.2s forwards}
+    .tg-typing b{width:5px;height:5px;border-radius:50%;background:#4b5563;display:block;animation:tgDot 1.3s ease infinite}
+    .tg-typing b:nth-child(2){animation-delay:.22s}
+    .tg-typing b:nth-child(3){animation-delay:.44s}
+    @keyframes tgIn{to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes tgBadge{to{opacity:1}}
+    @keyframes tgFadeIn{to{opacity:1}}
+    @keyframes tgDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+    @media(max-width:960px){.hero-split{grid-template-columns:1fr}.tg-phone-wrap{display:none}}
+  </style>
+
 </head>
 
 <body>
@@ -94,48 +122,122 @@
 
   <div class="hero-bg"></div>
 
-  <div class="container hero-content">
+  <div class="container hero-split">
 
-    <div class="hero-badge"><i class="fas fa-shield-halved"></i>&nbsp; AI-Powered Security Software</div>
+    <div class="hero-content" style="max-width:none;margin:0;text-align:left">
 
-    <h1>Turn Any Camera Into an<br><span class="gradient-text">Intelligent Security System</span></h1>
+      <div class="hero-badge"><i class="fas fa-shield-halved"></i>&nbsp; AI-Powered Security Software</div>
 
-    <p class="hero-subtitle">
+      <h1>Turn Any Camera Into an<br><span class="gradient-text">Intelligent Security System</span></h1>
 
-      SentinelVision Pro runs on a dedicated local device — delivered to you fully configured and ready to go.
+      <p class="hero-subtitle">
 
-      Real-time AI detection, configurable zones, instant Telegram photo alerts, and full local control.
+        SentinelVision Pro runs on a dedicated local device — delivered fully configured and ready to go.
 
-      No cloud. No per-camera subscription. Your data stays on your premises.
+        Real-time AI detection, custom detection zones, instant Telegram photo alerts, and complete local control.
 
-    </p>
+        No cloud. No per-camera fees. Your footage stays on your premises.
 
-    <div class="hero-actions">
+      </p>
 
-      <a href="order.html" class="btn btn-primary btn-lg"><i class="fas fa-key"></i> Get a License</a>
+      <div class="hero-actions" style="justify-content:flex-start">
 
-      <a href="quote.html" class="btn btn-ghost btn-lg"><i class="fas fa-file-invoice"></i> Get a Quote</a>
+        <a href="order.html" class="btn btn-primary btn-lg"><i class="fas fa-key"></i> Get a License</a>
 
-      <a href="#features" class="btn btn-ghost btn-lg"><i class="fas fa-circle-play"></i> Explore Features</a>
+        <a href="quote.html" class="btn btn-ghost btn-lg"><i class="fas fa-file-invoice"></i> Get a Quote</a>
+
+        <a href="#features" class="btn btn-ghost btn-lg"><i class="fas fa-circle-play"></i> See Features</a>
+
+      </div>
+
+      <div class="hero-stats" style="justify-content:flex-start">
+
+        <div class="stat"><strong>10+</strong><span>AI Features</span></div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat"><strong>100%</strong><span>Local Processing</span></div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat"><strong>24/7</strong><span>Automated Monitoring</span></div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat"><strong>ZAR</strong><span>Local Pricing</span></div>
+
+      </div>
 
     </div>
 
-    <div class="hero-stats">
+    <!-- Telegram alert phone mockup -->
+    <div class="tg-phone-wrap">
+      <div class="tg-phone">
+        <div class="tg-notif">1</div>
+        <div class="tg-screen">
 
-      <div class="stat"><strong>10+</strong><span>AI Features</span></div>
+          <div class="tg-statusbar">
+            <span>02:14</span>
+            <div style="display:flex;gap:5px;align-items:center">
+              <i class="fas fa-signal" style="font-size:8px"></i>
+              <i class="fas fa-wifi" style="font-size:8px"></i>
+              <i class="fas fa-battery-three-quarters" style="font-size:8px"></i>
+            </div>
+          </div>
 
-      <div class="stat-divider"></div>
+          <div class="tg-header">
+            <div class="tg-bot-av"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <div class="tg-bot-name">SentinelVision Bot</div>
+              <div class="tg-bot-online">&#9679; online</div>
+            </div>
+          </div>
 
-      <div class="stat"><strong>100%</strong><span>Local Processing</span></div>
+          <div class="tg-messages">
 
-      <div class="stat-divider"></div>
+            <div class="tg-msg">
+              &#x2705; System armed &mdash; 23:00 schedule active.
+              <div class="tg-msg-time">22:59</div>
+            </div>
 
-      <div class="stat"><strong>24/7</strong><span>Automated Monitoring</span></div>
+            <div class="tg-msg">
+              &#128247; All 4 cameras online. Monitoring active.
+              <div class="tg-msg-time">23:00</div>
+            </div>
 
-      <div class="stat-divider"></div>
+            <!-- Alert slides in after 2s -->
+            <div class="tg-alert">
+              <div class="tg-alert-lbl">&#128680; Motion Detected</div>
+              <svg class="tg-snap" viewBox="0 0 240 134" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1b2a"/><stop offset="100%" stop-color="#142035"/></linearGradient></defs>
+                <rect width="240" height="134" fill="url(#sg)"/>
+                <line x1="0" y1="106" x2="240" y2="106" stroke="#1a2f45" stroke-width="1"/>
+                <rect x="145" y="38" width="95" height="68" fill="#0a1626"/>
+                <rect x="158" y="54" width="22" height="28" fill="#0f2035" rx="1"/>
+                <rect x="190" y="54" width="22" height="28" fill="#0f2035" rx="1"/>
+                <ellipse cx="85" cy="55" rx="9" ry="9" fill="#b8bcc8"/>
+                <rect x="78" y="64" width="14" height="28" rx="3" fill="#b8bcc8"/>
+                <line x1="78" y1="70" x2="65" y2="83" stroke="#b8bcc8" stroke-width="3.5" stroke-linecap="round"/>
+                <line x1="92" y1="70" x2="105" y2="83" stroke="#b8bcc8" stroke-width="3.5" stroke-linecap="round"/>
+                <line x1="82" y1="92" x2="78" y2="108" stroke="#b8bcc8" stroke-width="3.5" stroke-linecap="round"/>
+                <line x1="90" y1="92" x2="94" y2="108" stroke="#b8bcc8" stroke-width="3.5" stroke-linecap="round"/>
+                <rect x="62" y="42" width="56" height="72" fill="none" stroke="#ef4444" stroke-width="1.5" rx="2" stroke-dasharray="5 2"/>
+                <rect x="62" y="36" width="56" height="11" fill="#ef4444" rx="2"/>
+                <text x="65" y="45" font-family="monospace" font-size="7.5" fill="white" font-weight="bold">Person 94%</text>
+                <text x="5" y="11" font-family="monospace" font-size="7" fill="#3a6080">CAM-03  DRIVEWAY GATE</text>
+                <text x="5" y="21" font-family="monospace" font-size="7" fill="#3a6080">2026-03-29  02:14:37</text>
+                <circle cx="232" cy="10" r="4" fill="none" stroke="#2a7a2a" stroke-width="1.2"/>
+                <text x="226" y="14" font-family="monospace" font-size="6" fill="#2a7a2a">IR</text>
+              </svg>
+              <div class="tg-alert-info">&#128205; CAM-03 &mdash; Driveway Gate<br>&#128100; Person detected &nbsp;(confidence 94%)</div>
+              <div class="tg-msg-time">02:14</div>
+            </div>
 
-      <div class="stat"><strong>ZAR</strong><span>Local Pricing</span></div>
+            <div class="tg-typing"><b></b><b></b><b></b></div>
 
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
