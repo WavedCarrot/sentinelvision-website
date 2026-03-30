@@ -116,6 +116,43 @@
 
 
 
+      <!-- v4.3.6 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.3.6</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-fix">Bug Fix</span>
+
+          <span class="changelog-date">March 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>PEOPLE NOW</strong> counter no longer drops to 0 when a person stands or sits still for more than 15 seconds</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> People count now reads directly from the latest YOLO result &mdash; no more artificial delay from the consecutive-frame confirmation gate</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Periodic YOLO refresh every 120&thinsp;s on static scenes keeps the live count accurate even with no motion detected</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Dashboard update now <strong>auto-restarts the Pi service reliably</strong> &mdash; no more logging in via SSH after applying an update</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Removed <code>StartLimitBurst</code> from the service definition &mdash; systemd can no longer permanently stop restarting after multiple rapid restarts</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
       <!-- v4.3.5 -->
 
       <div class="changelog-entry">
@@ -124,7 +161,7 @@
 
           <span class="changelog-version">v4.3.5</span>
 
-          <span class="changelog-badge cl-latest">Latest</span>
+          <span class="changelog-badge cl-fix">Bug Fix</span>
 
           <span class="changelog-badge cl-fix">Bug Fix</span>
 
