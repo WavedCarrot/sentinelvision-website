@@ -611,6 +611,7 @@ img { max-width: 100%; }
 .cl-tag-fix  { color: var(--orange); }
 .cl-tag-imp  { color: var(--accent); }
 .cl-tag-sec  { color: var(--red); }
+.cl-tag-note { color: var(--muted); }
 
 /* ── DOWNLOAD PAGE ─────────────────────────────────────── */
 .download-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; max-width: 900px; margin: 0 auto; }

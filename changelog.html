@@ -116,6 +116,48 @@
 
 
 
+      <!-- v4.3.5 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.3.5</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-fix">Bug Fix</span>
+
+          <span class="changelog-badge cl-imp">Improvement</span>
+
+          <span class="changelog-date">March 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Telegram alert messages no longer include a timestamp &mdash; Telegram already shows the message time natively</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Person + animal detected in the same frame now sends ONE combined Telegram message instead of two separate alerts</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Combined alert automatically appends the animal detail to the person summary (e.g. &ldquo;Person detected. Also detected: 1 dog.&rdquo;)</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Animal confidence threshold raised from 35% &rarr; 55% &mdash; dramatically reduces false alarms from shadows, IR noise, and moving foliage</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Animal minimum detection size raised from 200px&sup2; &rarr; 1500px&sup2; &mdash; eliminates tiny blob false triggers that are clearly not real animals</li>
+
+            <li><span class="cl-tag cl-tag-note">NOTE</span> Real animals at normal detection distances still trigger reliably &mdash; only noise-level detections are filtered out</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+
       <!-- v4.3.4 -->
 
       <div class="changelog-entry">
@@ -123,8 +165,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.3.4</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-badge cl-fix">Bug Fix</span>
 
