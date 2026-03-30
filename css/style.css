@@ -705,8 +705,8 @@ img { max-width: 100%; }
 
 @media (max-width: 768px) {
   .navbar { position: relative; }
-  .brand-logo { height: 66px !important; }
-  .brand-logo-footer { height: 81px !important; }
+  .brand-logo { height: 90px !important; }
+  .brand-logo-footer { height: 110px !important; }
   .nav-inner { height: 60px; }
   .nav-links {
     display: none; flex-direction: column; position: absolute;
