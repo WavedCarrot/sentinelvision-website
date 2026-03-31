@@ -116,6 +116,72 @@
 
 
 
+      <!-- v4.3.9 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.3.9</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-fix">Bug Fix</span>
+
+          <span class="changelog-date">March 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Detection no longer silently stops after 24&thinsp;h+</strong> &mdash; the watchdog now detects threads frozen on a stalled RTSP connection (alive but not reading frames) and automatically restarts them</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Per-camera heartbeat tracked on every frame; a thread is considered frozen if no frame is processed within 90&thinsp;seconds</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Periodic memory cleanup every ~10&thinsp;min prevents Pi RAM exhaustion on long uptime (position history, zone history, stats cache)</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <!-- v4.3.8 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.3.8</span>
+
+          <span class="changelog-badge cl-fix">Bug Fix</span>
+
+          <span class="changelog-date">March 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Zone exit alert now fires correctly</strong> when a person leaves the camera frame &mdash; previously silently dropped if they had walked out of the zone polygon while still visible on camera</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Zone entry &amp; exit counts in analytics now always balance &mdash; every entry in the database is paired with its corresponding exit</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Entry alerts include a photo of the person in the zone; exit alerts are text-only (person has already left the frame)</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Detection thread watchdog now uses correct method names &mdash; was silently failing to restart crashed threads</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
       <!-- v4.3.6 -->
 
       <div class="changelog-entry">
@@ -123,8 +189,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.3.6</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-badge cl-fix">Bug Fix</span>
 
