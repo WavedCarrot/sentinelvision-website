@@ -116,6 +116,39 @@
 
 
 
+      <!-- v4.4.0 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.4.0</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-fix">Bug Fix</span>
+
+          <span class="changelog-date">March 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>PEOPLE NOW counter now works correctly on Raspberry Pi</strong> &mdash; the detection engine and Flask web server were running in separate OS processes so the live count was always 0, even when detections and Telegram alerts were working fine</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> All live dashboard counters (People Now, camera status, detections today) now update in real-time on Pi</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> New <code>wsgi.py</code> entry point &mdash; gunicorn now initialises the detection engine inside its own worker process so Flask request handlers share the same memory as the live camera threads</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
       <!-- v4.3.9 -->
 
       <div class="changelog-entry">
@@ -123,8 +156,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.3.9</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-badge cl-fix">Bug Fix</span>
 
