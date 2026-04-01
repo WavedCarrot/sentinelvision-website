@@ -138,11 +138,11 @@
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Fewer false alarms</strong> &mdash; detection confidence threshold raised from 0.35 to 0.45 (zero CPU cost). The AI now only fires an alert when it is highly confident, cutting spurious triggers from shadows, reflections, and partial-view objects</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Better detection of distant and small objects</strong> &mdash; YOLO inference image size raised from 320 to 416 (a standard YOLO-friendly size). People and animals further from the camera are now reliably detected. Still 2.4&times; less compute than the original default of 640</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Better detection of distant and small objects</strong> &mdash; AI inference image size raised from 320 to 416. People and animals further from the camera are now reliably detected. Still 2.4&times; less compute than the original default of 640</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Confidence auto-tuning floor raised from 0.25 to 0.35 &mdash; the system can no longer drift into noisy low-confidence territory on quiet cameras</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Full accuracy kept &mdash; yolov8s model (all 80 COCO classes including people and animals) unchanged. CPU on Pi 5 remains ~55% vs original 92%</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Full accuracy kept &mdash; all 80 detection classes (people, animals, objects) unchanged. CPU on Pi 5 remains ~55% vs original 92%</li>
 
           </ul>
 
