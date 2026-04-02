@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 
@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Changelog — SentinelVision Pro</title>
+  <title>Changelog â€” SentinelVision Pro</title>
 
   <meta name="description" content="Full release history for SentinelVision Pro. See what changed in each version.">
 
@@ -16,13 +16,13 @@
   <!-- Open Graph / Social sharing -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SentinelVision Pro">
-  <meta property="og:title"       content="Changelog — SentinelVision Pro">
+  <meta property="og:title"       content="Changelog â€” SentinelVision Pro">
   <meta property="og:description" content="Full release history for SentinelVision Pro. See what changed in each version.">
   <meta property="og:url"         content="https://sentinelvision.net.za/changelog.html">
   <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.svg">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="Changelog — SentinelVision Pro">
+  <meta name="twitter:title"       content="Changelog â€” SentinelVision Pro">
   <meta name="twitter:description" content="Full release history for SentinelVision Pro. See what changed in each version.">
   <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.svg">
 
@@ -38,7 +38,7 @@
 
 
 
-<!-- ═══════════ NAVBAR ═══════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â• NAVBAR â•â•â•â•â•â•â•â•â•â•â• -->
 
 <nav class="navbar" id="navbar">
 
@@ -88,7 +88,7 @@
 
 
 
-<!-- ═══════════ PAGE HERO ═══════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â• PAGE HERO â•â•â•â•â•â•â•â•â•â•â• -->
 
 <section class="page-hero">
 
@@ -106,7 +106,7 @@
 
 
 
-<!-- ═══════════ CHANGELOG ═══════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â• CHANGELOG â•â•â•â•â•â•â•â•â•â•â• -->
 
 <section class="section">
 
@@ -116,6 +116,43 @@
 
 
 
+      <!-- v4.4.5 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.4.5</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-security">Security</span>
+
+          <span class="changelog-badge cl-fix">Bug Fix</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-sec">SEC</span> <strong>Line Crossing license now enforced</strong> &mdash; tripwire alerts and entrance counting lines are fully disabled when the <em>line_crossing</em> license has expired. Previously they continued working after expiry</li>
+
+            <li><span class="cl-tag cl-tag-sec">SEC</span> <strong>People Counting license now enforced</strong> &mdash; PEOPLE NOW counter, live count tracking, occupancy logging, and entrance count are all disabled when the <em>people_counting</em> license has expired</li>
+
+            <li><span class="cl-tag cl-tag-sec">SEC</span> <strong>Analytics / occupancy API gated</strong> &mdash; the Analytics dashboard and all <code>/api/occupancy/*</code> endpoints return 403 when <em>people_counting</em> license has expired</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> A <em>zone_detection</em> license alone no longer grants access to people counting or analytics &mdash; a separate <em>people_counting</em> license is required</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
       <!-- v4.4.4 -->
 
       <div class="changelog-entry">
@@ -123,8 +160,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.4.4</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-badge cl-new">New Feature</span>
 
@@ -503,7 +538,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Face blur now correctly applies — bounding box format mismatch was silently skipping all face regions</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Face blur now correctly applies â€” bounding box format mismatch was silently skipping all face regions</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> Face blur upgraded from Gaussian blur to strong pixelation (10&times; downscale) for a much more visible privacy effect</li>
 
@@ -537,17 +572,17 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Anomaly detection — AI learns normal activity per camera per hour and alerts when unusual spikes occur (e.g. 12 people at 3 AM)</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Anomaly detection â€” AI learns normal activity per camera per hour and alerts when unusual spikes occur (e.g. 12 people at 3 AM)</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Face blurring — automatically blur detected faces in saved snapshots for POPIA/GDPR compliance (toggle per camera)</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Face blurring â€” automatically blur detected faces in saved snapshots for POPIA/GDPR compliance (toggle per camera)</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Enhanced fall detection — geometry-based detection using bounding box aspect ratio change, no extra AI model required</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Enhanced fall detection â€” geometry-based detection using bounding box aspect ratio change, no extra AI model required</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Smart alert summaries — Telegram alerts now include context-aware AI summaries (e.g. "3 people in Staff Room at 02:15")</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Smart alert summaries â€” Telegram alerts now include context-aware AI summaries (e.g. "3 people in Staff Room at 02:15")</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Per-camera confidence auto-tuning — detection threshold auto-adjusts based on your false positive rate over time</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Per-camera confidence auto-tuning â€” detection threshold auto-adjusts based on your false positive rate over time</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> False alert button on every Telegram detection alert — one tap records the false positive and tightens the camera threshold</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> False alert button on every Telegram detection alert â€” one tap records the false positive and tightens the camera threshold</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Anomaly Detection, Fall Detection, and Face Blur toggles added to per-camera settings</li>
 
@@ -581,21 +616,21 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> App navbar redesigned — fixed position, backdrop blur glass effect, active page highlight</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> App navbar redesigned â€” fixed position, backdrop blur glass effect, active page highlight</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Hamburger menu animates to × on open; mobile breakpoint updated to 900px with blue-tint hover</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Hamburger menu animates to Ã— on open; mobile breakpoint updated to 900px with blue-tint hover</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Camera cards now shrink to fit content — no longer stretches to fill full grid row height</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Camera cards now shrink to fit content â€” no longer stretches to fill full grid row height</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> Camera grid capped at 300px per card so a single camera doesn't span the full page width</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> Dashboard camera cards also capped and fit-content height</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Live View MJPEG streams no longer use lazy loading — streams connect immediately on page load</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Live View MJPEG streams no longer use lazy loading â€” streams connect immediately on page load</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> Live View page now breaks out of container constraints for correct full-width display</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> WhatsApp float button on website was pushed off screen — restored to fixed position</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> WhatsApp float button on website was pushed off screen â€” restored to fixed position</li>
 
           </ul>
 
@@ -661,13 +696,13 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Hamburger menu bars now visible on mobile — missing CSS width property corrected</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Hamburger menu bars now visible on mobile â€” missing CSS width property corrected</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Logo no longer clipped by navbar overflow — now fully visible at correct size</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Logo no longer clipped by navbar overflow â€” now fully visible at correct size</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> Shimmer animation no longer escapes navbar boundaries and causes floating bar</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Logo now acts as a home button — click to return to dashboard from any page</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Logo now acts as a home button â€” click to return to dashboard from any page</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Logo sized at 90 px on desktop, 64 px on mobile for clear visibility on all devices</li>
 
@@ -705,7 +740,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Mobile navigation fully repaired — dropdown menu now opens correctly on phones and tablets</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Mobile navigation fully repaired â€” dropdown menu now opens correctly on phones and tablets</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Hamburger button animates to an X when the menu is open</li>
 
@@ -741,21 +776,21 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Forgot password recovery — set a recovery key in Settings, reset from the login page if locked out</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Forgot password recovery â€” set a recovery key in Settings, reset from the login page if locked out</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Events CSV export — download up to 5,000 events as a spreadsheet with one click</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Events CSV export â€” download up to 5,000 events as a spreadsheet with one click</li>
 
             <li><span class="cl-tag cl-tag-new">NEW</span> Schedule timezone expanded to 55+ grouped timezones (Africa, Americas, Asia, Australia, Europe)</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> Stock control page now shows the camera name instead of raw Camera #ID</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Missing CSS variables defined — login and auth pages now render correctly on all browsers</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Missing CSS variables defined â€” login and auth pages now render correctly on all browsers</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Event filter expanded — bicycle, motorbike, bus, weapon, and stock items now selectable</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Event filter expanded â€” bicycle, motorbike, bus, weapon, and stock items now selectable</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Multiview page inline CSS moved to shared stylesheet for consistency</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Recovery key management added to Settings → System Maintenance</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Recovery key management added to Settings â†’ System Maintenance</li>
 
           </ul>
 
@@ -783,15 +818,15 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> System Updates page fully redesigned — native CSS, drag-and-drop upload zone, animated progress bar, real-time countdown</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> System Updates page fully redesigned â€” native CSS, drag-and-drop upload zone, animated progress bar, real-time countdown</li>
 
             <li><span class="cl-tag cl-tag-new">NEW</span> "Get Updates" button in-app links to the official update request page on the website</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Post-update restart countdown increased to 16 seconds to match systemd RestartSec (was 5s — caused connection refused)</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Post-update restart countdown increased to 16 seconds to match systemd RestartSec (was 5s â€” caused connection refused)</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> Update backups now automatically pruned to max 3 after every update (was 5)</li>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> Live people count on dashboard now updates correctly — detection engine reference resolved at startup</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Live people count on dashboard now updates correctly â€” detection engine reference resolved at startup</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Active backup count displayed in System Updates stats bar</li>
 
@@ -855,13 +890,13 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> License expiry enforcement — features automatically stop when license expires</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> License expiry enforcement â€” features automatically stop when license expires</li>
 
             <li><span class="cl-tag cl-tag-new">NEW</span> Global expiry banner in dashboard (30-day warning: yellow; 7-day: orange; expired: red)</li>
 
             <li><span class="cl-tag cl-tag-new">NEW</span> Telegram alerts sent at 30-day, 7-day, and 1-day before expiry</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> License expiry monitor runs as background thread — no manual checks needed</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> License expiry monitor runs as background thread â€” no manual checks needed</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> License management page now shows direct renewal link</li>
 
@@ -893,7 +928,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Login page legal disclaimer — usage policy notice added</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Login page legal disclaimer â€” usage policy notice added</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Improved login page layout and branding</li>
 
@@ -935,7 +970,7 @@
 
             <li><span class="cl-tag cl-tag-sec">SEC</span> CSRF protection reviewed and tightened</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Error handling improvements throughout app — no sensitive paths exposed in error messages</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Error handling improvements throughout app â€” no sensitive paths exposed in error messages</li>
 
           </ul>
 
@@ -1005,11 +1040,11 @@
 
             <li><span class="cl-tag cl-tag-new">NEW</span> Zone-level occupancy tracking (live count per zone)</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Multi-user Telegram support — send alerts to multiple users or groups</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Multi-user Telegram support â€” send alerts to multiple users or groups</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Overhauled detection engine for lower latency and higher accuracy</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> One-click in-app update system redesigned — now preserves all config</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> One-click in-app update system redesigned â€” now preserves all config</li>
 
           </ul>
 
@@ -1073,9 +1108,9 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Completely redesigned web dashboard — dark theme, responsive layout</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Completely redesigned web dashboard â€” dark theme, responsive layout</li>
 
-            <li><span class="cl-tag cl-tag-new">NEW</span> Weapon Detection (Beta) — dedicated AI model</li>
+            <li><span class="cl-tag cl-tag-new">NEW</span> Weapon Detection (Beta) â€” dedicated AI model</li>
 
             <li><span class="cl-tag cl-tag-new">NEW</span> Per-camera alert cooldown and snooze timers</li>
 
@@ -1083,7 +1118,7 @@
 
             <li><span class="cl-tag cl-tag-new">NEW</span> License management system with in-app key activation</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Detection now runs on a dedicated background process — zero impact on web UI performance</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Detection now runs on a dedicated background process â€” zero impact on web UI performance</li>
 
             <li><span class="cl-tag cl-tag-sec">SEC</span> Encrypted license keys, session hardening, complete audit log</li>
 
@@ -1113,7 +1148,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Foundation version — zone detection, loitering and Telegram alerts</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Foundation version â€” zone detection, loitering and Telegram alerts</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Hikvision, Provision ISR and Dahua RTSP compatibility confirmed</li>
 
@@ -1137,7 +1172,7 @@
 
 
 
-<!-- ═══════════ CTA ═══════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â• CTA â•â•â•â•â•â•â•â•â•â•â• -->
 
 <section class="cta-section">
 
@@ -1161,7 +1196,7 @@
 
 
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â• FOOTER â•â•â•â•â•â•â•â•â•â•â• -->
 
 <footer class="footer">
 
@@ -1207,7 +1242,7 @@
 
 
 
-<!-- WhatsApp Float — replace 27XXXXXXXXX with your WhatsApp number e.g. 27821234567 -->
+<!-- WhatsApp Float â€” replace 27XXXXXXXXX with your WhatsApp number e.g. 27821234567 -->
 
 <a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
 
@@ -1224,6 +1259,7 @@
 </body>
 
 </html>
+
 
 
 
