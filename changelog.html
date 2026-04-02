@@ -116,6 +116,41 @@
 
 
 
+      <!-- v4.4.7 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.4.7</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-security">Security</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-sec">SEC</span> <strong>License keys are now device-locked</strong> &mdash; the Pi serial number is cryptographically baked into the HMAC signature at generation time. A key issued for one Pi will not activate on any other device &mdash; the signature check fails immediately</li>
+
+            <li><span class="cl-tag cl-tag-sec">SEC</span> Keys cannot be transferred, shared or reused on different hardware. There is no way to strip or re-sign the device binding without the signing secret</li>
+
+            <li><span class="cl-tag cl-tag-new">NEW</span> <strong>Device Serial shown on License page</strong> &mdash; your Pi serial is displayed with a one-click copy button. Send it to us when ordering so we can generate a key bound to your device</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> All previously issued keys are invalidated by this change and must be reissued. Contact us with your device serial to receive a new bound key</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
       <!-- v4.4.6 -->
 
       <div class="changelog-entry">
