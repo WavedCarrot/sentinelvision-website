@@ -116,6 +116,36 @@
 
 
 
+      <!-- v4.4.9 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.4.9</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-perf">Performance</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Central inference queue for 6-camera support</strong> &mdash; all cameras now share a single serialised YOLO worker thread instead of 6 competing simultaneously. Eliminates CPU contention and makes 6-camera operation practical on Raspberry Pi 5</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Zero accuracy loss &mdash; same YOLOv8s model, same imgsz=416 and confidence thresholds. Per-camera tracker state is preserved so track IDs stay consistent per camera even though inference is serialised</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
       <!-- v4.4.8 -->
 
       <div class="changelog-entry">
