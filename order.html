@@ -286,6 +286,31 @@
 
 
 
+          <!-- Device serial -->
+
+          <div class="form-group">
+
+            <label for="o-serial">
+              <i class="fas fa-microchip" style="color:#6366f1;margin-right:.3rem"></i>
+              Device Serial <span style="font-weight:400;color:var(--muted)">(required for key generation)</span>
+            </label>
+
+            <input type="text" id="o-serial" name="device_serial"
+                   placeholder="e.g. 0000000A1B2C3D4E"
+                   autocomplete="off" spellcheck="false"
+                   style="font-family:monospace;letter-spacing:.5px;text-transform:uppercase"
+                   oninput="this.value=this.value.toUpperCase()">
+
+            <div style="font-size:.8rem;color:var(--muted);margin-top:.4rem;line-height:1.5">
+              <i class="fas fa-info-circle"></i>
+              Find this on your Pi: go to <strong>SentinelVision &rarr; License Management</strong> and copy the <strong>Device Serial</strong> shown at the top of the page.
+              We need it to generate a key that only works on your device.
+            </div>
+
+          </div>
+
+
+
           <button type="submit" class="btn btn-primary btn-full" id="o-submit">
 
             <i class="fas fa-paper-plane"></i> Submit Order
@@ -320,6 +345,30 @@
 
 
 
+        <!-- Device serial explainer -->
+
+        <div class="order-info-box" style="border-left:3px solid #6366f1;">
+
+          <h4><i class="fas fa-microchip" style="color:#6366f1;margin-right:.5rem"></i>Your Device Serial</h4>
+
+          <p style="font-size:.87rem;color:var(--muted);margin:.5rem 0 .75rem;">License keys are <strong>device-locked</strong> &mdash; a key generated for your Pi will not activate on any other device.</p>
+
+          <ol class="order-steps">
+
+            <li><span class="step-num">1</span>Open SentinelVision on your Pi in a browser</li>
+
+            <li><span class="step-num">2</span>Go to <strong>License Management</strong> (padlock icon in the menu)</li>
+
+            <li><span class="step-num">3</span>Copy the <strong>Device Serial</strong> shown at the top &mdash; it looks like <code style="font-size:.8rem;background:#f1f5f9;padding:.1rem .35rem;border-radius:4px;">0000000A1B2C3D4E</code></li>
+
+            <li><span class="step-num">4</span>Paste it into the <strong>Device Serial</strong> field on this form</li>
+
+          </ol>
+
+        </div>
+
+
+
         <!-- What happens next -->
 
         <div class="order-info-box">
@@ -334,7 +383,7 @@
 
             <li><span class="step-num">3</span>You make payment in ZAR</li>
 
-            <li><span class="step-num">4</span>We generate and email your unique license key — within 24 hours of payment</li>
+            <li><span class="step-num">4</span>We generate and email your unique license key (device-locked to your Pi serial) &mdash; within 24 hours of payment</li>
 
             <li><span class="step-num">5</span>Enter the key in SentinelVision Pro → License Management and activate</li>
 
