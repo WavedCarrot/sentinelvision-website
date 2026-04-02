@@ -116,6 +116,43 @@
 
 
 
+      <!-- v4.4.4 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.4.4</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-new">New Feature</span>
+
+          <span class="changelog-badge cl-fix">Bug Fix</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-new">NEW</span> <strong>Entrance counting line</strong> &mdash; go to Zones, draw a line across a doorway and set the zone type to <em>Counting</em>. People crossing one way count as Entry, the other way as Exit. PEOPLE NOW on the dashboard shows how many are currently inside based on today&rsquo;s crossings &mdash; resets at midnight</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>PEOPLE NOW counter</strong> &mdash; now reads from entrance zone crossings first, then live AI detections, then database as fallback. Works correctly even after a Pi restart or service update</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Analytics chart now shows real counts</strong> &mdash; was previously always 0 because it queried through the strict alert filter (0.70 confidence) instead of the AI detection threshold (0.45)</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Animal detection confidence raised from 0.55 to 0.75 &mdash; only clear, unambiguous animal detections trigger alerts. Reduces false triggers from reflections or shadows at night</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
       <!-- v4.4.3 -->
 
       <div class="changelog-entry">
@@ -123,8 +160,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.4.3</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-badge cl-fix">Bug Fix</span>
 
