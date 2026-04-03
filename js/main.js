@@ -104,6 +104,8 @@ const PRICES = {
   'Loitering Detection — R100/month':                   [100,  300,  900],
   'Weapon Detection — R200/month':                      [200,  550, 1800],
   'People Counting &amp; Analytics — R150/month':       [150,  400, 1200],
+  'Vehicle Detection — R100/month':                     [100,  300,  900],
+  'Object Detection — R100/month':                      [100,  300,  900],
   'Full Feature Bundle — R500/month':                   [500, 1400, 4500],
 };
 
@@ -112,6 +114,8 @@ const LICENSE_NAMES = {
   'Loitering Detection — R100/month':               'Loitering Detection',
   'Weapon Detection — R200/month':                  'Weapon Detection (Beta)',
   'People Counting &amp; Analytics — R150/month':  'People Counting & Analytics',
+  'Vehicle Detection — R100/month':                 'Vehicle Detection',
+  'Object Detection — R100/month':                  'Object Detection',
   'Full Feature Bundle — R500/month':               'Full Feature Bundle',
 };
 
@@ -160,6 +164,8 @@ if (licenseSelect) {
       'loitering_detection':'Loitering Detection — R100/month',
       'weapon_detection':   'Weapon Detection — R200/month',
       'people_counting':    'People Counting &amp; Analytics — R150/month',
+      'vehicle_detection':  'Vehicle Detection — R100/month',
+      'object_detection':   'Object Detection — R100/month',
       'full_bundle':        'Full Feature Bundle — R500/month',
     };
     if (map[urlParam]) {
