@@ -136,7 +136,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Upgraded to YOLO11s detection model</strong> &mdash; 47.0 mAP vs YOLOv8s 44.9 mAP (+2.1% accuracy), fewer parameters (9.4M vs 11.2M) and faster inference. Identical CPU and RAM usage on Pi 5. Model downloads automatically on first run after update</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Upgraded AI detection engine</strong> &mdash; +2.1% detection accuracy, fewer model parameters and faster inference. Identical CPU and RAM usage on Pi 5. Engine updates automatically on first run after update</li>
 
           </ul>
 
@@ -306,9 +306,9 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Per-camera YOLO model instances</strong> &mdash; each camera now has its own model so tracker IDs never bleed between cameras. Eliminates false alarms and missed detections caused by tracking state confusion in multi-camera setups</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Per-camera detection engine instances</strong> &mdash; each camera now has its own isolated AI instance so tracker IDs never bleed between cameras. Eliminates false alarms and missed detections caused by tracking state confusion in multi-camera setups</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Inference serialised with a Semaphore</strong> &mdash; only one camera runs YOLO at a time, preventing CPU thrashing on 6-camera setups while keeping tracker state fully isolated per camera</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Inference serialised with a Semaphore</strong> &mdash; only one camera runs AI inference at a time, preventing CPU thrashing on 6-camera setups while keeping tracker state fully isolated per camera</li>
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Fall Detection toggle now saves correctly</strong> &mdash; a misplaced hidden input in the camera settings form caused the setting to always save as off regardless of what was selected</li>
 
@@ -338,9 +338,9 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Central inference queue for 6-camera support</strong> &mdash; all cameras now share a single serialised YOLO worker thread instead of 6 competing simultaneously. Eliminates CPU contention and makes 6-camera operation practical on Raspberry Pi 5</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Central inference queue for 6-camera support</strong> &mdash; all cameras now share a single serialised AI worker thread instead of 6 competing simultaneously. Eliminates CPU contention and makes 6-camera operation practical on Raspberry Pi 5</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Zero accuracy loss &mdash; same YOLOv8s model, same imgsz=416 and confidence thresholds. Per-camera tracker state is preserved so track IDs stay consistent per camera even though inference is serialised</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Zero accuracy loss &mdash; same detection engine, same image resolution and confidence thresholds. Per-camera tracker state is preserved so track IDs stay consistent per camera even though inference is serialised</li>
 
           </ul>
 
