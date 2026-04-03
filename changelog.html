@@ -116,6 +116,38 @@
 
 
 
+      <!-- v4.5.0 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.5.0</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge cl-fix">Fix</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Per-camera YOLO model instances</strong> &mdash; each camera now has its own model so tracker IDs never bleed between cameras. Eliminates false alarms and missed detections caused by tracking state confusion in multi-camera setups</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Inference serialised with a Semaphore</strong> &mdash; only one camera runs YOLO at a time, preventing CPU thrashing on 6-camera setups while keeping tracker state fully isolated per camera</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Fall Detection toggle now saves correctly</strong> &mdash; a misplaced hidden input in the camera settings form caused the setting to always save as off regardless of what was selected</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
       <!-- v4.4.9 -->
 
       <div class="changelog-entry">
