@@ -136,7 +136,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Upgraded AI detection engine</strong> &mdash; +2.1% detection accuracy, fewer model parameters and faster inference. Identical CPU and RAM usage on Pi 5. Engine updates automatically on first run after update</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Upgraded AI detection engine</strong> &mdash; +2.1% detection accuracy, fewer model parameters and faster inference. Identical CPU and RAM usage. Engine updates automatically on first run after update</li>
 
           </ul>
 
@@ -338,7 +338,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Central inference queue for 6-camera support</strong> &mdash; all cameras now share a single serialised AI worker thread instead of 6 competing simultaneously. Eliminates CPU contention and makes 6-camera operation practical on Raspberry Pi 5</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Central inference queue for 6-camera support</strong> &mdash; all cameras now share a single serialised AI worker thread instead of 6 competing simultaneously. Eliminates CPU contention and makes 6-camera operation practical on low-power hardware</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Zero accuracy loss &mdash; same detection engine, same image resolution and confidence thresholds. Per-camera tracker state is preserved so track IDs stay consistent per camera even though inference is serialised</li>
 
@@ -569,7 +569,7 @@
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Confidence auto-tuning floor raised from 0.25 to 0.35 &mdash; the system can no longer drift into noisy low-confidence territory on quiet cameras</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> Full accuracy kept &mdash; all 80 detection classes (people, animals, objects) unchanged. CPU on Pi 5 remains ~55% vs original 92%</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> Full accuracy kept &mdash; all 80 detection classes (people, animals, objects) unchanged. CPU usage reduced significantly vs original</li>
 
           </ul>
 
@@ -916,7 +916,7 @@
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> Anomaly Detection, Fall Detection, and Face Blur toggles added to per-camera settings</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> All 5 AI features add near-zero CPU/RAM overhead on Raspberry Pi 5</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> All 5 AI features add near-zero CPU/RAM overhead on the device</li>
 
           </ul>
 
