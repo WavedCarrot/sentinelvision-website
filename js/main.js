@@ -61,7 +61,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 
 // ── Pricing page: duration toggle ────────────────────────
 // Prices per duration index (0=1mo, 1=3mo, 2=12mo)
-const INDIVIDUAL_TOTALS = [600, 1650, 5100]; // sum of all 4 individual features
+const INDIVIDUAL_TOTALS = [700, 1950, 6000]; // sum of all 5 individual features (zone+loitering, weapon, people, vehicle, object)
 const BUNDLE_PRICES     = [500, 1400, 4500];
 const BUNDLE_SAVINGS    = INDIVIDUAL_TOTALS.map((t, i) => t - BUNDLE_PRICES[i]); // [100, 250, 600]
 const DUR_LABELS        = ['1 month', '3 months', '12 months'];
@@ -100,8 +100,7 @@ document.querySelectorAll('.dur-btn').forEach(btn => {
 
 // ── Order form: price calculator ─────────────────────────
 const PRICES = {
-  'Zone Detection — R150/month':                        [150,  400, 1200],
-  'Loitering Detection — R100/month':                   [100,  300,  900],
+  'Zone Detection &amp; Loitering — R150/month':                [150,  400, 1200],
   'Weapon Detection — R200/month':                      [200,  550, 1800],
   'People Counting &amp; Analytics — R150/month':       [150,  400, 1200],
   'Vehicle Detection — R100/month':                     [100,  300,  900],
@@ -110,8 +109,7 @@ const PRICES = {
 };
 
 const LICENSE_NAMES = {
-  'Zone Detection — R150/month':                    'Zone Detection',
-  'Loitering Detection — R100/month':               'Loitering Detection',
+  'Zone Detection &amp; Loitering — R150/month':                'Zone Detection &amp; Loitering',
   'Weapon Detection — R200/month':                  'Weapon Detection (Beta)',
   'People Counting &amp; Analytics — R150/month':  'People Counting & Analytics',
   'Vehicle Detection — R100/month':                 'Vehicle Detection',
@@ -160,8 +158,8 @@ if (licenseSelect) {
   const urlParam = new URLSearchParams(window.location.search).get('license');
   if (urlParam) {
     const map = {
-      'zone_detection':     'Zone Detection — R150/month',
-      'loitering_detection':'Loitering Detection — R100/month',
+      'zone_detection':     'Zone Detection &amp; Loitering — R150/month',
+      'loitering_detection':'Zone Detection &amp; Loitering — R150/month',
       'weapon_detection':   'Weapon Detection — R200/month',
       'people_counting':    'People Counting &amp; Analytics — R150/month',
       'vehicle_detection':  'Vehicle Detection — R100/month',
