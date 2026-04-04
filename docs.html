@@ -152,6 +152,8 @@
 
           <li><a href="#telegram"><i class="fab fa-telegram"></i> Telegram Alerts</a></li>
 
+          <li><a href="#detection-tuning"><i class="fas fa-sliders-h"></i> Detection Tuning</a></li>
+
           <li class="nav-section">Help</li>
 
           <li><a href="#troubleshooting"><i class="fas fa-wrench"></i> Troubleshooting</a></li>
@@ -690,6 +692,40 @@ Sub stream:  rtsp://&lt;user&gt;:&lt;password&gt;@&lt;ip&gt;:554/cam/realmonitor
             <p>You can add multiple Telegram Chat IDs — for example, send alerts to both a personal account and a group shared with staff or family members.</p>
 
           </div>
+
+        </section>
+
+
+
+        <!-- DETECTION TUNING -->
+
+        <section id="detection-tuning">
+
+          <h2><i class="fas fa-sliders-h" style="color:var(--accent);margin-right:0.5rem;font-size:1.1rem"></i>Detection Tuning</h2>
+
+          <p>Each camera has five per-camera sliders that let you fine-tune detection behaviour without touching the global settings. Access them by clicking <strong>Edit</strong> on any camera card and scrolling to the <em>Detection Tuning</em> section.</p>
+
+          <h3>Person Sensitivity</h3>
+          <p>Sets the minimum confidence score (0.50&ndash;0.95) required before a person detection triggers an alert. The default of <strong>0.75</strong> balances accuracy against missed detections. Raise it if you are getting false person alerts from statues, mannequins or reflections; lower it if distant or partially-visible people are being missed. At night the engine automatically adds an additional 0.05 margin on top of this value.</p>
+
+          <h3>Animal Sensitivity</h3>
+          <p>Sets the minimum confidence score for animal classes (dog, cat, bear, etc.). The default of <strong>0.88</strong> is intentionally high to prevent common misclassifications &mdash; most famously, a dog being detected as a bear on wide-angle cameras. Lower it only if legitimate animals are being missed.</p>
+
+          <h3>Night / IR Mode Sensitivity</h3>
+          <p>Controls how the engine decides whether a video frame is in night/IR mode. Each frame, the engine measures the colour spread across the R, G and B channels. A true-colour daytime frame always has a noticeable spread; an IR/night frame is near-grayscale so all three channels are nearly identical &mdash; giving a very low spread value.</p>
+          <p>If the measured spread is <strong>below</strong> this threshold the frame is flagged as night mode and the engine switches to stricter rules: the person confidence minimum is raised from 0.70 to 0.80, and detections with borderline confidence combined with a poor bounding-box shape are rejected.</p>
+          <p>The default of <strong>12</strong> works for most cameras. Some cameras have warm IR LEDs that add a slight reddish tint even at night, which raises the spread above 12 and prevents night mode from triggering. If your camera produces a warm-tinted IR image, raise this slider to <strong>18&ndash;25</strong>.</p>
+
+          <div class="callout callout-info">
+            <i class="fas fa-info-circle"></i>
+            <p>Unsure what value to use? Check the SentinelVision server log. When a frame is correctly identified as night/IR, you will see: <code>&#x1F319; Night/IR frame detected (channel diff=X.X)</code>. If that line never appears at night, your camera has warm LEDs &mdash; raise the slider to just above the logged value.</p>
+          </div>
+
+          <h3>Detection Alert Cooldown</h3>
+          <p>The minimum number of seconds between consecutive alerts for the same camera. The cooldown is tracked <strong>independently per detection class</strong> &mdash; so a person alert and a vehicle alert will never suppress each other. The default is <strong>60 seconds</strong>. Raise it for busy scenes where you want fewer repeated notifications; lower it if you need rapid successive alerts.</p>
+
+          <h3>Animal Minimum Size</h3>
+          <p>The minimum bounding-box area in pixels squared that an animal detection must have before it is considered valid. The default of <strong>1500 px&sup2;</strong> filters out tiny false positives caused by birds or insects in the far background of wide-angle cameras. If your camera covers a large area and genuine animals appear small in frame, lower this value.</p>
 
         </section>
 
