@@ -116,6 +116,40 @@
 
 
 
+      <!-- v4.7.0 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.0</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.35);">Launch Ready</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-feature">RELEASE</span> <strong>v4.7.0 Launch Ready</strong> &mdash; full security audit passed; stable for local network deployment on Raspberry Pi. Brute-force rate limiting, PBKDF2 password hashing, HttpOnly session cookies, 12-hour auto-logout, and CSRF mitigation all confirmed.</li>
+
+            <li><span class="cl-tag cl-tag-feature">SECURITY</span> <strong>Secure session cookie</strong> &mdash; automatically enables <code>SESSION_COOKIE_SECURE</code> when <code>FORCE_HTTPS=true</code> env var is set; safe on local HTTP, ready for future HTTPS/reverse-proxy deployments without code changes</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Light mode — full page coverage</strong> &mdash; login page, footer, setup page, and event content now correctly keep their dark appearance; only the page background turns light so all text and badges remain readable on every page</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+
       <!-- v4.6.10 -->
 
       <div class="changelog-entry">
@@ -123,8 +157,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.6.10</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-badge cl-fix">Fix</span>
 
