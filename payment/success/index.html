@@ -308,10 +308,10 @@ function copyKey() {
 (async function verifyPayment() {
   const params     = new URLSearchParams(window.location.search);
   const checkoutId = params.get('checkoutId') || params.get('id')
-                     || sessionStorage.getItem('sv_checkout_id');
+                     || localStorage.getItem('sv_checkout_id');
 
   // Clear stored ID so it can't be reused
-  sessionStorage.removeItem('sv_checkout_id');
+  localStorage.removeItem('sv_checkout_id');
 
   if (!checkoutId) {
     document.getElementById('verify-loading').style.display = 'none';

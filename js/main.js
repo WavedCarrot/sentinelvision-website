@@ -320,7 +320,7 @@ function setupForm(formId, resultId, submitId) {
       if (!resp.ok || !json.redirectUrl) throw new Error(json.error || 'Payment gateway error');
 
       // Save checkoutId so success page can retrieve it after Yoco redirects back
-      if (json.checkoutId) sessionStorage.setItem('sv_checkout_id', json.checkoutId);
+      if (json.checkoutId) localStorage.setItem('sv_checkout_id', json.checkoutId);
 
       // Redirect customer to Yoco hosted payment page
       window.location.href = json.redirectUrl;
