@@ -100,24 +100,24 @@ document.querySelectorAll('.dur-btn').forEach(btn => {
 
 // ── Order form: price calculator ─────────────────────────
 const PRICES = {
-  'Zone Detection &amp; Loitering — R150/month':                [150,  400, 1200],
-  'Weapon Detection — R200/month':                      [200,  550, 1800],
-  'People Counting &amp; Analytics — R150/month':       [150,  400, 1200],
-  'Vehicle Detection — R100/month':                     [100,  300,  900],
-  'Object Detection — R100/month':                      [100,  300,  900],
-  'Full Feature Bundle — R500/month':                   [500, 1400, 4500],
+  'zone_detection':    [150,  400, 1200],
+  'weapon_detection':  [200,  550, 1800],
+  'people_counting':   [150,  400, 1200],
+  'vehicle_detection': [100,  300,  900],
+  'object_detection':  [100,  300,  900],
+  'all':               [500, 1400, 4500],
 };
 
 const LICENSE_NAMES = {
-  'Zone Detection &amp; Loitering — R150/month':                'Zone Detection &amp; Loitering',
-  'Weapon Detection — R200/month':                  'Weapon Detection (Beta)',
-  'People Counting &amp; Analytics — R150/month':  'People Counting & Analytics',
-  'Vehicle Detection — R100/month':                 'Vehicle Detection',
-  'Object Detection — R100/month':                  'Object Detection',
-  'Full Feature Bundle — R500/month':               'Full Feature Bundle',
+  'zone_detection':    'Zone Detection &amp; Loitering',
+  'weapon_detection':  'Weapon Detection (Beta)',
+  'people_counting':   'People Counting & Analytics',
+  'vehicle_detection': 'Vehicle Detection',
+  'object_detection':  'Object Detection',
+  'all':               'Full Feature Bundle',
 };
 
-const DUR_INDEX = { '1 month': 0, '3 months': 1, '12 months': 2 };
+const DUR_INDEX = { '1': 0, '3': 1, 'Y': 2 };
 
 function updateOrderPrice() {
   const licenseSelect = document.getElementById('o-license');
@@ -129,7 +129,7 @@ function updateOrderPrice() {
 
   const licVal  = licenseSelect.value;
   const durEl   = document.querySelector('input[name="duration"]:checked');
-  const durVal  = durEl ? durEl.value : '1 month';
+  const durVal  = durEl ? durEl.value : '1';
   const durIdx  = DUR_INDEX[durVal] ?? 0;
   const priceArr = PRICES[licVal];
 
@@ -158,13 +158,14 @@ if (licenseSelect) {
   const urlParam = new URLSearchParams(window.location.search).get('license');
   if (urlParam) {
     const map = {
-      'zone_detection':     'Zone Detection &amp; Loitering — R150/month',
-      'loitering_detection':'Zone Detection &amp; Loitering — R150/month',
-      'weapon_detection':   'Weapon Detection — R200/month',
-      'people_counting':    'People Counting &amp; Analytics — R150/month',
-      'vehicle_detection':  'Vehicle Detection — R100/month',
-      'object_detection':   'Object Detection — R100/month',
-      'full_bundle':        'Full Feature Bundle — R500/month',
+      'zone_detection':      'zone_detection',
+      'loitering_detection': 'zone_detection',
+      'weapon_detection':    'weapon_detection',
+      'people_counting':     'people_counting',
+      'vehicle_detection':   'vehicle_detection',
+      'object_detection':    'object_detection',
+      'full_bundle':         'all',
+      'all':                 'all',
     };
     if (map[urlParam]) {
       licenseSelect.value = map[urlParam];
@@ -263,7 +264,78 @@ function setupForm(formId, resultId, submitId) {
   });
 }
 
-setupForm('order-form',    'order-result',    'o-submit');
+// ── Order form: Yoco online payment ─────────────────────
+(function() {
+  // UPDATE this URL after deploying to Railway:
+  const LICENSING_BACKEND = 'https://sv-licensing.up.railway.app';
+
+  const form   = document.getElementById('order-form');
+  const result = document.getElementById('order-result');
+  const submit = document.getElementById('o-submit');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Honeypot check — silently discard bot submissions
+    const hp = form.querySelector('input[name="website_url"]');
+    if (hp && hp.value.trim() !== '') return;
+
+    const serial    = ((document.getElementById('o-serial')  || {}).value || '').trim();
+    const licenseEl = document.getElementById('o-license');
+    const durEl     = form.querySelector('input[name="duration"]:checked');
+    const firstName = ((document.getElementById('o-fname')   || {}).value || '').trim();
+    const lastName  = ((document.getElementById('o-lname')   || {}).value || '').trim();
+    const email     = ((document.getElementById('o-email')   || {}).value || '').trim();
+    const phone     = ((document.getElementById('o-phone')   || {}).value || '').trim();
+
+    if (!serial) {
+      result.className = 'form-result error';
+      result.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter your Device Serial number.';
+      return;
+    }
+
+    if (submit) {
+      submit.disabled = true;
+      submit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating payment...';
+    }
+    result.className = '';
+    result.innerHTML = '';
+
+    try {
+      const resp = await fetch(LICENSING_BACKEND + '/create-checkout', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:          (firstName + ' ' + lastName).trim(),
+          email:         email,
+          phone:         phone,
+          feature_id:    licenseEl ? licenseEl.value : '',
+          duration_code: durEl ? durEl.value : '1',
+          device_serial: serial.toUpperCase(),
+        }),
+      });
+
+      const json = await resp.json();
+      if (!resp.ok || !json.redirectUrl) throw new Error(json.error || 'Payment gateway error');
+
+      // Redirect customer to Yoco hosted payment page
+      window.location.href = json.redirectUrl;
+
+    } catch (err) {
+      result.className = 'form-result error';
+      result.innerHTML =
+        '<i class="fas fa-exclamation-circle"></i> ' + (err.message || 'Something went wrong') +
+        '. Please email <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a>';
+      showWebToast(err.message || 'Something went wrong. Please try again.', 'error');
+      if (submit) {
+        submit.disabled = false;
+        submit.innerHTML = '<i class="fas fa-credit-card"></i> Pay Now with Yoco';
+      }
+    }
+  });
+})();
+
 setupForm('contact-form',  'contact-result',  'c-submit');
 setupForm('quote-form',    'quote-result');
 setupForm('update-form',   'update-result');
