@@ -327,52 +327,45 @@ async function runVerify() {
     return;
   }
 
-  var lastErr = '';
-  for (var attempt = 1; attempt <= 3; attempt++) {
-    try {
-      var controller = new AbortController();
-      var timer = setTimeout(function() { controller.abort(); }, 8000);
-      var resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ checkoutId: _pendingCheckoutId }),
-        signal:  controller.signal,
-      });
-      clearTimeout(timer);
-      var json = await resp.json();
+  // Update loading message to manage expectations during cold start
+  var loadingMsg = document.querySelector('#verify-loading p');
+  if (loadingMsg) loadingMsg.textContent = 'Verifying your payment\u2026 (may take up to 20 seconds)';
 
-      document.getElementById('verify-loading').style.display = 'none';
+  try {
+    var controller = new AbortController();
+    var timer = setTimeout(function() { controller.abort(); }, 25000);
+    var resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ checkoutId: _pendingCheckoutId }),
+      signal:  controller.signal,
+    });
+    clearTimeout(timer);
+    var json = await resp.json();
 
-      if (json.success && json.license_key) {
-        // Only clear stored ID after confirmed success
-        localStorage.removeItem('sv_checkout_id');
-        document.getElementById('license-key-display').textContent = json.license_key;
-        document.getElementById('feature-summary').textContent =
-          json.feature_name + ' \u2014 ' + json.duration_label;
-        if (!json.email_sent) {
-          document.getElementById('feature-summary').textContent +=
-            ' (email delivery failed \u2014 copy the key above)';
-        }
-        document.getElementById('verify-success').style.display = 'block';
-      } else {
-        document.getElementById('verify-error').style.display   = 'block';
-        document.getElementById('verify-error-msg').textContent =
-          json.error || 'Payment could not be verified.';
+    document.getElementById('verify-loading').style.display = 'none';
+
+    if (json.success && json.license_key) {
+      localStorage.removeItem('sv_checkout_id');
+      document.getElementById('license-key-display').textContent = json.license_key;
+      document.getElementById('feature-summary').textContent =
+        json.feature_name + ' \u2014 ' + json.duration_label;
+      if (!json.email_sent) {
+        document.getElementById('feature-summary').textContent +=
+          ' (email delivery failed \u2014 copy the key above)';
       }
-      return; // success or API error — either way, stop retrying
-    } catch (err) {
-      lastErr = err.message || 'Network error';
-      if (attempt < 3) {
-        await new Promise(function(r) { setTimeout(r, 2000 * attempt); });
-      }
+      document.getElementById('verify-success').style.display = 'block';
+    } else {
+      document.getElementById('verify-error').style.display   = 'block';
+      document.getElementById('verify-error-msg').textContent =
+        json.error || 'Payment could not be verified.';
     }
+  } catch (err) {
+    document.getElementById('verify-loading').style.display = 'none';
+    document.getElementById('verify-error').style.display   = 'block';
+    document.getElementById('verify-error-msg').textContent =
+      'Verification timed out. Please click Try Again — the server may have been restarting.';
   }
-
-  // All 3 attempts failed
-  document.getElementById('verify-loading').style.display = 'none';
-  document.getElementById('verify-error').style.display   = 'block';
-  document.getElementById('verify-error-msg').textContent =
-    'Could not reach the verification server after 3 attempts. Please click Try Again or email us.';
 }
 
 runVerify();

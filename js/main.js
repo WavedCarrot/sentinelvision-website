@@ -266,13 +266,16 @@ function setupForm(formId, resultId, submitId) {
 
 // ── Order form: Yoco online payment ─────────────────────
 (function() {
-  // UPDATE this URL after deploying to Railway:
   const LICENSING_BACKEND = 'https://sentinelvision-licensing-production.up.railway.app';
 
   const form   = document.getElementById('order-form');
   const result = document.getElementById('order-result');
   const submit = document.getElementById('o-submit');
   if (!form) return;
+
+  // Silently wake the Railway backend as soon as the order page loads
+  // so the server is warm by the time the user finishes paying (~1-3 min later)
+  fetch(LICENSING_BACKEND + '/', { method: 'GET', mode: 'no-cors' }).catch(function(){});
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
