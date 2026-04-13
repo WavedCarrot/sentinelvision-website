@@ -267,7 +267,7 @@ function setupForm(formId, resultId, submitId) {
 // ── Order form: Yoco online payment ─────────────────────
 (function() {
   // UPDATE this URL after deploying to Railway:
-  const LICENSING_BACKEND = 'https://sv-licensing.up.railway.app';
+  const LICENSING_BACKEND = 'https://sentinelvision-licensing-production.up.railway.app';
 
   const form   = document.getElementById('order-form');
   const result = document.getElementById('order-result');
