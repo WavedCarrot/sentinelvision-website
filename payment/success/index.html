@@ -57,6 +57,42 @@
       justify-content: center;
       flex-wrap: wrap;
     }
+    .key-box {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      text-align: center;
+    }
+    .key-box .key-label {
+      font-size: .72rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: .5rem;
+    }
+    .key-box code {
+      font-size: 1.2rem;
+      color: #a5b4fc;
+      letter-spacing: 2px;
+      font-weight: 700;
+      word-break: break-all;
+      display: block;
+    }
+    .key-copy-btn {
+      margin-top: .75rem;
+      background: #334155;
+      border: none;
+      color: #e2e8f0;
+      padding: .4rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: .82rem;
+    }
+    .key-copy-btn:hover { background: #475569; }
+    #verify-loading { color: var(--muted, #94a3b8); padding: 2rem 0; }
+    #verify-error   { color: #f87171; margin: 1rem 0; }
   </style>
 
 </head>
@@ -137,58 +173,67 @@
 
     <div class="payment-result-card">
 
-      <div class="payment-result-icon">
+      <!-- Loading state -->
+      <div id="verify-loading">
+        <i class="fas fa-spinner fa-spin" style="font-size:2.5rem;color:#6366f1;margin-bottom:1rem;display:block"></i>
+        <p>Verifying your payment&hellip;</p>
+      </div>
 
-        <i class="fas fa-circle-check"></i>
+      <!-- Success state (hidden until verified) -->
+      <div id="verify-success" style="display:none">
+
+        <div class="payment-result-icon">
+          <i class="fas fa-circle-check"></i>
+        </div>
+
+        <h2 style="margin:0 0 .75rem">Payment confirmed!</h2>
+
+        <p style="color:var(--muted);margin:0 0 1rem;line-height:1.6">
+          Your license key has been generated. It has also been
+          <strong style="color:var(--text)">emailed to you</strong> — check your inbox.
+        </p>
+
+        <div class="key-box">
+          <div class="key-label">Your License Key</div>
+          <code id="license-key-display">—</code>
+          <button class="key-copy-btn" onclick="copyKey()">
+            <i class="fas fa-copy"></i> Copy Key
+          </button>
+        </div>
+
+        <p id="feature-summary" style="font-size:.85rem;color:var(--muted);margin:.25rem 0 1.25rem"></p>
+
+        <ul class="result-steps">
+          <li><i class="fas fa-check" style="color:#4ade80"></i> Open SentinelVision on your device in a browser</li>
+          <li><i class="fas fa-check" style="color:#4ade80"></i> Go to <strong>License Management</strong> (padlock icon in the menu)</li>
+          <li><i class="fas fa-check" style="color:#4ade80"></i> Paste your key and click <strong>Activate</strong></li>
+          <li><i class="fas fa-envelope" style="color:#6366f1"></i> Key also sent to your email — check spam if not in inbox</li>
+        </ul>
+
+        <div class="result-btns">
+          <a href="/docs/" class="btn btn-outline"><i class="fas fa-book"></i> Activation Guide</a>
+          <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
 
       </div>
 
-      <h2 style="margin:0 0 .75rem">Thank you for your purchase!</h2>
-
-      <p style="color:var(--muted);margin:0 0 .5rem;line-height:1.6">
-
-        Your payment was confirmed by Yoco and your license key has been generated automatically.
-
-      </p>
-
-      <p style="color:var(--text);font-weight:600;margin:0 0 1.5rem">
-
-        <i class="fas fa-envelope" style="color:#6366f1;margin-right:.4rem"></i>Check your email inbox now — the key should arrive within a few minutes.
-
-      </p>
-
-      <ul class="result-steps">
-
-        <li><i class="fas fa-check" style="color:#4ade80"></i> Payment confirmed by Yoco</li>
-
-        <li><i class="fas fa-check" style="color:#4ade80"></i> License key generated and device-locked to your serial</li>
-
-        <li><i class="fas fa-envelope" style="color:#6366f1"></i> Key sent to the email address you provided</li>
-
-        <li><i class="fas fa-triangle-exclamation" style="color:#f59e0b"></i> Check your spam folder if you don't see it after 5 minutes</li>
-
-      </ul>
-
-      <div class="result-btns">
-
-        <a href="/docs/" class="btn btn-outline">
-
-          <i class="fas fa-book"></i> Activation Guide
-
-        </a>
-
-        <a href="/" class="btn btn-primary">
-
-          <i class="fas fa-home"></i> Back to Home
-
-        </a>
-
+      <!-- Error state (hidden until error) -->
+      <div id="verify-error" style="display:none">
+        <i class="fas fa-triangle-exclamation" style="font-size:2.5rem;color:#f59e0b;margin-bottom:1rem;display:block"></i>
+        <h2 style="margin:0 0 .75rem">Could not verify payment</h2>
+        <p id="verify-error-msg" style="color:var(--muted);margin:0 0 1.25rem;line-height:1.6"></p>
+        <p style="font-size:.85rem;color:var(--muted)">
+          If your card was charged, email us at
+          <a href="mailto:info.sentinelvision@gmail.com" style="color:var(--accent)">info.sentinelvision@gmail.com</a>
+          with your order details and we will generate your key manually.
+        </p>
+        <div class="result-btns">
+          <a href="/order/" class="btn btn-outline"><i class="fas fa-redo"></i> Try Again</a>
+        </div>
       </div>
 
       <p style="margin-top:1.5rem;font-size:.8rem;color:var(--muted)">
-
         Questions? Email <a href="mailto:info.sentinelvision@gmail.com" style="color:var(--accent)">info.sentinelvision@gmail.com</a>
-
       </p>
 
     </div>
@@ -247,6 +292,62 @@
 
 <script src="/js/main.js"></script>
 
-</body>
+<script>
+// UPDATE this to your Railway URL after deploying:
+const LICENSING_BACKEND = 'https://sv-licensing.up.railway.app';
+
+function copyKey() {
+  const key = document.getElementById('license-key-display').textContent;
+  navigator.clipboard.writeText(key).then(() => {
+    const btn = document.querySelector('.key-copy-btn');
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Copy Key'; }, 2000);
+  });
+}
+
+(async function verifyPayment() {
+  const params     = new URLSearchParams(window.location.search);
+  const checkoutId = params.get('checkoutId') || params.get('id');
+
+  if (!checkoutId) {
+    document.getElementById('verify-loading').style.display = 'none';
+    document.getElementById('verify-error').style.display   = 'block';
+    document.getElementById('verify-error-msg').textContent =
+      'No payment ID found in this URL. If you just paid, please email us.';
+    return;
+  }
+
+  try {
+    const resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ checkoutId }),
+    });
+    const json = await resp.json();
+
+    document.getElementById('verify-loading').style.display = 'none';
+
+    if (json.success && json.license_key) {
+      document.getElementById('license-key-display').textContent = json.license_key;
+      document.getElementById('feature-summary').textContent =
+        json.feature_name + ' \u2014 ' + json.duration_label;
+      if (!json.email_sent) {
+        document.getElementById('feature-summary').textContent +=
+          ' (email delivery failed — copy the key above)';
+      }
+      document.getElementById('verify-success').style.display = 'block';
+    } else {
+      document.getElementById('verify-error').style.display   = 'block';
+      document.getElementById('verify-error-msg').textContent =
+        json.error || 'Payment could not be verified.';
+    }
+  } catch (err) {
+    document.getElementById('verify-loading').style.display = 'none';
+    document.getElementById('verify-error').style.display   = 'block';
+    document.getElementById('verify-error-msg').textContent =
+      'Could not reach the verification server. Please email us if your card was charged.';
+  }
+})();
+</script>
 
 </html>
