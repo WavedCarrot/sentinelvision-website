@@ -228,7 +228,8 @@
           with your order details and we will generate your key manually.
         </p>
         <div class="result-btns">
-          <a href="/order/" class="btn btn-outline"><i class="fas fa-redo"></i> Try Again</a>
+          <button onclick="retryVerify()" class="btn btn-outline"><i class="fas fa-redo"></i> Try Again</button>
+          <a href="/order/" class="btn btn-primary"><i class="fas fa-key"></i> New Order</a>
         </div>
       </div>
 
@@ -293,51 +294,58 @@
 <script src="/js/main.js"></script>
 
 <script>
-// UPDATE this to your Railway URL after deploying:
 const LICENSING_BACKEND = 'https://sentinelvision-licensing-production.up.railway.app';
 
+// Capture checkoutId once on load; keep it for retries
+var _pendingCheckoutId = (function() {
+  var p = new URLSearchParams(window.location.search);
+  return p.get('checkoutId') || p.get('id') || localStorage.getItem('sv_checkout_id') || '';
+})();
+
 function copyKey() {
-  const key = document.getElementById('license-key-display').textContent;
-  navigator.clipboard.writeText(key).then(() => {
-    const btn = document.querySelector('.key-copy-btn');
+  var key = document.getElementById('license-key-display').textContent;
+  navigator.clipboard.writeText(key).then(function() {
+    var btn = document.querySelector('.key-copy-btn');
     btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-    setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Copy Key'; }, 2000);
+    setTimeout(function() { btn.innerHTML = '<i class="fas fa-copy"></i> Copy Key'; }, 2000);
   });
 }
 
-(async function verifyPayment() {
-  const params     = new URLSearchParams(window.location.search);
-  const checkoutId = params.get('checkoutId') || params.get('id')
-                     || localStorage.getItem('sv_checkout_id');
+function retryVerify() {
+  document.getElementById('verify-error').style.display   = 'none';
+  document.getElementById('verify-success').style.display = 'none';
+  document.getElementById('verify-loading').style.display = 'block';
+  runVerify();
+}
 
-  // Clear stored ID so it can't be reused
-  localStorage.removeItem('sv_checkout_id');
-
-  if (!checkoutId) {
+async function runVerify() {
+  if (!_pendingCheckoutId) {
     document.getElementById('verify-loading').style.display = 'none';
     document.getElementById('verify-error').style.display   = 'block';
     document.getElementById('verify-error-msg').textContent =
-      'No payment ID found in this URL. If you just paid, please email us.';
+      'No payment ID found. If you just paid, please email us at info.sentinelvision@gmail.com with your order details.';
     return;
   }
 
   try {
-    const resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
+    var resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ checkoutId }),
+      body:    JSON.stringify({ checkoutId: _pendingCheckoutId }),
     });
-    const json = await resp.json();
+    var json = await resp.json();
 
     document.getElementById('verify-loading').style.display = 'none';
 
     if (json.success && json.license_key) {
+      // Only clear stored ID after confirmed success
+      localStorage.removeItem('sv_checkout_id');
       document.getElementById('license-key-display').textContent = json.license_key;
       document.getElementById('feature-summary').textContent =
         json.feature_name + ' \u2014 ' + json.duration_label;
       if (!json.email_sent) {
         document.getElementById('feature-summary').textContent +=
-          ' (email delivery failed — copy the key above)';
+          ' (email delivery failed \u2014 copy the key above)';
       }
       document.getElementById('verify-success').style.display = 'block';
     } else {
@@ -349,9 +357,11 @@ function copyKey() {
     document.getElementById('verify-loading').style.display = 'none';
     document.getElementById('verify-error').style.display   = 'block';
     document.getElementById('verify-error-msg').textContent =
-      'Could not reach the verification server. Please email us if your card was charged.';
+      'Could not reach the verification server. Please try again in a moment.';
   }
-})();
+}
+
+runVerify();
 </script>
 
 </html>
