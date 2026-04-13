@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News &amp; Announcements — SentinelVision Pro</title>
+
+  <meta name="description" content="Latest news, announcements, and notices from SentinelVision Pro.">
+
+  <link rel="canonical" href="https://sentinelvision.net.za/news/">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SentinelVision Pro">
+  <meta property="og:title"       content="News &amp; Announcements — SentinelVision Pro">
+  <meta property="og:description" content="Latest news, announcements, and notices from SentinelVision Pro.">
+  <meta property="og:url"         content="https://sentinelvision.net.za/news/">
+  <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="News &amp; Announcements — SentinelVision Pro">
+  <meta name="twitter:description" content="Latest news, announcements, and notices from SentinelVision Pro.">
+  <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.png">
+
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    /* ── News-specific styles ── */
+    .news-list { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+
+    .news-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+      border-left: 5px solid var(--accent);
+      transition: box-shadow .2s;
+    }
+    .news-card:hover { box-shadow: 0 8px 32px rgba(59,130,246,.12); }
+    .news-card.type-warning { border-left-color: var(--orange); }
+    .news-card.type-urgent  { border-left-color: var(--red); }
+    .news-card.type-info    { border-left-color: var(--accent); }
+
+    .news-card-meta {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-bottom: .75rem;
+    }
+    .news-tag {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      padding: .2rem .6rem;
+      border-radius: 20px;
+    }
+    .news-tag.info    { background: rgba(59,130,246,.15); color: #60a5fa; }
+    .news-tag.warning { background: rgba(245,158,11,.15);  color: #fbbf24; }
+    .news-tag.urgent  { background: rgba(239,68,68,.15);   color: #f87171; }
+
+    .news-date { font-size: .82rem; color: var(--muted); }
+
+    .news-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: .65rem;
+      line-height: 1.35;
+    }
+    .news-card.type-warning .news-title { color: #fbbf24; }
+    .news-card.type-urgent  .news-title { color: #f87171; }
+
+    .news-body {
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+    .news-body strong { color: var(--text); }
+
+    .news-empty {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <img src="/img/logo.svg" alt="SentinelVision Pro" class="brand-logo">
+      <div class="brand-text">
+        <strong>SentinelVision</strong>
+        <span>Pro Security Platform</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/platform/">Platform</a></li>
+      <li><a href="/gallery/">Gallery</a></li>
+      <li><a href="/docs/">Docs</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/changelog/">Changelog</a></li>
+      <li><a href="/news/" class="active">News</a></li>
+      <li><a href="/order/" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-badge"><i class="fas fa-bullhorn"></i>&nbsp; Announcements</div>
+    <h1>News &amp; Announcements</h1>
+    <p>Important notices, pricing updates, and announcements from the SentinelVision team.</p>
+  </div>
+</section>
+
+<!-- ═══════════ NEWS POSTS ═══════════ -->
+<section class="section">
+  <div class="container">
+    <div class="news-list">
+
+      <!-- ════════════════════════════════════════════════════
+           HOW TO ADD A POST:
+           Copy one of the <div class="news-card ..."> blocks below,
+           paste it at the TOP of this list (above the others),
+           and fill in the title, date, and body text.
+
+           type options:
+             type-info    → blue  (general updates)
+             type-warning → amber (pricing / policy changes)
+             type-urgent  → red   (critical notices)
+           ════════════════════════════════════════════════════ -->
+
+      <!-- ── POST 1 ── -->
+      <div class="news-card type-info">
+        <div class="news-card-meta">
+          <span class="news-tag info"><i class="fas fa-info-circle me-1"></i> Info</span>
+          <span class="news-date">13 April 2026</span>
+        </div>
+        <div class="news-title">Welcome to the SentinelVision News Page</div>
+        <div class="news-body">This page will be used to post important notices, pricing updates, product announcements, and other news.
+
+Check back here regularly for updates.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="/img/logo.svg" alt="SentinelVision Pro" class="footer-logo">
+      <div>
+        <strong>SentinelVision Pro</strong>
+        <p>AI-Powered Security Platform</p>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="/platform/">Platform</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/changelog/">Changelog</a>
+      <a href="/news/">News</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 SentinelVision Pro. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
