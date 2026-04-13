@@ -330,11 +330,15 @@ async function runVerify() {
   var lastErr = '';
   for (var attempt = 1; attempt <= 3; attempt++) {
     try {
+      var controller = new AbortController();
+      var timer = setTimeout(function() { controller.abort(); }, 8000);
       var resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ checkoutId: _pendingCheckoutId }),
+        signal:  controller.signal,
       });
+      clearTimeout(timer);
       var json = await resp.json();
 
       document.getElementById('verify-loading').style.display = 'none';
