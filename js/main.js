@@ -342,6 +342,49 @@ function setupForm(formId, resultId, submitId) {
   });
 })();
 
+// ── Dynamic email subject lines ──────────────────────────
+(function () {
+  // Contact form: "[SentinelVision] Licensing Query — Jane Smith"
+  var cForm = document.getElementById('contact-form');
+  if (cForm) {
+    cForm.addEventListener('submit', function () {
+      var name  = (document.getElementById('c-name')    || {}).value || '';
+      var type  = (document.getElementById('c-subject') || {}).value || '';
+      var labels = {
+        'licensing': 'Licensing Query',
+        'hardware':  'Hardware Bundle',
+        'technical': 'Technical Support',
+        'other':     'General Enquiry',
+      };
+      var label = labels[type] || 'Website Enquiry';
+      var subj  = cForm.querySelector('input[name="subject"]');
+      if (subj) subj.value = '[SentinelVision] ' + label + (name ? ' \u2014 ' + name : '');
+    }, true);
+  }
+
+  // Quote form: "[SentinelVision] Hardware Quote — Jane Smith"
+  var qForm = document.getElementById('quote-form');
+  if (qForm) {
+    qForm.addEventListener('submit', function () {
+      var fn   = (document.getElementById('q-fname') || {}).value || '';
+      var ln   = (document.getElementById('q-lname') || {}).value || '';
+      var name = (fn + ' ' + ln).trim();
+      var subj = qForm.querySelector('input[name="subject"]');
+      if (subj) subj.value = '[SentinelVision] Hardware Quote' + (name ? ' \u2014 ' + name : '');
+    }, true);
+  }
+
+  // Download/quote-request form: "[SentinelVision] Quote Request — Jane Smith"
+  var dForm = document.getElementById('download-form');
+  if (dForm) {
+    dForm.addEventListener('submit', function () {
+      var name = (document.getElementById('d-name') || {}).value || '';
+      var subj = dForm.querySelector('input[name="subject"]');
+      if (subj) subj.value = '[SentinelVision] Quote Request' + (name ? ' \u2014 ' + name : '');
+    }, true);
+  }
+})();
+
 setupForm('contact-form',  'contact-result',  'c-submit');
 setupForm('quote-form',    'quote-result');
 setupForm('update-form',   'update-result');
