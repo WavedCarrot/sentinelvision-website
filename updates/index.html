@@ -8,22 +8,22 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Request a Software Update — SentinelVision Pro</title>
+  <title>Software Updates — SentinelVision Pro</title>
 
-  <meta name="description" content="Running an older version of SentinelVision? Request the latest update package here. We'll email it to you within 24 hours.">
+  <meta name="description" content="Download the latest SentinelVision Pro software update. Free for all licensed customers — download and apply in minutes.">
 
   <link rel="canonical" href="https://sentinelvision.net.za/updates/">
   <!-- Open Graph / Social sharing -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SentinelVision Pro">
-  <meta property="og:title"       content="Request a Software Update — SentinelVision Pro">
-  <meta property="og:description" content="Running an older version of SentinelVision? Request the latest update package here. We'll email it to you within 24 hours.">
+  <meta property="og:title"       content="Software Updates — SentinelVision Pro">
+  <meta property="og:description" content="Download the latest SentinelVision Pro update. Free for all licensed customers.">
   <meta property="og:url"         content="https://sentinelvision.net.za/updates/">
   <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.png">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="Request a Software Update — SentinelVision Pro">
-  <meta name="twitter:description" content="Running an older version of SentinelVision? Request the latest update package here. We'll email it to you within 24 hours.">
+  <meta name="twitter:title"       content="Software Updates — SentinelVision Pro">
+  <meta name="twitter:description" content="Download the latest SentinelVision Pro update. Free for all licensed customers.">
   <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.png">
 
   <link rel="icon" type="image/png" href="/img/favicon.png">
@@ -97,9 +97,9 @@
 
     <div class="section-badge">Software Updates</div>
 
-    <h1>Request a Software Update</h1>
+    <h1>Download the Latest Update</h1>
 
-    <p>Fill in the form below and we'll email you the latest <code style="background:rgba(255,255,255,.15);padding:.15rem .45rem;border-radius:4px;font-size:.9rem;">.zip</code> update package within 24 hours — free for all licensed customers.</p>
+    <p>Updates are free for all licensed customers. Download the <code style="background:rgba(255,255,255,.15);padding:.15rem .45rem;border-radius:4px;font-size:.9rem;">.zip</code> package and apply it from the <strong>System → Updates</strong> page in minutes.</p>
 
   </div>
 
@@ -107,274 +107,100 @@
 
 
 
-<!-- ═══════════ FORM ═══════════ -->
+<!-- ═══════════ DOWNLOAD SECTION ═══════════ -->
 
 <section class="section">
 
-  <div class="container">
+  <div class="container" style="max-width:800px;">
 
-    <div class="order-layout">
+    <!-- Loading state -->
+    <div id="upd-loading" style="text-align:center;padding:3rem 0;color:var(--muted);">
+      <i class="fas fa-spinner fa-spin" style="font-size:1.5rem;margin-bottom:1rem;display:block;"></i>
+      Loading latest release…
+    </div>
 
+    <!-- Download card (filled by JS) -->
+    <div id="upd-card" style="display:none;">
 
+      <!-- Version + download -->
+      <div class="order-form-box" style="margin-bottom:1.5rem;">
 
-      <!-- ── Left: Form ── -->
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+          <div style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);border-radius:8px;padding:.4rem 1rem;">
+            <span style="font-size:.75rem;color:#818cf8;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Latest Release</span>
+          </div>
+          <div id="upd-version-badge" style="font-size:1.4rem;font-weight:800;color:var(--accent);"></div>
+          <div id="upd-date" style="font-size:.82rem;color:var(--muted);margin-left:auto;"></div>
+        </div>
 
+        <a id="upd-download-btn" href="#" download
+           class="btn btn-primary btn-full"
+           style="font-size:1.05rem;padding:.85rem 2rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:.6rem;">
+          <i class="fas fa-download"></i>
+          <span>Download Update</span>
+          <span id="upd-filesize" style="font-size:.8rem;opacity:.75;font-weight:400;"></span>
+        </a>
+
+        <p style="font-size:.82rem;color:var(--muted);text-align:center;margin:0;">
+          <i class="fas fa-shield-alt" style="color:#10b981;margin-right:.3rem;"></i>
+          Your cameras, recordings and settings are never touched during an update
+        </p>
+
+      </div>
+
+      <!-- What's new -->
+      <div class="order-form-box" style="margin-bottom:1.5rem;">
+        <h3 style="margin:0 0 1rem;font-size:1rem;display:flex;align-items:center;gap:.5rem;">
+          <i class="fas fa-list-ul" style="color:var(--accent);"></i> What's New
+        </h3>
+        <ul id="upd-changes" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;font-size:.88rem;color:var(--muted);"></ul>
+      </div>
+
+      <!-- How to apply -->
       <div class="order-form-box">
-
-        <h2>Update Request Form</h2>
-
-        <p class="subtitle">Updates are provided free of charge to all current license holders. We'll verify your license and email the package directly.</p>
-
-
-
-        <form id="update-form" action="https://api.web3forms.com/submit" method="POST">
-
-          <!-- Honeypot: bots fill this, humans don't -->
-          <input type="text" name="website_url" style="display:none;position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <input type="hidden" name="access_key"  value="6f8c3403-e63d-49b1-ad5d-f709cec8c85e">
-
-          <input type="hidden" name="subject"     value="SentinelVision Pro — Software Update Request">
-
-          <input type="hidden" name="from_name"   value="SentinelVision Website">
-
-          <input type="checkbox" name="botcheck"  style="display:none">
-
-
-
-          <!-- Name -->
-
-          <div class="form-row">
-
-            <div class="form-group">
-
-              <label for="u-fname">First Name</label>
-
-              <input type="text" id="u-fname" name="first_name" placeholder="Jane" required autocomplete="given-name">
-
-            </div>
-
-            <div class="form-group">
-
-              <label for="u-lname">Last Name</label>
-
-              <input type="text" id="u-lname" name="last_name" placeholder="Smith" required autocomplete="family-name">
-
-            </div>
-
-          </div>
-
-
-
-          <!-- Email -->
-
-          <div class="form-group">
-
-            <label for="u-email">Email Address</label>
-
-            <input type="email" id="u-email" name="email" placeholder="jane@example.com" required autocomplete="email">
-
-          </div>
-
-
-
-          <!-- Phone (optional) -->
-
-          <div class="form-group">
-
-            <label for="u-phone">Phone Number <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-
-            <input type="tel" id="u-phone" name="phone" placeholder="+27 82 123 4567" autocomplete="tel">
-
-          </div>
-
-
-
-          <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0">
-
-
-
-          <!-- Current version -->
-
-          <div class="form-group">
-
-            <label for="u-version">Your Current Version</label>
-
-            <input type="text" id="u-version" name="current_version" placeholder="e.g. v3.7.8"
-
-                   autocomplete="off">
-
-            <small style="color:var(--muted);font-size:.82rem;">
-
-              Find this on the <strong>System Updates</strong> page inside SentinelVision.
-
-            </small>
-
-          </div>
-
-
-
-          <!-- System / site name -->
-
-          <div class="form-group">
-
-            <label for="u-site">System / Site Name <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-
-            <input type="text" id="u-site" name="site_name" placeholder="e.g. Main Warehouse, Home Office">
-
-          </div>
-
-
-
-          <!-- License key (optional, for verification) -->
-
-          <div class="form-group">
-
-            <label for="u-key">License Key <span style="font-weight:400;color:var(--muted)">(optional — helps us verify faster)</span></label>
-
-            <input type="text" id="u-key" name="license_key" placeholder="SVP-Z1-XXXXXXXX-XXXX"
-
-                   style="font-family:monospace;letter-spacing:.05em;" autocomplete="off">
-
-          </div>
-
-
-
-          <!-- Notes -->
-
-          <div class="form-group">
-
-            <label for="u-notes">Additional Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-
-            <textarea id="u-notes" name="notes" rows="3"
-
-                      placeholder="e.g. specific feature requests, issues you're experiencing, preferred delivery time…" data-wordlimit="100"></textarea>
-
-          </div>
-
-
-
-          <button type="submit" class="btn btn-primary btn-full" id="u-submit">
-
-            <i class="fas fa-paper-plane"></i> Submit Update Request
-
-          </button>
-
-          <div id="update-result" class="form-result"></div>
-
-        </form>
-
+        <h3 style="margin:0 0 1rem;font-size:1rem;display:flex;align-items:center;gap:.5rem;">
+          <i class="fas fa-upload" style="color:var(--accent);"></i> How to Apply
+        </h3>
+        <ol style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;font-size:.88rem;color:var(--muted);">
+          <li style="display:flex;gap:.75rem;align-items:flex-start;">
+            <span style="background:var(--accent);color:#fff;border-radius:50%;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">1</span>
+            Download the <code style="font-size:.82rem;">.zip</code> file above
+          </li>
+          <li style="display:flex;gap:.75rem;align-items:flex-start;">
+            <span style="background:var(--accent);color:#fff;border-radius:50%;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">2</span>
+            Open SentinelVision → go to <strong style="color:var(--text);">System → Updates</strong> in the sidebar
+          </li>
+          <li style="display:flex;gap:.75rem;align-items:flex-start;">
+            <span style="background:var(--accent);color:#fff;border-radius:50%;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">3</span>
+            Drag &amp; drop the <code style="font-size:.82rem;">.zip</code> or click <strong style="color:var(--text);">Browse</strong>, then click <strong style="color:var(--text);">Upload &amp; Apply</strong>
+          </li>
+          <li style="display:flex;gap:.75rem;align-items:flex-start;">
+            <span style="background:#10b981;color:#fff;border-radius:50%;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">✓</span>
+            <span style="color:#10b981;font-weight:600;">SentinelVision restarts automatically — done!</span>
+          </li>
+        </ol>
       </div>
 
+    </div><!-- /upd-card -->
 
-
-      <!-- ── Right: Sidebar ── -->
-
-      <div class="order-sidebar">
-
-
-
-        <!-- Free for licensed users -->
-
-        <div class="price-display-box">
-
-          <div class="pd-label">Cost</div>
-
-          <div style="font-size:1.6rem;font-weight:800;color:var(--accent);margin:.25rem 0;">Free</div>
-
-          <div style="font-size:.83rem;color:var(--muted);">for all current license holders</div>
-
-        </div>
-
-
-
-        <!-- What happens next -->
-
-        <div class="order-info-box">
-
-          <h4><i class="fas fa-list-check" style="color:var(--accent);margin-right:.5rem"></i>What Happens Next</h4>
-
-          <ol class="order-steps">
-
-            <li><span class="step-num">1</span>Submit this form with your contact details</li>
-
-            <li><span class="step-num">2</span>We verify your license and prepare your update package</li>
-
-            <li><span class="step-num">3</span>We email you the <code style="font-size:.82rem;">.zip</code> file within 24 hours</li>
-
-            <li><span class="step-num">4</span>Go to <strong>System → Updates</strong> in SentinelVision, upload the file, and you're done</li>
-
-            <li><span class="step-num">5</span>The system applies the update and restarts automatically</li>
-
-          </ol>
-
-        </div>
-
-
-
-        <!-- How to apply -->
-
-        <div class="order-info-box" style="margin-top:1.25rem">
-
-          <h4><i class="fas fa-upload" style="color:var(--accent);margin-right:.5rem"></i>How to Apply the Update</h4>
-
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.65rem;font-size:.87rem;color:var(--muted)">
-
-            <li><i class="fas fa-check-circle" style="color:#10b981;margin-right:.4rem;"></i>Navigate to <strong style="color:var(--text)">Updates</strong> in the sidebar</li>
-
-            <li><i class="fas fa-check-circle" style="color:#10b981;margin-right:.4rem;"></i>Drag &amp; drop or browse for the <code style="font-size:.82rem;">.zip</code> file we sent</li>
-
-            <li><i class="fas fa-check-circle" style="color:#10b981;margin-right:.4rem;"></i>Click <strong style="color:var(--text)">Upload &amp; Apply Update</strong></li>
-
-            <li><i class="fas fa-check-circle" style="color:#10b981;margin-right:.4rem;"></i>The system restarts automatically — your data is always preserved</li>
-
-          </ul>
-
-        </div>
-
-
-
-        <div class="payment-note" style="margin-top:1.25rem">
-
-          <strong><i class="fas fa-shield-alt"></i> Your data is safe:</strong>
-
-          Updates only replace application code. All cameras, recordings, settings and detections remain completely intact.
-
-        </div>
-
-
-
-        <!-- Latest version info -->
-
-        <div class="order-info-box" style="margin-top:1.25rem">
-
-          <h4><i class="fas fa-code-branch" style="color:var(--accent);margin-right:.5rem"></i>Latest Release</h4>
-
-          <p style="font-size:.87rem;color:var(--muted);margin:0 0 .5rem;">
-
-            Check the <a href="/changelog/" style="color:var(--accent)">Changelog</a> to see what's new in the latest version before requesting your update.
-
-          </p>
-
-          <a href="/changelog/" class="btn btn-sm" style="border:1px solid var(--border);color:var(--text);font-size:.83rem;">
-
-            <i class="fas fa-list-ul"></i> View Changelog
-
-          </a>
-
-        </div>
-
-
-
-      </div>
-
+    <!-- Support CTA -->
+    <div style="text-align:center;margin-top:2rem;padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--card-bg);">
+      <p style="margin:0 0 .75rem;color:var(--muted);font-size:.9rem;">Need help applying the update or have questions?</p>
+      <a href="/contact/" class="btn btn-secondary" style="margin-right:.5rem;"><i class="fas fa-envelope"></i> Contact Us</a>
+      <a href="https://wa.me/27725714142" target="_blank" rel="noopener" class="btn btn-secondary" style="color:#25d366;border-color:#25d366;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
 
   </div>
 
 </section>
 
+<!-- ═══════════ FOOTER ═══════════ -->
 
+
+
+          <!-- Name -->
+
+          <div class="form-row">
 
 <!-- ═══════════ FOOTER ═══════════ -->
 
@@ -445,109 +271,42 @@
 <script src="/js/main.js"></script>
 
 <script>
-
 (function () {
+  fetch('/updates/version.json?_=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(v) {
+      document.getElementById('upd-loading').style.display = 'none';
+      document.getElementById('upd-card').style.display = 'block';
 
-  // Pre-fill version from URL query param e.g. updates.html?version=3.7.8
-
-  const params = new URLSearchParams(window.location.search);
-
-  const ver = params.get('version');
-
-  if (ver) {
-
-    const el = document.getElementById('u-version');
-
-    if (el) el.value = ver.startsWith('v') ? ver : 'v' + ver;
-
-  }
-
-
-
-  // Form submission via fetch
-
-  const form      = document.getElementById('update-form');
-
-  const resultEl  = document.getElementById('update-result');
-
-  const submitBtn = document.getElementById('u-submit');
-
-
-
-  if (form) {
-
-    form.addEventListener('submit', async function (e) {
-
-      e.preventDefault();
-
-      // Honeypot — discard silently if filled by a bot
-      const hp = form.querySelector('input[name="website_url"]');
-      if (hp && hp.value.trim() !== '') return;
-
-      submitBtn.disabled = true;
-
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending\u2026';
-
-
-
-      try {
-
-        const data = new FormData(form);
-
-        const res  = await fetch(form.action, { method: 'POST', body: data });
-
-        const json = await res.json();
-
-
-
-        if (json.success) {
-
-          resultEl.innerHTML = `
-
-            <div class="result-success">
-
-              <i class="fas fa-check-circle"></i>
-
-              <strong>Request received!</strong> We'll email your update package to <em>${document.getElementById('u-email').value}</em> within 24 hours.
-
-            </div>`;
-
-          form.reset();
-
-          submitBtn.innerHTML = '<i class="fas fa-check"></i> Request Sent';
-
-        } else {
-
-          throw new Error(json.message || 'Submission failed');
-
-        }
-
-      } catch (err) {
-
-        resultEl.innerHTML = `
-
-          <div class="result-error">
-
-            <i class="fas fa-exclamation-circle"></i>
-
-            Something went wrong — please email us directly at
-
-            <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a>.
-
-          </div>`;
-
-        submitBtn.disabled = false;
-
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Update Request';
-
+      document.getElementById('upd-version-badge').textContent = 'v' + v.version;
+      if (v.release_date) {
+        var d = new Date(v.release_date);
+        document.getElementById('upd-date').textContent = d.toLocaleDateString('en-ZA', {year:'numeric',month:'long',day:'numeric'});
       }
 
+      var btn = document.getElementById('upd-download-btn');
+      btn.href = v.download_url;
+      if (v.file_size) {
+        document.getElementById('upd-filesize').textContent = '(' + v.file_size + ')';
+      }
+
+      var ul = document.getElementById('upd-changes');
+      (v.changes || []).forEach(function(c) {
+        var li = document.createElement('li');
+        var icon = c.startsWith('FEATURE') ? 'fa-star' : c.startsWith('FIX') ? 'fa-wrench' : c.startsWith('SECURITY') ? 'fa-shield-alt' : c.startsWith('UX') ? 'fa-paint-brush' : 'fa-circle-dot';
+        var color = c.startsWith('FEATURE') ? '#818cf8' : c.startsWith('FIX') ? '#10b981' : c.startsWith('SECURITY') ? '#f59e0b' : '#64748b';
+        li.style.cssText = 'display:flex;gap:.5rem;align-items:flex-start;';
+        li.innerHTML = '<i class="fas ' + icon + '" style="color:' + color + ';margin-top:.15rem;flex-shrink:0;font-size:.75rem;"></i>' +
+                       '<span>' + c.replace(/^(FEATURE|FIX|SECURITY|CHANGE|UX): /, '<strong style="color:var(--accent);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;margin-right:.3rem;">$1</strong>') + '</span>';
+        ul.appendChild(li);
+      });
+    })
+    .catch(function() {
+      document.getElementById('upd-loading').innerHTML =
+        '<i class="fas fa-exclamation-circle" style="color:#f87171;font-size:1.5rem;margin-bottom:1rem;display:block;"></i>' +
+        'Could not load release info — <a href="mailto:info.sentinelvision@gmail.com">contact us</a> for the latest update.';
     });
-
-  }
-
 })();
-
 </script>
 
 </body>

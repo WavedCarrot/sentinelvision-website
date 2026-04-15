@@ -1,0 +1,28 @@
+{
+  "version": "4.7.6",
+  "release_date": "2026-04-15",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.6.zip",
+  "file_name": "sentinelvision_update_v4.7.6.zip",
+  "file_size": "0.28 MB",
+  "changes": [
+    "FEATURE: Camera cards now show Offline status (amber) when a connected camera loses stream",
+    "FEATURE: Active Cameras stat panel shows offline camera count or All Online status in real time",
+    "FEATURE: Dark/light mode toggle — preference saved to browser storage",
+    "FEATURE: Admin and viewer account custom usernames shown on navbar and login page",
+    "FEATURE: Audit log in Settings — last 100 login, logout, and system-change events",
+    "FEATURE: Disk full Telegram alert when disk usage reaches 85%",
+    "FEATURE: Delete All Events button in Settings",
+    "FEATURE: Per-camera animal class filter (Dog, Cat, Bird, Horse, Sheep, Cow, Bear, Elephant)",
+    "FEATURE: Telegram /sensitivity command — adjust thresholds without web UI",
+    "FEATURE: Login page shows Admin / Viewer role chooser",
+    "FEATURE: Combined per-frame Telegram alert when person + animal + vehicle detected together",
+    "FEATURE: Per-camera sensitivity, cooldown, night/IR trigger, and animal min-size sliders",
+    "CHANGE: Line Crossing merged into Zone Detection — one license covers both",
+    "FIX: Zone live view now shows real-time feed for Provision cameras",
+    "FIX: Combined detection alert correctly lists all detected items",
+    "SECURITY: Session cookie secure flag auto-enables when FORCE_HTTPS env var is set",
+    "FIX: Light mode — login, footer, setup page keep dark appearance",
+    "UX: Dashboard redesigned with detection breakdown, live health bars, 24h activity chart",
+    "UX: Mobile-friendly layout — camera grids, event cards, and stat panels stack on phones"
+  ]
+}
