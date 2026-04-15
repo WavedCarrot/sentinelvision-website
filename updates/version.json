@@ -1,10 +1,14 @@
 {
-  "version": "4.7.6",
+  "version": "4.7.7",
   "release_date": "2026-04-15",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.6.zip",
-  "file_name": "sentinelvision_update_v4.7.6.zip",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.7.zip",
+  "file_name": "sentinelvision_update_v4.7.7.zip",
   "file_size": "0.28 MB",
   "changes": [
+    "FIX: Small animals (puppies, kittens) no longer falsely detected as persons",
+    "FIX: Person confidence threshold raised (0.75 day / 0.85 night) to reduce animal false alarms",
+    "FIX: Bounding boxes under 4000px\u00b2 now require 0.88+ confidence to be accepted as a person",
+    "FIX: Animal overlap suppression catches borderline dog/cat detections at lower confidence (0.15) to block nearby false person alerts",
     "FEATURE: Camera cards now show Offline status (amber) when a connected camera loses stream",
     "FEATURE: Active Cameras stat panel shows offline camera count or All Online status in real time",
     "FEATURE: Dark/light mode toggle — preference saved to browser storage",
@@ -19,9 +23,7 @@
     "FEATURE: Per-camera sensitivity, cooldown, night/IR trigger, and animal min-size sliders",
     "CHANGE: Line Crossing merged into Zone Detection — one license covers both",
     "FIX: Zone live view now shows real-time feed for Provision cameras",
-    "FIX: Combined detection alert correctly lists all detected items",
     "SECURITY: Session cookie secure flag auto-enables when FORCE_HTTPS env var is set",
-    "FIX: Light mode — login, footer, setup page keep dark appearance",
     "UX: Dashboard redesigned with detection breakdown, live health bars, 24h activity chart",
     "UX: Mobile-friendly layout — camera grids, event cards, and stat panels stack on phones"
   ]
