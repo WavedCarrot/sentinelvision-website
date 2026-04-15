@@ -5,6 +5,7 @@
   "file_name": "sentinelvision_update_v4.7.8.zip",
   "file_size": "0.28 MB",
   "changes": [
+    "FEATURE: Weapon alert sound & red banner — dashboard plays a 3-burst siren and shows a red banner when a weapon is detected; per-camera toggle; auto-dismisses after 30s",
     "FIX: Children and distant people correctly detected — small-detection guard now uses aspect ratio so tall/narrow boxes (people) always pass while square ones (animals) require higher confidence",
     "FIX: Baby animals (puppies, kittens) no longer falsely detected as persons",
     "FIX: Person confidence threshold raised (0.75 day / 0.85 night) to reduce animal false alarms",
