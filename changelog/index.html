@@ -117,6 +117,38 @@
 
 
 
+      <!-- v4.7.8 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.8</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Children and distant people correctly detected</strong> &mdash; the small-detection guard now uses aspect ratio: tall/narrow bounding boxes (which people always produce) pass freely; only short/square boxes (animals) are held to a higher confidence bar</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Baby animals no longer falsely detected as persons</strong> &mdash; puppies and kittens produce square bounding boxes under 4&thinsp;000&thinsp;px&sup2; and now require 0.88 confidence to be accepted as a person detection</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Animal overlap suppression improved</strong> &mdash; borderline dog/cat detections at confidence as low as 0.15 suppress nearby false person alerts</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+
       <!-- v4.7.7 -->
 
       <div class="changelog-entry">
@@ -124,8 +156,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.7.7</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-date">April 2026</span>
 
