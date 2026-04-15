@@ -1,0 +1,12 @@
+[BUG]: no found input "license_manager.py"
+
+## Command Line
+C:\Users\arman\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts\pyarmor gen --platform linux.aarch64 --output dist_obf license_manager.py
+
+## Environments
+Python 3.12.10
+Pyarmor 9.2.4 (trial), 000000, non-profits
+Platform windows.x86_64
+Native windows.amd64
+Home C:\Users\arman\.pyarmor
+

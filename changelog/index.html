@@ -99,7 +99,13 @@
 
     <h1>Release History &amp; Downloads</h1>
 
-    <p>SentinelVision Pro is actively maintained and improved. View what changed in each version and download the latest release directly below.</p>
+    <p>SentinelVision Pro is actively maintained and improved. New versions are released regularly — always upgrade from the latest.</p>
+
+    <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.10.zip" class="btn btn-primary" download>
+        <i class="fas fa-download"></i>&nbsp; Download v4.7.10
+      </a>
+    </div>
 
   </div>
 
@@ -117,6 +123,43 @@
 
 
 
+      <!-- v4.7.10 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.10</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-security">SECURITY</span> <strong>Encrypted update packages</strong> &mdash; update .zip files are now AES-256 encrypted; nobody can unzip or read your source code from a downloaded package; the decryption key is fetched live from the licensing server on each update apply</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Separate admin notification email</strong> &mdash; key-issued notifications now go to a dedicated admin address so your main inbox stays clean; configurable via <code>ADMIN_EMAIL</code> on Railway</li>
+
+          </ul>
+
+        </div>
+
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.10.zip" class="btn btn-primary btn-sm" download>
+            <i class="fas fa-download"></i>&nbsp; Download v4.7.10
+          </a>
+          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Requires v4.7.9 installed on the Pi first</span>
+        </div>
+
+      </div>
+
+
+
       <!-- v4.7.9 -->
 
       <div class="changelog-entry">
@@ -124,8 +167,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.7.9</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-date">April 2026</span>
 
@@ -1013,8 +1054,6 @@
 
           <span class="changelog-version">v4.5.2</span>
 
-          <span class="changelog-badge cl-latest">Latest</span>
-
           <span class="changelog-badge cl-imp">Improvement</span>
 
           <span class="changelog-date">April 2026</span>
@@ -1042,8 +1081,6 @@
         <div class="changelog-header">
 
           <span class="changelog-version">v4.5.1</span>
-
-          <span class="changelog-badge cl-latest">Latest</span>
 
           <span class="changelog-badge cl-fix">Fix</span>
 
