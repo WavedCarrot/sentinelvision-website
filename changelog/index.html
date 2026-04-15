@@ -139,12 +139,6 @@
 
             <li><span class="cl-tag cl-tag-security">SECURITY</span> <strong>Obfuscated license module</strong> &mdash; <code>license_manager.py</code> is now shipped as PyArmor-obfuscated bytecode; source code and signing secret are no longer readable from the update package</li>
 
-            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Weapon alert sound &amp; red banner</strong> &mdash; when a weapon is detected the dashboard instantly plays a 3-burst siren (Web Audio API &mdash; no sound file required) and shows a red banner at the top of the page; banner auto-dismisses after 30 seconds or on click; per-camera &ldquo;Play alert sound&rdquo; toggle controls it independently per camera</li>
-
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Children and distant people correctly detected</strong> &mdash; the small-detection guard now uses aspect ratio: tall/narrow bounding boxes (which people always produce) pass freely; only short/square boxes (animals) are held to a higher confidence bar</li>
-
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Baby animals no longer falsely detected as persons</strong> &mdash; puppies and kittens produce square bounding boxes under 4&thinsp;000&thinsp;px&sup2; and now require 0.88 confidence to be accepted as a person detection</li>
-
           </ul>
 
         </div>
