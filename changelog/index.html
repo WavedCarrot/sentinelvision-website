@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 
@@ -71,6 +71,7 @@
       <li><a href="/about/">About</a></li>
 
       <li><a href="/changelog/">Changelog</a></li>
+      <li><a href="/updates/">Downloads</a></li>
       <li><a href="/news/">News</a></li>
 
       <li><a href="/order/" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
@@ -2241,6 +2242,8 @@
 
       <a href="/changelog/">Changelog</a>
 
+      <a href="/updates/">Downloads</a>
+
       <a href="/platform/">Platform</a>
 
       <a href="/quote/">Get a Quote</a>
@@ -2274,6 +2277,43 @@
 
 
 <script src="/js/main.js"></script>
+
+<script>
+/* ── Inject download buttons from releases.json ── */
+(function () {
+  fetch('/updates/releases.json?_=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var map = {};
+      (data.releases || []).forEach(function (r) { map[r.version] = r; });
+
+      document.querySelectorAll('.changelog-entry').forEach(function (entry) {
+        var vSpan = entry.querySelector('.changelog-version');
+        if (!vSpan) return;
+        var ver = vSpan.textContent.replace(/^v/, '');
+        if (!map[ver]) return;
+
+        var rel = map[ver];
+        var url = '/updates/files/' + rel.file;
+        var size = rel.size ? ' (' + rel.size + ')' : '';
+
+        var btn = document.createElement('a');
+        btn.href = url;
+        btn.setAttribute('download', '');
+        btn.className = 'btn btn-sm';
+        btn.style.cssText = 'margin-left:auto;font-size:.75rem;padding:.25rem .75rem;display:inline-flex;align-items:center;gap:.35rem;border:1px solid var(--accent,#6366f1);color:var(--accent,#6366f1);border-radius:6px;text-decoration:none;white-space:nowrap;';
+        btn.innerHTML = '<i class="fas fa-download"></i> Download' + size;
+
+        var header = entry.querySelector('.changelog-header');
+        if (header) {
+          header.style.cssText = (header.getAttribute('style') || '') + ';display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;';
+          header.appendChild(btn);
+        }
+      });
+    })
+    .catch(function () { /* silently ignore if releases.json unavailable */ });
+})();
+</script>
 
 </body>
 
