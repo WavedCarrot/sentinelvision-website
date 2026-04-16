@@ -1,4 +1,489 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Device &mdash; SentinelVision Pro</title>
+  <meta name="description" content="Request a SentinelVision hardware device. Choose your bundle and channel count, fill in your details and we will respond within 24 hours.">
+  <link rel="canonical" href="https://sentinelvision.net.za/quote/">
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SentinelVision Pro">
+  <meta property="og:title"       content="Get a Device &mdash; SentinelVision Pro">
+  <meta property="og:description" content="Request a SentinelVision hardware device. Choose your bundle, fill in your details and we will be in touch within 24 hours.">
+  <meta property="og:url"         content="https://sentinelvision.net.za/quote/">
+  <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.png">
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Get a Device &mdash; SentinelVision Pro">
+  <meta name="twitter:description" content="Request a SentinelVision hardware device.">
+  <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .channel-row { display: none; }
+    .channel-row.visible { display: block; }
+    .bundle-price-tag {
+      display: inline-block;
+      margin-left: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    #qd-price {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin: 0.25rem 0 0;
+    }
+    .sidebar-price-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; }
+    .channel-cards { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .channel-card {
+      flex: 1; min-width: 90px;
+      border: 2px solid var(--border); border-radius: 10px;
+      padding: 0.75rem 0.5rem; text-align: center;
+      cursor: pointer; transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+    .channel-card:hover { border-color: var(--accent); }
+    .channel-card.selected { border-color: var(--accent); background: rgba(99,102,241,0.12); }
+    .channel-card .ch-name  { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+    .channel-card .ch-desc  { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+    .channel-card .ch-price { font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-top: 5px; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <img src="/img/logo.svg" alt="SentinelVision Pro" class="brand-logo">
+      <div class="brand-text">
+        <strong>SentinelVision</strong>
+        <span>Pro Security Platform</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/platform/">Platform</a></li>
+      <li><a href="/gallery/">Gallery</a></li>
+      <li><a href="/docs/">Docs</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/changelog/">Changelog &amp; Downloads</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/order/" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-badge">Hardware Request</div>
+    <h1>Get a Device</h1>
+    <p>Choose your bundle, fill in your details and we&rsquo;ll send you pricing and banking information within 24 hours. No upfront commitment required.</p>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="section">
+  <div class="container">
+    <div class="order-layout">
+
+      <!-- Left: Form -->
+      <div class="order-form-box">
+        <h2>Device Request Form</h2>
+        <p class="subtitle">All required fields must be filled in. We&rsquo;ll reply to the email address you provide.</p>
+
+        <form id="quote-form" novalidate>
+          <!-- Honeypot -->
+          <input type="text" name="website_url" style="display:none;position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <!-- Personal details -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="q-fname">First Name <span style="color:#f87171">*</span></label>
+              <input type="text" id="q-fname" placeholder="Jane" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="q-lname">Last Name <span style="color:#f87171">*</span></label>
+              <input type="text" id="q-lname" placeholder="Smith" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="q-email">Email Address <span style="color:#f87171">*</span></label>
+            <input type="email" id="q-email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="q-phone">Phone / WhatsApp Number <span style="font-weight:400;color:var(--muted)">(optional &mdash; speeds things up)</span></label>
+            <input type="tel" id="q-phone" placeholder="+27 82 123 4567" autocomplete="tel">
+          </div>
+
+          <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0">
+
+          <!-- Bundle selection -->
+          <div class="form-group">
+            <label for="q-bundle">Hardware Bundle <span style="color:#f87171">*</span></label>
+            <select id="q-bundle" required>
+              <option value="" disabled selected>Select a bundle</option>
+              <option value="Unit Only">Unit Only (use your own cameras)</option>
+              <option value="Starter Bundle">Starter Bundle &mdash; R13 700 (Unit + 2 Cameras)</option>
+              <option value="Pro Bundle">Pro Bundle &mdash; R20 300 (Unit + 4 Cameras)</option>
+              <option value="Business Bundle">Business Bundle &mdash; R28 300 (Unit + 6 Cameras)</option>
+              <option value="Custom">Custom / I&rsquo;m not sure yet &mdash; tell me more</option>
+            </select>
+          </div>
+
+          <!-- Channel selector â€” shown only for Unit Only -->
+          <div class="form-group channel-row" id="channel-row">
+            <label>Channel Count <span style="color:#f87171">*</span></label>
+            <p style="font-size:0.83rem;color:var(--muted);margin:0.25rem 0 0.75rem">Choose how many cameras your unit should support:</p>
+            <div class="channel-cards">
+              <div class="channel-card" data-ch="4" data-price="7500" tabindex="0" role="button" aria-pressed="false">
+                <div class="ch-name">4ch</div>
+                <div class="ch-desc">Up to 4 cameras</div>
+                <div class="ch-price">R7 500</div>
+              </div>
+              <div class="channel-card" data-ch="8" data-price="8500" tabindex="0" role="button" aria-pressed="false">
+                <div class="ch-name">8ch</div>
+                <div class="ch-desc">Up to 8 cameras</div>
+                <div class="ch-price">R8 500</div>
+              </div>
+              <div class="channel-card" data-ch="16" data-price="10000" tabindex="0" role="button" aria-pressed="false">
+                <div class="ch-name">16ch</div>
+                <div class="ch-desc">Up to 16 cameras</div>
+                <div class="ch-price">R10 000</div>
+              </div>
+            </div>
+            <input type="hidden" id="q-channels" value="">
+          </div>
+
+          <!-- Property type -->
+          <div class="form-group">
+            <label for="q-property">Property Type <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <select id="q-property">
+              <option value="" disabled selected>Select property type</option>
+              <option value="Home / Residence">Home / Residence</option>
+              <option value="Small Office">Small Office</option>
+              <option value="Retail / Shop">Retail / Shop</option>
+              <option value="Warehouse / Industrial">Warehouse / Industrial</option>
+              <option value="Complex / Multi-unit">Complex / Multi-unit</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Notes -->
+          <div class="form-group">
+            <label for="q-notes">Additional Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <textarea id="q-notes" rows="3" placeholder="e.g. number of cameras, site details, specific questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="q-submit">
+            <i class="fas fa-paper-plane"></i> Submit Device Request
+          </button>
+          <div id="quote-result" class="form-result" style="margin-top:1rem"></div>
+        </form>
+      </div>
+
+      <!-- Right: Sidebar -->
+      <div class="order-sidebar">
+
+        <!-- Price display -->
+        <div class="price-display-box">
+          <div class="pd-label">Selected Bundle</div>
+          <div id="qd-bundle" class="pd-none">Select a bundle above</div>
+          <div id="qd-price" style="display:none"></div>
+          <div id="qd-price-note" class="sidebar-price-note" style="display:none">All prices include VAT</div>
+        </div>
+
+        <!-- What happens next -->
+        <div class="order-info-box">
+          <h4><i class="fas fa-list-check" style="color:var(--accent);margin-right:.5rem"></i>What Happens Next</h4>
+          <ol class="order-steps">
+            <li><span class="step-num">1</span>Submit this form with your bundle preference</li>
+            <li><span class="step-num">2</span>We email you a detailed quote with EFT / bank transfer payment details</li>
+            <li><span class="step-num">3</span>You make payment in ZAR &mdash; no commitment from this form</li>
+            <li><span class="step-num">4</span>We configure and deliver your unit or arrange onsite setup</li>
+            <li><span class="step-num">5</span>You&rsquo;re fully protected within 30 minutes of delivery</li>
+          </ol>
+        </div>
+
+        <div class="payment-note">
+          <strong><i class="fas fa-info-circle"></i> No upfront payment needed:</strong>
+          This is just a device request. We will send full pricing and banking details by email before anything is due.
+        </div>
+
+        <!-- Bundle overview -->
+        <div class="order-info-box" style="margin-top:1.25rem">
+          <h4><i class="fas fa-cube" style="color:var(--accent);margin-right:.5rem"></i>Bundle Overview</h4>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.88rem;color:var(--muted)">
+            <li>
+              <strong style="color:var(--text)">Unit Only</strong>
+              <span class="bundle-price-tag">from R7 500</span><br>
+              Use your own existing IP cameras<br>
+              <span style="font-size:0.78rem">4ch &mdash; R7 500 &bull; 8ch &mdash; R8 500 &bull; 16ch &mdash; R10 000</span>
+            </li>
+            <li><strong style="color:var(--text)">Starter</strong> <span class="bundle-price-tag">R13 700</span><br>Unit + 2 IP cameras</li>
+            <li><strong style="color:var(--text)">Pro</strong> <span class="bundle-price-tag">R20 300</span><br>Unit + 4 IP cameras</li>
+            <li><strong style="color:var(--text)">Business</strong> <span class="bundle-price-tag">R28 300</span><br>Unit + 6 IP cameras + custom zone setup</li>
+          </ul>
+          <p style="margin-top:0.85rem;font-size:0.82rem;color:var(--muted)">All prices include VAT. Custom configurations available.</p>
+        </div>
+
+        <!-- Direct contact -->
+        <div class="order-info-box" style="margin-top:1.25rem">
+          <h4><i class="fab fa-whatsapp" style="color:#25d366;margin-right:.5rem"></i>Prefer to Chat?</h4>
+          <p style="font-size:0.85rem;color:var(--muted);margin:0 0 0.85rem">Skip the form and contact us directly:</p>
+          <a href="https://wa.me/27725714142?text=Hi%2C+I%27d+like+to+get+a+SentinelVision+device"
+             class="btn btn-primary btn-full" style="background:#25d366;border-color:#25d366;margin-bottom:0.6rem" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp +27 72 571 4142
+          </a>
+          <a href="mailto:info.sentinelvision@gmail.com?subject=Device%20Request"
+             class="btn btn-full" style="text-align:center;display:block">
+            <i class="fas fa-envelope"></i> info.sentinelvision@gmail.com
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="/img/logo.svg" alt="SentinelVision Pro" class="brand-logo-footer" loading="lazy">
+    </div>
+    <nav class="footer-links">
+      <a href="/">Home</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/docs/">Docs</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
+      <a href="/changelog/">Changelog &amp; Downloads</a>
+      <a href="/platform/">Platform</a>
+      <a href="/quote/">Get a Device</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+    <p class="footer-copy">
+      &copy; 2026 SentinelVision Pro &mdash;
+      <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="/js/main.js"></script>
+<script>
+(function () {
+  var RAILWAY = "https://sentinelvision-licensing-production.up.railway.app";
+
+  var FIXED_PRICES = {
+    "Starter Bundle": 13700,
+    "Pro Bundle":     20300,
+    "Business Bundle":28300,
+  };
+  var CHANNEL_PRICES = { "4": 7500, "8": 8500, "16": 10000 };
+
+  var bundleSel    = document.getElementById("q-bundle");
+  var channelRow   = document.getElementById("channel-row");
+  var channelInp   = document.getElementById("q-channels");
+  var channelCards = document.querySelectorAll(".channel-card");
+  var bdLabel      = document.getElementById("qd-bundle");
+  var bdPrice      = document.getElementById("qd-price");
+  var bdPriceNote  = document.getElementById("qd-price-note");
+
+  function fmtPrice(n) {
+    // "R7 500" format
+    return "R" + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+
+  function updateSidebar() {
+    var bval = bundleSel.value;
+    var ch   = channelInp.value;
+    if (!bval) {
+      bdLabel.textContent = "Select a bundle above";
+      bdLabel.classList.add("pd-none");
+      bdPrice.style.display = "none";
+      bdPriceNote.style.display = "none";
+      return;
+    }
+    // Label
+    if (bval === "Unit Only" && ch) {
+      bdLabel.textContent = "Unit Only \u2014 " + ch + "ch";
+    } else {
+      bdLabel.textContent = bval;
+    }
+    bdLabel.classList.remove("pd-none");
+    // Price
+    var price = null;
+    if (bval === "Unit Only" && ch) {
+      price = CHANNEL_PRICES[ch];
+    } else {
+      price = FIXED_PRICES[bval] || null;
+    }
+    if (price) {
+      bdPrice.textContent = fmtPrice(price);
+      bdPrice.style.display = "block";
+      bdPriceNote.style.display = "block";
+    } else {
+      bdPrice.style.display = "none";
+      bdPriceNote.style.display = "none";
+    }
+  }
+
+  // Channel card clicks
+  channelCards.forEach(function (card) {
+    function select() {
+      channelCards.forEach(function (c) {
+        c.classList.remove("selected");
+        c.setAttribute("aria-pressed", "false");
+      });
+      card.classList.add("selected");
+      card.setAttribute("aria-pressed", "true");
+      channelInp.value = card.dataset.ch;
+      updateSidebar();
+    }
+    card.addEventListener("click", select);
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(); }
+    });
+  });
+
+  // Bundle change
+  bundleSel.addEventListener("change", function () {
+    if (this.value === "Unit Only") {
+      channelRow.classList.add("visible");
+    } else {
+      channelRow.classList.remove("visible");
+      channelInp.value = "";
+      channelCards.forEach(function (c) {
+        c.classList.remove("selected");
+        c.setAttribute("aria-pressed", "false");
+      });
+    }
+    updateSidebar();
+  });
+
+  // Pre-fill from ?bundle= URL param
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var map = {
+      "unit-only": "Unit Only",
+      "starter":   "Starter Bundle",
+      "pro":       "Pro Bundle",
+      "business":  "Business Bundle",
+    };
+    var key = (params.get("bundle") || "").toLowerCase();
+    if (map[key]) {
+      bundleSel.value = map[key];
+      bundleSel.dispatchEvent(new Event("change"));
+    }
+  })();
+
+  // Form submit
+  var form      = document.getElementById("quote-form");
+  var resultEl  = document.getElementById("quote-result");
+  var submitBtn = document.getElementById("q-submit");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Honeypot
+    var hp = form.querySelector("input[name='website_url']");
+    if (hp && hp.value.trim() !== "") return;
+
+    // Validate channels for Unit Only
+    if (bundleSel.value === "Unit Only" && !channelInp.value) {
+      resultEl.textContent = "Please select a channel count (4ch, 8ch or 16ch).";
+      resultEl.className = "form-result error";
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    resultEl.textContent = "";
+    resultEl.className   = "form-result";
+
+    // Build human-readable bundle label
+    var bundleLabel = bundleSel.value;
+    var ch = channelInp.value;
+    if (bundleLabel === "Unit Only" && ch) {
+      var pmap = { "4": "R7 500", "8": "R8 500", "16": "R10 000" };
+      bundleLabel = "Unit Only \u2014 " + ch + "ch (" + (pmap[ch] || "") + ")";
+    } else if (bundleLabel === "Starter Bundle") {
+      bundleLabel = "Starter Bundle \u2014 R13 700 (Unit + 2 Cameras)";
+    } else if (bundleLabel === "Pro Bundle") {
+      bundleLabel = "Pro Bundle \u2014 R20 300 (Unit + 4 Cameras)";
+    } else if (bundleLabel === "Business Bundle") {
+      bundleLabel = "Business Bundle \u2014 R28 300 (Unit + 6 Cameras)";
+    }
+
+    var payload = {
+      first_name:    document.getElementById("q-fname").value.trim(),
+      last_name:     document.getElementById("q-lname").value.trim(),
+      email:         document.getElementById("q-email").value.trim(),
+      phone:         document.getElementById("q-phone").value.trim(),
+      bundle:        bundleLabel,
+      channels:      ch ? ch + "ch" : "",
+      property_type: document.getElementById("q-property").value || "",
+      notes:         document.getElementById("q-notes").value.trim(),
+      website_url:   "",
+    };
+
+    try {
+      var res  = await fetch(RAILWAY + "/api/quote-request", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(payload),
+      });
+      var json = await res.json();
+
+      if (json.success) {
+        resultEl.innerHTML =
+          "<strong>Request sent!</strong> Check your inbox &mdash; we&rsquo;ve emailed you a confirmation with your quote reference. " +
+          "We&rsquo;ll be in touch within 24 hours.<br>" +
+          "<small style='color:var(--muted)'>Reference: <strong>" + (json.ref || "") + "</strong></small>";
+        resultEl.className = "form-result success";
+        form.reset();
+        channelRow.classList.remove("visible");
+        channelCards.forEach(function (c) { c.classList.remove("selected"); });
+        channelInp.value = "";
+        bdLabel.textContent = "Select a bundle above";
+        bdLabel.classList.add("pd-none");
+        bdPrice.style.display = "none";
+        bdPriceNote.style.display = "none";
+      } else {
+        throw new Error(json.error || "Submission failed");
+      }
+    } catch (err) {
+      resultEl.textContent =
+        "Something went wrong. Please try again or contact us directly: " +
+        "WhatsApp +27 72 571 4142 or info.sentinelvision@gmail.com";
+      resultEl.className = "form-result error";
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Device Request';
+  });
+})();
+</script>
+</body>
+</html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -8,7 +493,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Get a Hardware Quote — SentinelVision Pro</title>
+  <title>Get a Hardware Quote ï¿½ SentinelVision Pro</title>
 
   <meta name="description" content="Get a Device for the SentinelVision hardware unit. Choose your bundle, fill in your details, and we'll respond within 24 hours.">
 
@@ -16,13 +501,13 @@
   <!-- Open Graph / Social sharing -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SentinelVision Pro">
-  <meta property="og:title"       content="Get a Hardware Quote — SentinelVision Pro">
+  <meta property="og:title"       content="Get a Hardware Quote ï¿½ SentinelVision Pro">
   <meta property="og:description" content="Get a Device for the SentinelVision hardware unit. Choose your bundle, fill in your details, and we'll respond within 24 hours.">
   <meta property="og:url"         content="https://sentinelvision.net.za/quote/">
   <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.png">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="Get a Hardware Quote — SentinelVision Pro">
+  <meta name="twitter:title"       content="Get a Hardware Quote ï¿½ SentinelVision Pro">
   <meta name="twitter:description" content="Get a Device for the SentinelVision hardware unit. Choose your bundle, fill in your details, and we'll respond within 24 hours.">
   <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.png">
 
@@ -134,7 +619,7 @@
 
           <input type="hidden" name="access_key"  value="6f8c3403-e63d-49b1-ad5d-f709cec8c85e">
 
-          <input type="hidden" name="subject"     value="SentinelVision — Hardware Quote Request">
+          <input type="hidden" name="subject"     value="SentinelVision ï¿½ Hardware Quote Request">
 
           <input type="hidden" name="from_name"   value="SentinelVision Website">
 
@@ -196,17 +681,17 @@
 
             <select id="q-bundle" name="bundle" required>
 
-              <option value="" disabled>— Select a bundle —</option>
+              <option value="" disabled>ï¿½ Select a bundle ï¿½</option>
 
-              <option value="Unit Only — R7 500">Unit Only — R7 500 (use your own cameras)</option>
+              <option value="Unit Only ï¿½ R7 500">Unit Only ï¿½ R7 500 (use your own cameras)</option>
 
-              <option value="Starter Bundle — R13 700">Starter Bundle — R13 700 (Unit + 2 Cameras)</option>
+              <option value="Starter Bundle ï¿½ R13 700">Starter Bundle ï¿½ R13 700 (Unit + 2 Cameras)</option>
 
-              <option value="Pro Bundle — R20 300">Pro Bundle — R20 300 (Unit + 4 Cameras)</option>
+              <option value="Pro Bundle ï¿½ R20 300">Pro Bundle ï¿½ R20 300 (Unit + 4 Cameras)</option>
 
-              <option value="Business Bundle — R28 300">Business Bundle — R28 300 (Unit + 6 Cameras)</option>
+              <option value="Business Bundle ï¿½ R28 300">Business Bundle ï¿½ R28 300 (Unit + 6 Cameras)</option>
 
-              <option value="Custom / Still deciding">Custom / I'm not sure yet — tell me more</option>
+              <option value="Custom / Still deciding">Custom / I'm not sure yet ï¿½ tell me more</option>
 
             </select>
 
@@ -222,7 +707,7 @@
 
             <select id="q-property" name="property_type">
 
-              <option value="" disabled selected>— Select property type —</option>
+              <option value="" disabled selected>ï¿½ Select property type ï¿½</option>
 
               <option value="Home / Residence">Home / Residence</option>
 
@@ -300,7 +785,7 @@
 
             <li><span class="step-num">3</span>You make payment in ZAR</li>
 
-            <li><span class="step-num">4</span>We configure and ship your unit — or arrange onsite setup</li>
+            <li><span class="step-num">4</span>We configure and ship your unit ï¿½ or arrange onsite setup</li>
 
             <li><span class="step-num">5</span>You're fully protected within 30 minutes of delivery</li>
 
@@ -326,13 +811,13 @@
 
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;font-size:0.88rem;color:var(--muted)">
 
-            <li><strong style="color:var(--text)">Unit Only — R7 500</strong><br>Use your own existing IP cameras</li>
+            <li><strong style="color:var(--text)">Unit Only ï¿½ R7 500</strong><br>Use your own existing IP cameras</li>
 
-            <li><strong style="color:var(--text)">Starter — R13 700</strong><br>Unit + 2 IP cameras</li>
+            <li><strong style="color:var(--text)">Starter ï¿½ R13 700</strong><br>Unit + 2 IP cameras</li>
 
-            <li><strong style="color:var(--text)">Pro — R20 300</strong><br>Unit + 4 IP cameras</li>
+            <li><strong style="color:var(--text)">Pro ï¿½ R20 300</strong><br>Unit + 4 IP cameras</li>
 
-            <li><strong style="color:var(--text)">Business — R28 300</strong><br>Unit + 6 IP cameras + custom zone setup</li>
+            <li><strong style="color:var(--text)">Business ï¿½ R28 300</strong><br>Unit + 6 IP cameras + custom zone setup</li>
 
           </ul>
 
@@ -426,13 +911,13 @@
 
   const bundleMap = {
 
-    'unit-only': 'Unit Only — R7 500',
+    'unit-only': 'Unit Only ï¿½ R7 500',
 
-      'starter':   'Starter Bundle — R13 700',
+      'starter':   'Starter Bundle ï¿½ R13 700',
 
-      'pro':       'Pro Bundle — R20 300',
+      'pro':       'Pro Bundle ï¿½ R20 300',
 
-      'business':  'Business Bundle — R28 300'
+      'business':  'Business Bundle ï¿½ R28 300'
 
   };
 
@@ -510,13 +995,13 @@
 
       e.preventDefault();
 
-      // Honeypot — discard silently if filled by a bot
+      // Honeypot ï¿½ discard silently if filled by a bot
       const hp = form.querySelector('input[name="website_url"]');
       if (hp && hp.value.trim() !== '') return;
 
       submitBtn.disabled = true;
 
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sendingï¿½';
 
       try {
 
