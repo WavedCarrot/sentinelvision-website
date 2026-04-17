@@ -102,8 +102,8 @@
     <p>SentinelVision Pro is actively maintained and improved. New versions are released regularly  always upgrade from the latest.</p>
 
     <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.10.zip" class="btn btn-primary" download>
-        <i class="fas fa-download"></i>&nbsp; Download v4.7.10
+      <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.11.zip" class="btn btn-primary" download>
+        <i class="fas fa-download"></i>&nbsp; Download v4.7.11
       </a>
     </div>
 
@@ -123,6 +123,49 @@
 
 
 
+      <!-- v4.7.11 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.11</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Foolproof installer</strong> &mdash; <code>install.sh</code> now runs pre-flight checks (Pi model, RAM, disk space, internet); collects the admin password during install so there is no default password on first boot; auto-starts and verifies the service when done</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>NVR &amp; brand fingerprinting</strong> &mdash; network scanner identifies Hikvision, Dahua, Provision ISR, Reolink, Axis, Annke, Uniview and generic DVR/NVR from HTTP response signatures; per-brand RTSP URL templates tried first, then generic fallbacks</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Camera scan UI</strong> &mdash; scan results now show brand name, device class icon (NVR/DVR vs IP Camera), detected credentials, channel count; full troubleshooting guide when no devices found</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Sensitivity quick-presets</strong> &mdash; Low / Medium / High / Custom one-click buttons above the detection sliders; plain-English slider labels; selecting a preset highlights the button; manually moving a slider auto-switches to Custom</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>All Camera columns migrated on startup</strong> &mdash; <code>working_rtsp_url</code>, <code>has_ptz</code>, PTZ columns, stream dimensions, detection sensitivity, behaviour-analysis columns and viewer account fields all have explicit <code>ALTER TABLE</code> guards so fresh installs never get an <code>AttributeError</code></li>
+
+          </ul>
+
+        </div>
+
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.11.zip" class="btn btn-primary btn-sm" download>
+            <i class="fas fa-download"></i>&nbsp; Download v4.7.11
+          </a>
+          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+        </div>
+
+      </div>
+
+
+
       <!-- v4.7.10 -->
 
       <div class="changelog-entry">
@@ -131,7 +174,7 @@
 
           <span class="changelog-version">v4.7.10</span>
 
-          <span class="changelog-badge cl-latest">Latest</span>
+          <span class="changelog-badge">Stable</span>
 
           <span class="changelog-date">April 2026</span>
 
@@ -147,13 +190,6 @@
 
           </ul>
 
-        </div>
-
-        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.10.zip" class="btn btn-primary btn-sm" download>
-            <i class="fas fa-download"></i>&nbsp; Download v4.7.10
-          </a>
-          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported (pyzipper auto-installed if needed)</span>
         </div>
 
       </div>

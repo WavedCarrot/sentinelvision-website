@@ -513,43 +513,46 @@
       website_url:   "",
     };
 
+    var res, json = null;
     try {
-      var res  = await fetch(RAILWAY + "/api/quote-request", {
+      res = await fetch(RAILWAY + "/api/quote-request", {
         method:  "POST",
         headers: { "Content-Type": "application/json" },
         body:    JSON.stringify(payload),
       });
-
-      var json = null;
-      try { json = await res.json(); } catch (_) { /* non-JSON response */ }
-
-      // Treat as success if server said OK (2xx) OR json.success is set
-      if ((res.ok && json === null) || (json && json.success)) {
-        var refStr = (json && json.ref) ? json.ref : "";
-        resultEl.innerHTML =
-          "<strong>Request sent!</strong> Check your inbox &mdash; we&rsquo;ve emailed you a confirmation with your quote reference. " +
-          "We&rsquo;ll be in touch within 24 hours." +
-          (refStr ? "<br><small style='color:var(--muted)'>Reference: <strong>" + refStr + "</strong></small>" : "");
-        resultEl.className = "form-result success";
-        form.reset();
-        channelRow.classList.remove("visible");
-        bundleRow.classList.remove("visible");
-        channelCards.forEach(function (c) { c.classList.remove("selected"); });
-        bundleCards.forEach(function (c)  { c.classList.remove("selected"); });
-        channelInp.value = "";
-        bundleChoiceInp.value = "";
-        bdLabel.textContent = "Select a category above";
-        bdLabel.classList.add("pd-none");
-        bdPrice.style.display = "none";
-        bdPriceNote.style.display = "none";
-      } else {
-        var errMsg = (json && json.error) ? json.error : "Submission failed. Please try again.";
-        throw new Error(errMsg);
-      }
-    } catch (err) {
+    } catch (_) {
       resultEl.textContent =
-        "Something went wrong. Please try again or contact us directly: " +
-        "WhatsApp or info.sentinelvision@gmail.com";
+        "Network error — please check your connection and try again, or contact us directly at info.sentinelvision@gmail.com";
+      resultEl.className = "form-result error";
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Device Request';
+      return;
+    }
+
+    try { json = await res.json(); } catch (_) { /* non-JSON response */ }
+
+    // Treat as success if server said OK (2xx) OR json.success is set
+    if (res.ok || (json && json.success)) {
+      var refStr = (json && json.ref) ? json.ref : "";
+      resultEl.innerHTML =
+        "<strong>Request sent!</strong> Check your inbox &mdash; we&rsquo;ve emailed you a confirmation with your quote reference. " +
+        "We&rsquo;ll be in touch within 24 hours." +
+        (refStr ? "<br><small style='color:var(--muted)'>Reference: <strong>" + refStr + "</strong></small>" : "");
+      resultEl.className = "form-result success";
+      form.reset();
+      channelRow.classList.remove("visible");
+      bundleRow.classList.remove("visible");
+      channelCards.forEach(function (c) { c.classList.remove("selected"); });
+      bundleCards.forEach(function (c)  { c.classList.remove("selected"); });
+      channelInp.value = "";
+      bundleChoiceInp.value = "";
+      bdLabel.textContent = "Select a category above";
+      bdLabel.classList.add("pd-none");
+      bdPrice.style.display = "none";
+      bdPriceNote.style.display = "none";
+    } else {
+      var errMsg = (json && json.error) ? json.error : "Submission failed. Please try again.";
+      resultEl.textContent = errMsg;
       resultEl.className = "form-result error";
     }
 
