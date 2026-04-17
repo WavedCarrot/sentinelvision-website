@@ -141,8 +141,6 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Foolproof installer</strong> &mdash; <code>install.sh</code> now runs pre-flight checks (Pi model, RAM, disk space, internet); collects the admin password during install so there is no default password on first boot; auto-starts and verifies the service when done</li>
-
             <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>NVR &amp; brand fingerprinting</strong> &mdash; network scanner identifies Hikvision, Dahua, Provision ISR, Reolink, Axis, Annke, Uniview and generic DVR/NVR from HTTP response signatures; per-brand RTSP URL templates tried first, then generic fallbacks</li>
 
             <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Camera scan UI</strong> &mdash; scan results now show brand name, device class icon (NVR/DVR vs IP Camera), detected credentials, channel count; full troubleshooting guide when no devices found</li>
@@ -186,7 +184,7 @@
 
             <li><span class="cl-tag cl-tag-security">SECURITY</span> <strong>Encrypted update packages</strong> &mdash; update .zip files are now AES-256 encrypted; nobody can unzip or read your source code from a downloaded package; the decryption key is fetched live from the licensing server on each update apply</li>
 
-            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Separate admin notification email</strong> &mdash; key-issued notifications now go to a dedicated admin address so your main inbox stays clean; configurable via <code>ADMIN_EMAIL</code> on Railway</li>
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Separate admin notification email</strong> &mdash; key-issued notifications now go to a dedicated admin address so your main inbox stays clean</li>
 
           </ul>
 
