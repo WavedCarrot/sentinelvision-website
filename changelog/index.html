@@ -151,6 +151,8 @@
 
             <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Animal class picker emojis</strong> &mdash; emojis now display correctly in the per-camera animal filter; Zebra removed from selectable animal classes</li>
 
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Cameras, Zones, License, Stock &amp; Analytics pages crashing</strong> &mdash; PyArmor-obfuscated <code>license_manager.py</code> was compiled on Python 3.12 and failed with <em>undefined symbol</em> on the Pi&rsquo;s Python 3.9&ndash;3.11; <code>license_manager</code> is now shipped as plain Python and all imports have safe fallbacks</li>
+
           </ul>
 
         </div>
