@@ -102,8 +102,8 @@
     <p>SentinelVision Pro is actively maintained and improved. New versions are released regularly  always upgrade from the latest.</p>
 
     <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.11.zip" class="btn btn-primary" download>
-        <i class="fas fa-download"></i>&nbsp; Download v4.7.11
+      <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.13.zip" class="btn btn-primary" download>
+        <i class="fas fa-download"></i>&nbsp; Download v4.7.13
       </a>
     </div>
 
@@ -123,6 +123,97 @@
 
 
 
+      <!-- v4.7.13 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.13</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Telegram snapshot no longer fails on single-stream cameras</strong> &mdash; snapshot is now served from the detection engine&rsquo;s frame cache; no second RTSP connection is opened so cameras like Provision ISR that reject concurrent streams (error 453 Not Enough Bandwidth) now send photos correctly</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Telegram snapshot RTSP fallback limited to 3 paths</strong> &mdash; if the cache is empty (camera offline) the bot tries at most 3 URLs instead of 37, so failures are fast and the camera is not hammered</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Faster camera reconnect</strong> &mdash; when a working RTSP URL is already saved the detection engine skips the 37-URL scan and connects directly; reconnects after a drop now take ~5 s instead of potentially minutes</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Dashboard offline count correct</strong> &mdash; inactive cameras are no longer counted as &ldquo;offline&rdquo;; the counter only shows active cameras that the detection engine cannot reach</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Duplicate RTSP URL removed from alternate list</strong> &mdash; bare-root <code>rtsp://ip:554/</code> was generated twice; deduplicated so the list is cleaner and scans are faster</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Night/IR log noise eliminated</strong> &mdash; per-frame &ldquo;Night/IR frame detected&rdquo; message moved from INFO to DEBUG; server logs are much quieter during night monitoring</li>
+
+          </ul>
+
+        </div>
+
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.13.zip" class="btn btn-primary btn-sm" download>
+            <i class="fas fa-download"></i>&nbsp; Download v4.7.13
+          </a>
+          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+        </div>
+
+      </div>
+
+
+
+      <!-- v4.7.12 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.12</span>
+
+          <span class="changelog-badge">Stable</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Live camera thumbnails</strong> &mdash; each camera card shows a real-time snapshot preview with auto-refresh every 30 s</li>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>RTSP URL builder</strong> &mdash; collapsible helper above the RTSP field; enter IP, port, credentials and brand to auto-generate the correct URL</li>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Bulk delete cameras</strong> &mdash; Bulk Mode toggle shows checkboxes; Select All / Delete Selected in one click</li>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Drag-to-reorder camera cards</strong> &mdash; drag by the card header to rearrange the grid; order saved to the database and persists across reloads</li>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Onboarding wizard</strong> &mdash; first-time setup shows a three-step guide (Scan / Add / RTSP formats)</li>
+
+            <li><span class="cl-tag cl-tag-ux">UX</span> <strong>Unsaved changes warning</strong> &mdash; camera edit modal warns before discarding unsaved edits</li>
+
+            <li><span class="cl-tag cl-tag-ux">UX</span> <strong>Schedule badge on camera cards</strong> &mdash; shows Armed / Disarmed or auto-schedule arm/disarm times</li>
+
+            <li><span class="cl-tag cl-tag-ux">UX</span> <strong>Night / Day mode indicator</strong> &mdash; each camera card shows Night or Day based on current time</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Detection confidence overlay</strong> &mdash; AI confidence % shown as a badge on each event image</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Dashboard redesigned</strong> &mdash; detection breakdown, live health bars, 24-hour activity chart</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+
       <!-- v4.7.11 -->
 
       <div class="changelog-entry">
@@ -131,7 +222,7 @@
 
           <span class="changelog-version">v4.7.11</span>
 
-          <span class="changelog-badge cl-latest">Latest</span>
+          <span class="changelog-badge">Stable</span>
 
           <span class="changelog-date">April 2026</span>
 
@@ -158,7 +249,7 @@
         </div>
 
         <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.11.zip" class="btn btn-primary btn-sm" download>
+          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.11.zip" class="btn btn-secondary btn-sm" download>
             <i class="fas fa-download"></i>&nbsp; Download v4.7.11
           </a>
           <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
