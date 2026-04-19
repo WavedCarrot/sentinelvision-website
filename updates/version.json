@@ -1,24 +1,10 @@
 {
-  "version": "4.7.11",
-  "release_date": "2026-04-17",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.11.zip",
-  "file_name": "sentinelvision_update_v4.7.11.zip",
-  "file_size": "0.64 MB",
+  "version": "4.7.16",
+  "release_date": "2026-04-20",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.16.zip",
+  "file_name": "sentinelvision_update_v4.7.16.zip",
+  "file_size": "0.32 MB",
   "changes": [
-    "IMP: Network scanner now fingerprints 14 camera brands (Hikvision, Dahua, Provision, Reolink, Axis, Annke, Uniview and more) — NVR channels get brand-specific RTSP URL templates with fallbacks",
-    "IMP: Camera scan results show brand name, device class (NVR/DVR vs IP Camera), detected credentials and channel count; troubleshooting guide shown when no devices found",
-    "IMP: Sensitivity quick-presets — Low / Medium / High / Custom one-click buttons above detection sliders with plain-English labels",
-    "FIX: Animal class picker emojis now display correctly; Zebra removed from selectable animal classes",
-    "FIX: All Camera model columns now migrated on startup — no more AttributeError on fresh installs",
-    "SECURITY: Update packages are AES-256 encrypted — source code not readable from downloaded package; decryption key fetched live from licensing server",
-    "SECURITY: License keys validated server-side — revoked or pirated keys rejected; cached 24 h for offline use",
-    "FEATURE: Weapon alert plays a 3-burst siren and shows a red banner on the dashboard; per-camera toggle in Camera Settings",
-    "FIX: Children and distant people now correctly detected — bounding-box aspect ratio guard prevents small animals from triggering person alerts",
-    "FEATURE: Dark / light mode toggle — preference saved to browser storage",
-    "FEATURE: Admin and viewer custom usernames shown on navbar and login page",
-    "FEATURE: Audit log — last 100 login, logout and settings-change events in Settings",
-    "FEATURE: Disk full Telegram alert at 85% usage",
-    "FEATURE: Per-camera animal class filter (Dog, Cat, Bird, Horse, Sheep, Cow, Giraffe)",
-    "UX: Mobile-friendly layout — camera grids, event cards and stat panels stack on phones"
+    "IMP: Internal stability improvements and performance optimisations"
   ]
 }
