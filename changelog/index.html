@@ -102,8 +102,8 @@
     <p>SentinelVision Pro is actively maintained and improved. New versions are released regularly  always upgrade from the latest.</p>
 
     <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.13.zip" class="btn btn-primary" download>
-        <i class="fas fa-download"></i>&nbsp; Download v4.7.13
+      <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.14.zip" class="btn btn-primary" download>
+        <i class="fas fa-download"></i>&nbsp; Download v4.7.14
       </a>
     </div>
 
@@ -123,6 +123,51 @@
 
 
 
+      <!-- v4.7.14 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.14</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Camera tamper detection</strong> &mdash; SentinelVision now detects when a camera has been moved, covered, or deliberately obstructed and sends an immediate Telegram alert with a snapshot</li>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Tamper alert action buttons</strong> &mdash; Telegram tamper alerts include two inline buttons: &ldquo;This is fine &mdash; update view&rdquo; saves the new position as the reference frame; &ldquo;Acknowledge &mdash; keep watching&rdquo; resets the counter and resumes monitoring from the original angle</li>
+
+            <li><span class="cl-tag cl-tag-feature">FEATURE</span> <strong>Per-camera tamper sensitivity</strong> &mdash; Low, Medium (default), or High sensitivity configurable per camera in the Advanced settings tab</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>IR / day&ndash;night switch detection</strong> &mdash; automatic brightness-jump detection silently refreshes the reference frame when the camera switches between colour and IR mode, preventing false tamper alerts at dusk and dawn</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>PTZ cameras excluded</strong> &mdash; cameras with PTZ enabled are automatically skipped from tamper checking since movement is intentional</li>
+
+            <li><span class="cl-tag cl-tag-imp">IMP</span> <strong>Migration completeness</strong> &mdash; post-install script now covers every database column across all four tables; installs that never had a prior server run will no longer be missing any schema fields</li>
+
+          </ul>
+
+        </div>
+
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.14.zip" class="btn btn-primary btn-sm" download>
+            <i class="fas fa-download"></i>&nbsp; Download v4.7.14
+          </a>
+          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+        </div>
+
+      </div>
+
+
+
       <!-- v4.7.13 -->
 
       <div class="changelog-entry">
@@ -131,7 +176,7 @@
 
           <span class="changelog-version">v4.7.13</span>
 
-          <span class="changelog-badge cl-latest">Latest</span>
+          <span class="changelog-badge">Stable</span>
 
           <span class="changelog-date">April 2026</span>
 
@@ -158,10 +203,7 @@
         </div>
 
         <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.13.zip" class="btn btn-primary btn-sm" download>
-            <i class="fas fa-download"></i>&nbsp; Download v4.7.13
-          </a>
-          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+          <span style="font-size:0.78rem;color:var(--muted);">Superseded by v4.7.14 &mdash; upgrade recommended</span>
         </div>
 
       </div>
@@ -249,10 +291,7 @@
         </div>
 
         <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.11.zip" class="btn btn-secondary btn-sm" download>
-            <i class="fas fa-download"></i>&nbsp; Download v4.7.11
-          </a>
-          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+          <span style="font-size:0.78rem;color:var(--muted);">Superseded by v4.7.14 &mdash; upgrade recommended</span>
         </div>
 
       </div>
