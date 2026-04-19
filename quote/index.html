@@ -131,7 +131,7 @@
             <label for="q-bundle">Category <span style="color:#f87171">*</span></label>
             <select id="q-bundle" required>
               <option value="" disabled selected>Select a category</option>
-              <option value="Devices">Devices &mdash; use your own cameras (from R7 500)</option>
+              <option value="Devices">Devices &mdash; use your own cameras (from R8 000)</option>
               <option value="Camera Bundles">Camera Bundles &mdash; unit + cameras included</option>
               <option value="Custom">Custom / I&rsquo;m not sure yet &mdash; tell me more</option>
             </select>
@@ -142,20 +142,20 @@
             <label>Channel Count <span style="color:#f87171">*</span></label>
             <p style="font-size:0.83rem;color:var(--muted);margin:0.25rem 0 0.75rem">Choose how many cameras your unit should support:</p>
             <div class="channel-cards">
-              <div class="channel-card" data-ch="4" data-price="7500" tabindex="0" role="button" aria-pressed="false">
+              <div class="channel-card" data-ch="4" data-price="8000" tabindex="0" role="button" aria-pressed="false">
                 <div class="ch-name">4ch</div>
                 <div class="ch-desc">Up to 4 cameras</div>
-                <div class="ch-price">R7 500</div>
+                <div class="ch-price">R8 000</div>
               </div>
-              <div class="channel-card" data-ch="8" data-price="8500" tabindex="0" role="button" aria-pressed="false">
+              <div class="channel-card" data-ch="8" data-price="12500" tabindex="0" role="button" aria-pressed="false">
                 <div class="ch-name">8ch</div>
                 <div class="ch-desc">Up to 8 cameras</div>
-                <div class="ch-price">R8 500</div>
+                <div class="ch-price">R12 500</div>
               </div>
-              <div class="channel-card" data-ch="16" data-price="10000" tabindex="0" role="button" aria-pressed="false">
+              <div class="channel-card" data-ch="16" data-price="22000" tabindex="0" role="button" aria-pressed="false">
                 <div class="ch-name">16ch</div>
                 <div class="ch-desc">Up to 16 cameras</div>
-                <div class="ch-price">R10 000</div>
+                <div class="ch-price">R22 000</div>
               </div>
             </div>
             <input type="hidden" id="q-channels" value="">
@@ -246,9 +246,9 @@
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.88rem;color:var(--muted)">
             <li>
               <strong style="color:var(--text)">Unit Only</strong>
-              <span class="bundle-price-tag">from R7 500</span><br>
+              <span class="bundle-price-tag">from R8 000</span><br>
               Use your own existing IP cameras<br>
-              <span style="font-size:0.78rem">4ch &mdash; R7 500 &bull; 8ch &mdash; R8 500 &bull; 16ch &mdash; R10 000</span>
+              <span style="font-size:0.78rem">4ch &mdash; R8 000 &bull; 8ch &mdash; R12 500 &bull; 16ch &mdash; R22 000</span>
             </li>
             <li><strong style="color:var(--text)">Starter</strong> <span class="bundle-price-tag">R13 700</span><br>Unit + 2 IP cameras</li>
             <li><strong style="color:var(--text)">Pro</strong> <span class="bundle-price-tag">R20 300</span><br>Unit + 4 IP cameras</li>
@@ -494,7 +494,7 @@
     // Build human-readable bundle label
     var bundleLabel = cat;
     if (cat === "Devices" && ch) {
-      var pmap = { "4": "R7 500", "8": "R8 500", "16": "R10 000" };
+      var pmap = { "4": "R8 000", "8": "R12 500", "16": "R22 000" };
       bundleLabel = "Unit Only \u2014 " + ch + "ch (" + (pmap[ch] || "") + ")";
     } else if (cat === "Camera Bundles" && bch) {
       var bpmap = { "Starter Bundle": "R13 700", "Pro Bundle": "R20 300", "Business Bundle": "R28 300" };
