@@ -75,9 +75,11 @@ img { max-width: 100%; }
 .brand-icon { width: 38px; height: 38px; flex-shrink: 0; }
 .brand-logo { height: 130px !important; width: auto !important; max-width: none !important; flex-shrink: 0; display: block; }
 .brand-logo-footer { height: 90px !important; width: auto !important; max-width: none !important; display: block; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.25; }
-.brand-text strong { font-size: 1rem; color: var(--text); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-text strong { font-size: 1.05rem; color: var(--text); font-weight: 800; letter-spacing: 0.1px; font-style: normal; }
 .brand-text span   { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.brand-pro { background: linear-gradient(90deg,#818cf8,#a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900; font-style: normal; font-size: inherit; }
+.brand-sub { font-size: 0.58rem !important; color: rgba(165,180,252,0.75) !important; text-transform: uppercase; letter-spacing: 2px !important; font-weight: 600; display: block; margin-top: 1px; }
 .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
 .nav-links li a {
   color: var(--muted); font-size: 0.92rem; font-weight: 500;
