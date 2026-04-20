@@ -1,10 +1,12 @@
 {
-  "version": "4.7.16",
+  "version": "4.7.17",
   "release_date": "2026-04-20",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.16.zip",
-  "file_name": "sentinelvision_update_v4.7.16.zip",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.17.zip",
+  "file_name": "sentinelvision_update_v4.7.17.zip",
   "file_size": "0.32 MB",
   "changes": [
-    "IMP: Internal stability improvements and performance optimisations"
+    "FIX: Tamper false alarm at dawn/dusk fixed",
+    "FIX: Tamper acknowledge stops spam alerts for 30 minutes",
+    "FEATURE: Per-camera Vehicle Sensitivity slider"
   ]
 }
