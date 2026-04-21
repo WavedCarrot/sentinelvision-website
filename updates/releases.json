@@ -1,45 +1,70 @@
-{
-  "releases": [
-    {
-      "version": "4.7.10",
-      "date": "2026-04-15",
-      "file": "sentinelvision_update_v4.7.10.zip",
-      "size": "0.62 MB"
-    },
-    {
-      "version": "4.7.9",
-      "date": "2026-04-15",
-      "file": "sentinelvision_update_v4.7.9.zip",
-      "size": "0.62 MB"
-    },
-      "file": "sentinelvision_update_v4.7.8.zip",
-      "size": "0.28 MB"
-    },
-    {
-      "version": "4.7.7",
-      "date": "2026-04-15",
-      "file": "sentinelvision_update_v4.7.7.zip",
-      "size": "0.28 MB"
-    },
-    {
-      "version": "4.7.6",
-      "date": "2026-04-15",
-      "file": "sentinelvision_update_v4.7.6.zip",
-      "size": "0.28 MB"
-    }
-  ]
-}
-    {
-      "version": "4.7.7",
-      "date": "2026-04-15",
-      "file": "sentinelvision_update_v4.7.7.zip",
-      "size": "0.28 MB"
-    },
-    {
-      "version": "4.7.6",
-      "date": "2026-04-15",
-      "file": "sentinelvision_update_v4.7.6.zip",
-      "size": "0.28 MB"
-    }
-  ]
+﻿{
+    "releases":  [
+                     {
+                         "date":  "2026-04-21",
+                         "version":  "4.7.20",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.20.zip"
+                     },
+                     {
+                         "date":  "2026-04-21",
+                         "version":  "4.7.19",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.19.zip"
+                     },
+                     {
+                         "date":  "2026-04-20",
+                         "version":  "4.7.18",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.18.zip"
+                     },
+                     {
+                         "date":  "2026-04-20",
+                         "version":  "4.7.17",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.17.zip"
+                     },
+                     {
+                         "date":  "2026-04-19",
+                         "version":  "4.7.16",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.16.zip"
+                     },
+                     {
+                         "date":  "2026-04-18",
+                         "version":  "4.7.14",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.14.zip"
+                     },
+                     {
+                         "date":  "2026-04-17",
+                         "version":  "4.7.13",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.13.zip"
+                     },
+                     {
+                         "date":  "2026-04-16",
+                         "version":  "4.7.11",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.7.11.zip"
+                     },
+                     {
+                         "date":  "2026-04-15",
+                         "version":  "4.7.9",
+                         "size":  "0.62 MB",
+                         "file":  "sentinelvision_update_v4.7.9.zip"
+                     },
+                     {
+                         "date":  "2026-04-15",
+                         "version":  "4.7.8",
+                         "size":  "0.28 MB",
+                         "file":  "sentinelvision_update_v4.7.8.zip"
+                     },
+                     {
+                         "date":  "2026-04-15",
+                         "version":  "4.7.6",
+                         "size":  "0.28 MB",
+                         "file":  "sentinelvision_update_v4.7.6.zip"
+                     }
+                 ]
 }
