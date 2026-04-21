@@ -1,11 +1,13 @@
 {
-  "version": "4.7.18",
-  "release_date": "2026-04-20",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.18.zip",
-  "file_name": "sentinelvision_update_v4.7.18.zip",
+  "version": "4.7.19",
+  "release_date": "2026-04-21",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.19.zip",
+  "file_name": "sentinelvision_update_v4.7.19.zip",
   "file_size": "0.33 MB",
   "changes": [
-    "FEATURE: PTZ Control Panel — pan/tilt/zoom modal with live preview, d-pad, speed control and 5 presets",
+    "FIX: Tamper false alarms on IR day/night switch — saturation collapse now detected, reference refreshes silently",
+    "FIX: Transient glitch false tampers eliminated — requires 4 consecutive frames before alerting",
+    "FEATURE: PTZ Control Panel with live preview, d-pad, zoom and presets",
     "UX: Navbar brand refresh — gradient Pro accent and Security Platform subtitle",
     "FIX: Vehicle Sensitivity slider now saves and loads correctly"
   ]
