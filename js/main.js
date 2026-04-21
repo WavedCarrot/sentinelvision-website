@@ -391,18 +391,7 @@ setupForm('update-form',   'update-result');
 setupForm('download-form', 'download-result');
 
 // ── Reviews ───────────────────────────────────────────────
-const SEED_REVIEWS = [
-  { seed: true, stars: 5, name: 'Riaan Botha', role: 'Farm Owner, Limpopo',
-    text: 'Set it up on my farm and it immediately caught an intruder at 2am. Got the Telegram photo on my phone within seconds. Worth every cent.' },
-  { seed: true, stars: 5, name: 'Danie van Wyk', role: 'Retail Business, Pretoria',
-    text: 'Replaced an expensive cloud CCTV subscription with SentinelVision. Better detection, no monthly cloud fees, and my footage never leaves the premises.' },
-  { seed: true, stars: 5, name: 'Michelle Ferreira', role: 'Guesthouse Owner, Cape Town',
-    text: 'The zone detection is incredible. I drew zones around my gate and reception entrance — no more false alerts from trees or animals in the background.' },
-  { seed: true, stars: 4.5, name: 'Sifiso Ndlovu', role: 'Warehouse Manager, Durban',
-    text: 'Runs 24/7 without any issues. The weapon detection gave us peace of mind during a difficult period. Support team was quick to help with our RTSP setup.' },
-  { seed: true, stars: 5, name: 'Andre Steyn', role: 'Residential Estate, Stellenbosch',
-    text: 'We run 6 cameras across the property. People counting and loitering alerts work exactly as described. The local processing means zero lag on the alerts.' },
-];
+const SEED_REVIEWS = [];
 
 function escapeHtml(str) {
   return String(str)

@@ -837,16 +837,6 @@ img { max-width: 100%; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── Hero dot pattern (static, subtle) ──────────────────────── */
-.hero-bg::after {
-  content: '';
-  position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(rgba(59,130,246,0.18) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 80%);
-}
-
 /* ── Hero badge pulse glow ───────────────────────────────────── */
 .hero-badge { animation: badge-pulse 3.5s ease-in-out infinite; }
 @keyframes badge-pulse {
