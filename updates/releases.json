@@ -2,15 +2,15 @@
     "releases":  [
                      {
                          "date":  "2026-04-21",
-                         "version":  "4.7.20",
+                         "version":  "4.7.21",
                          "size":  "0.33 MB",
-                         "file":  "sentinelvision_update_v4.7.20.zip"
+                         "file":  "sentinelvision_update_v4.7.21.zip"
                      },
                      {
                          "date":  "2026-04-21",
-                         "version":  "4.7.19",
+                         "version":  "4.7.20",
                          "size":  "0.33 MB",
-                         "file":  "sentinelvision_update_v4.7.19.zip"
+                         "file":  "sentinelvision_update_v4.7.20.zip"
                      },
                      {
                          "date":  "2026-04-20",

@@ -1,14 +1,14 @@
-{
-  "version": "4.7.20",
+﻿{
+  "version": "4.7.21",
   "release_date": "2026-04-21",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.20.zip",
-  "file_name": "sentinelvision_update_v4.7.20.zip",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.21.zip",
+  "file_name": "sentinelvision_update_v4.7.21.zip",
   "file_size": "0.33 MB",
   "changes": [
-    "FIX: Event snapshot lightbox now displays correctly — clicking an event image opens the full-size photo modal instead of showing a broken placeholder",
-    "FIX: Tamper false alarms on IR day/night switch — saturation collapse now detected, reference refreshes silently",
-    "FIX: Transient glitch false tampers eliminated — requires 4 consecutive frames before alerting",
+    "IMPROVE: Post-install migration now covers all database columns - no missing column errors when upgrading from any older version",
+    "FIX: Event snapshot lightbox displays correctly - clicking an event image opens the full-size photo modal",
+    "FIX: Tamper false alarms on IR day/night switch eliminated",
     "FEATURE: PTZ Control Panel with live preview, d-pad, zoom and presets",
-    "UX: Navbar brand refresh — gradient Pro accent and Security Platform subtitle"
+    "UX: Navbar brand refresh - gradient Pro accent and Security Platform subtitle"
   ]
 }
