@@ -1,0 +1,19 @@
+# Treat all files as text unless specified below
+* text=auto
+
+# Binary files - never do line-ending conversion
+*.zip        binary
+*.gz         binary
+*.tar        binary
+*.png        binary
+*.jpg        binary
+*.jpeg       binary
+*.gif        binary
+*.ico        binary
+*.webp       binary
+*.svg        text
+*.woff       binary
+*.woff2      binary
+*.ttf        binary
+*.eot        binary
+*.pdf        binary
