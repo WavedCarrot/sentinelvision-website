@@ -818,3 +818,40 @@ img { max-width: 100%; }
 .lb-caption { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
 .lb-caption h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
 .lb-caption p  { font-size: 0.9rem; color: var(--muted); }
+
+/* ── Scroll reveal ───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Hero animated background grid ──────────────────────────── */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  animation: hero-grid 28s linear infinite;
+}
+@keyframes hero-grid {
+  0%   { background-position: 0 0; }
+  100% { background-position: 56px 56px; }
+}
+
+/* ── Hero badge pulse glow ───────────────────────────────────── */
+.hero-badge { animation: badge-pulse 3.5s ease-in-out infinite; }
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: none; }
+  50%       { box-shadow: 0 0 20px 5px rgba(59,130,246,0.15); }
+}
+
+/* ── Typewriter cursor ───────────────────────────────────────── */
+.typing-cursor {
+  color: #3b82f6; font-weight: 300;
+  animation: cur-blink 0.7s steps(1) infinite;
+}
+@keyframes cur-blink { 0%,100%{opacity:1} 50%{opacity:0} }

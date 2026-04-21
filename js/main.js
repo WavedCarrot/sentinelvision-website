@@ -560,3 +560,83 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   });
 });
+
+// ── Scroll reveal ─────────────────────────────────────────────
+(function() {
+  const STAGGERED = ['.feature-card', '.why-item', '.pricing-preview-card', '.contact-item', '.step-card'];
+  const SOLO      = ['.faq-item', '.section-header', '.compare-home-table', '.testimonial-card', '.review-cta', '.changelog-item'];
+
+  STAGGERED.forEach(sel => {
+    const parents = new Set([...document.querySelectorAll(sel)].map(el => el.parentElement));
+    parents.forEach(parent => {
+      parent.querySelectorAll(sel).forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.transitionDelay = (i * 0.09) + 's';
+      });
+    });
+  });
+
+  SOLO.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (!el.classList.contains('reveal')) el.classList.add('reveal');
+    });
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+// ── Animated counters (hero stats) ────────────────────────────
+(function() {
+  document.querySelectorAll('.hero-stats .stat strong').forEach(el => {
+    const text = el.textContent.trim();
+    const m = text.match(/^(\d+)(\D*)$/);
+    if (!m) return;
+    const target = parseInt(m[1], 10);
+    const suffix = m[2];
+    el.textContent = '0' + suffix;
+    const io = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      const dur = 1400, start = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(ease * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target + suffix;
+      })(performance.now());
+    }, { threshold: 0.6 });
+    io.observe(el.closest('.stat') || el);
+  });
+})();
+
+// ── Typewriter effect (hero gradient heading) ─────────────────
+(function() {
+  const el = document.querySelector('.hero-content .gradient-text');
+  if (!el) return;
+  const fullText = el.textContent.trim();
+  el.textContent = '';
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  cursor.textContent = '|';
+  el.parentNode.insertBefore(cursor, el.nextSibling);
+  let i = 0;
+  function type() {
+    if (i < fullText.length) {
+      el.textContent += fullText[i++];
+      setTimeout(type, i < 4 ? 90 : 46);
+    } else {
+      setTimeout(() => cursor.remove(), 1200);
+    }
+  }
+  setTimeout(type, 500);
+})();
