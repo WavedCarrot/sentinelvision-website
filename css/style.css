@@ -140,6 +140,16 @@ img { max-width: 100%; }
 .stat span   { font-size: 0.8rem; color: var(--muted); }
 .stat-divider { width: 1px; height: 40px; background: var(--border); }
 
+/* ── Hero trust strip ────────────────────────────────────────── */
+.hero-trust {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  margin: 1rem 0 1.75rem;
+}
+.hero-trust span {
+  font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 0.35rem;
+}
+.hero-trust i { color: #22c55e; font-size: 0.78rem; }
+
 /* ── SECTIONS ─────────────────────────────────────── */
 .section      { padding: 6rem 0; }
 .section-dark { background: var(--bg2); }
@@ -827,19 +837,14 @@ img { max-width: 100%; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── Hero animated background grid ──────────────────────────── */
+/* ── Hero dot pattern (static, subtle) ──────────────────────── */
 .hero-bg::after {
   content: '';
   position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px);
-  background-size: 56px 56px;
-  animation: hero-grid 28s linear infinite;
-}
-@keyframes hero-grid {
-  0%   { background-position: 0 0; }
-  100% { background-position: 56px 56px; }
+  background-image: radial-gradient(rgba(59,130,246,0.18) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 80%);
 }
 
 /* ── Hero badge pulse glow ───────────────────────────────────── */
