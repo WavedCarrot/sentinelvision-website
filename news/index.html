@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>News &amp; Announcements  SentinelVision Pro</title>
+  <title>News &amp; Announcements &mdash; SentinelVision Pro</title>
 
   <meta name="description" content="Latest news, announcements, and notices from SentinelVision Pro.">
 
@@ -16,13 +16,13 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SentinelVision Pro">
-  <meta property="og:title"       content="News &amp; Announcements  SentinelVision Pro">
+  <meta property="og:title"       content="News &amp; Announcements &mdash; SentinelVision Pro">
   <meta property="og:description" content="Latest news, announcements, and notices from SentinelVision Pro.">
   <meta property="og:url"         content="https://sentinelvision.net.za/news/">
   <meta property="og:image"       content="https://sentinelvision.net.za/img/logo.png">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="News &amp; Announcements  SentinelVision Pro">
+  <meta name="twitter:title"       content="News &amp; Announcements &mdash; SentinelVision Pro">
   <meta name="twitter:description" content="Latest news, announcements, and notices from SentinelVision Pro.">
   <meta name="twitter:image"       content="https://sentinelvision.net.za/img/logo.png">
 
@@ -150,6 +150,22 @@
              type-urgent  ? red   (critical notices)
            ---------------------------------------------------- -->
 
+      <!-- -- POST 3 -- -->
+      <div class="news-card type-info">
+        <div class="news-card-meta">
+          <span class="news-tag info"><i class="fas fa-shield-alt me-1"></i> Feature Update</span>
+          <span class="news-date">21 April 2026</span>
+        </div>
+        <div class="news-title">v4.7.19 &mdash; Tamper Detection False Alarm Fix for IR Cameras</div>
+        <div class="news-body">If you use cameras that automatically switch between colour and infrared (night vision) mode, you may have noticed occasional false tamper alerts during those transitions &mdash; especially at dawn and dusk. <strong>v4.7.19 eliminates this.</strong>
+
+The tamper detection engine now monitors the HSV saturation channel of each camera feed. When a sudden drop in colour saturation is detected (the signature of an IR mode switch), SentinelVision silently refreshes the reference frame instead of raising an alarm. This means you get alerts when your camera is actually tampered with &mdash; not when it's simply doing what it's designed to do at night.
+
+Additionally, the consecutive-frame thresholds required before a tamper alert fires have been raised slightly across all sensitivity levels, further reducing edge-case false positives without impacting genuine tamper detection speed.
+
+<strong>Update to v4.7.19</strong> from the System Updates page inside SentinelVision, or download directly from the <a href="/changelog/" style="color:var(--accent)">Changelog</a>.</div>
+      </div>
+
       <!-- -- POST 2 -- -->
       <div class="news-card type-info">
         <div class="news-card-meta">
@@ -208,6 +224,11 @@ Check back here regularly for updates.</div>
     <p class="footer-copy">&copy; 2026 SentinelVision Pro &mdash; <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a></p>
   </div>
 </footer>
+
+<a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script src="/js/main.js"></script>
 </body>
