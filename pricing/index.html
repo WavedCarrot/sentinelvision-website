@@ -28,6 +28,39 @@
 
   <link rel="icon" type="image/png" href="/img/favicon.png">
 
+  <!-- Structured Data: Product pricing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "SentinelVision Pro",
+    "description": "AI-powered local security software with zone detection, loitering alerts, weapon detection, people counting, and real-time Telegram alerts. No cloud. No per-camera fees.",
+    "brand": { "@type": "Brand", "name": "SentinelVision Pro" },
+    "url": "https://sentinelvision.net.za/",
+    "image": "https://sentinelvision.net.za/img/logo.png",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Zone Detection & Loitering",
+        "price": "150",
+        "priceCurrency": "ZAR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "150", "priceCurrency": "ZAR", "unitText": "month" },
+        "url": "https://sentinelvision.net.za/pricing/",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Full Feature Bundle",
+        "price": "500",
+        "priceCurrency": "ZAR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "500", "priceCurrency": "ZAR", "unitText": "month" },
+        "url": "https://sentinelvision.net.za/pricing/",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="/css/style.css">

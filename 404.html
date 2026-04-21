@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found &mdash; SentinelVision Pro</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .notfound-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .notfound-code {
+      font-size: clamp(5rem, 20vw, 10rem);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, #3b82f6 30%, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .notfound-icon {
+      font-size: 3rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .notfound-wrap h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .notfound-wrap p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 440px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .notfound-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <img src="/img/logo.svg" alt="SentinelVision Pro" class="brand-logo">
+      <div class="brand-text">
+        <strong>SentinelVision <em class="brand-pro">Pro</em></strong><span class="brand-sub">Security Platform</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/platform/">Platform</a></li>
+      <li><a href="/gallery/">Gallery</a></li>
+      <li><a href="/docs/">Docs</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/changelog/">Changelog</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/order/" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="notfound-wrap">
+  <i class="fas fa-shield-halved notfound-icon"></i>
+  <div class="notfound-code">404</div>
+  <h1>Page Not Found</h1>
+  <p>The page you're looking for doesn't exist or may have moved. Use the links below to get back on track.</p>
+  <div class="notfound-links">
+    <a href="/" class="btn btn-primary"><i class="fas fa-house"></i> Go Home</a>
+    <a href="/pricing/" class="btn btn-ghost"><i class="fas fa-tag"></i> Pricing</a>
+    <a href="/docs/" class="btn btn-ghost"><i class="fas fa-book"></i> Docs</a>
+    <a href="/contact/" class="btn btn-ghost"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+</div>
+
+<a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
