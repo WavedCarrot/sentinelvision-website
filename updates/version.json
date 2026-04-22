@@ -1,8 +1,8 @@
 ﻿{
   "version": "4.7.21",
   "release_date": "2026-04-21",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.21.zip",
-  "file_name": "sentinelvision_update_v4.7.21.zip",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.21_r2.zip",
+  "file_name": "sentinelvision_update_v4.7.21_r2.zip",
   "file_size": "0.33 MB",
   "changes": [
     "IMPROVE: Post-install migration now covers all database columns - no missing column errors when upgrading from any older version",
