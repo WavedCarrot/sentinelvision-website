@@ -119,13 +119,13 @@
 
 
 
-      <!-- v4.7.24 -->
+      <!-- v4.7.25 -->
 
       <div class="changelog-entry">
 
         <div class="changelog-header">
 
-          <span class="changelog-version">v4.7.24</span>
+          <span class="changelog-version">v4.7.25</span>
 
           <span class="changelog-badge cl-latest">Latest</span>
 
@@ -137,17 +137,51 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Live stream no longer freezes on a stale frame</strong> &mdash; frame timestamps are tracked per camera; if the detection engine stops updating a camera feed the stream detects the stale frame within 5 seconds and automatically reconnects via direct RTSP</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Live stream frozen frame fully resolved</strong> &mdash; annotated frame timestamps are now tracked independently from raw frame timestamps; if AI inference has not produced a fresh annotated frame within 5 seconds the stream automatically falls back to the live raw camera feed, preventing any frozen/old frame from being served</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Live stream crash on startup</strong> &mdash; numpy array truth-value <em>ValueError</em> in the stream loop replaced with explicit <code>is not None</code> check</li>
 
           </ul>
 
         </div>
 
         <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.24.zip" class="btn btn-primary btn-sm" download>
-            <i class="fas fa-download"></i>&nbsp; Download v4.7.24
+          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.25.zip" class="btn btn-primary btn-sm" download>
+            <i class="fas fa-download"></i>&nbsp; Download v4.7.25
           </a>
           <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+        </div>
+
+      </div>
+
+
+
+      <!-- v4.7.24 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.24</span>
+
+          <span class="changelog-badge" style="background:rgba(100,116,139,0.15);color:#94a3b8;border:1px solid rgba(100,116,139,0.3);">Superseded</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Initial live stream stale-frame detection</li>
+
+          </ul>
+
+        </div>
+
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <span style="font-size:0.78rem;color:var(--muted);">Superseded by v4.7.25 &mdash; upgrade recommended</span>
         </div>
 
       </div>
