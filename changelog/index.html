@@ -118,6 +118,79 @@
 
 
 
+      <!-- v4.7.23 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.23</span>
+
+          <span class="changelog-badge cl-latest">Latest</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Live stream bounding boxes</strong> &mdash; person and vehicle outlines with track IDs are now drawn on the live camera feed in real time; previously the raw un-annotated frame was served to the browser</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Live stream crash (HTTP 500)</strong> &mdash; replaced Python <code>or</code> short-circuit on numpy arrays (which raised a <em>ValueError</em>) with an explicit <code>is not None</code> guard</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Person sensitivity restored to 0.75</strong> &mdash; confidence floor raised back to 0.75 day / 0.85 night to prevent false person alerts on empty scenes; post-install migration automatically restores any cameras lowered by the previous update</li>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Web interface available within 1 second of service start</strong> &mdash; weapon model loading moved to a background thread so it no longer blocks startup for up to 60 seconds</li>
+
+          </ul>
+
+        </div>
+
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.23.zip" class="btn btn-primary btn-sm" download>
+            <i class="fas fa-download"></i>&nbsp; Download v4.7.23
+          </a>
+          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+        </div>
+
+      </div>
+
+
+
+      <!-- v4.7.22 -->
+
+      <div class="changelog-entry">
+
+        <div class="changelog-header">
+
+          <span class="changelog-version">v4.7.22</span>
+
+          <span class="changelog-badge" style="background:rgba(100,116,139,0.15);color:#94a3b8;border:1px solid rgba(100,116,139,0.3);">Superseded</span>
+
+          <span class="changelog-date">April 2026</span>
+
+        </div>
+
+        <div class="changelog-body">
+
+          <ul>
+
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Bug fixes and live view improvements</li>
+
+          </ul>
+
+        </div>
+
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <span style="font-size:0.78rem;color:var(--muted);">Superseded by v4.7.23 &mdash; upgrade recommended</span>
+        </div>
+
+      </div>
+
+
+
       <!-- v4.7.21 -->
 
       <div class="changelog-entry">
@@ -126,7 +199,7 @@
 
           <span class="changelog-version">v4.7.21</span>
 
-          <span class="changelog-badge cl-latest">Latest</span>
+          <span class="changelog-badge" style="background:rgba(100,116,139,0.15);color:#94a3b8;border:1px solid rgba(100,116,139,0.3);">Superseded</span>
 
           <span class="changelog-date">April 2026</span>
 
@@ -144,11 +217,8 @@
 
         </div>
 
-        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-          <a href="https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.21_r2.zip" class="btn btn-primary btn-sm" download>
-            <i class="fas fa-download"></i>&nbsp; Download v4.7.21
-          </a>
-          <span style="font-size:0.78rem;color:var(--muted);">AES-256 encrypted &bull; Updates from any older version are supported</span>
+        <div style="padding:0.75rem 1.5rem;border-top:1px solid var(--border);">
+          <span style="font-size:0.78rem;color:var(--muted);">Superseded by v4.7.22 &mdash; upgrade recommended</span>
         </div>
 
       </div>
