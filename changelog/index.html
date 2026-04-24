@@ -137,21 +137,7 @@
 
           <ul>
 
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Fight detection false alerts resolved</strong> &mdash; a bounding box format mismatch caused all person centers to be computed as (0,0), making distance always zero and firing fight alerts whenever 2 people were visible; both x/y/width/height and x1/y1/x2/y2 formats now correctly handled</li>
-
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Fall detection false alerts resolved</strong> &mdash; same bbox format bug caused person height to always be 0, triggering fall alerts on anyone bending down or sitting; threshold tightened to 60px (truly lying flat)</li>
-
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>FIREARM shape detector no longer alerts on umbrellas and bags</strong> &mdash; visual gun-shape detection is now disabled when a trained weapon model is loaded; size range and aspect ratio thresholds tightened to reduce false positives when no model is present</li>
-
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Auto-delete retention setting now works</strong> &mdash; the &ldquo;Auto-delete after N days&rdquo; setting in System Settings was previously ignored (hardcoded 7 days); now correctly reads the configured value</li>
-
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Zone detection uses feet anchor point</strong> &mdash; zone membership is now tested against the bottom-center of the bounding box (where feet are) rather than bbox center, giving more accurate zone entry/exit for cameras at any angle</li>
-
-            <li><span class="cl-tag cl-tag-fix">FIX</span> <strong>Triangular (3-corner) zones now trigger alerts</strong> &mdash; zones drawn with 3 points were silently rejected; any polygon with 3 or more corners now works correctly</li>
-
-            <li><span class="cl-tag cl-tag-improve">IMPROVE</span> <strong>Loitering alerts now include a photo</strong> &mdash; the alert image shows the loitering person with their bounding box and duration annotated in orange, replacing the previous text-only message</li>
-
-            <li><span class="cl-tag cl-tag-improve">IMPROVE</span> <strong>Events page queries faster on large datasets</strong> &mdash; composite database index added on (camera_id, created_at) so filtered event queries no longer require a full table scan</li>
+            <li><span class="cl-tag cl-tag-fix">FIX</span> Bug fixes and improvements</li>
 
           </ul>
 
