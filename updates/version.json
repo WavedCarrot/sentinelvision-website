@@ -1,14 +1,10 @@
 ﻿{
-  "version": "4.7.21",
-  "release_date": "2026-04-21",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.21_r2.zip",
-  "file_name": "sentinelvision_update_v4.7.21_r2.zip",
+  "version": "4.7.27",
+  "release_date": "2026-04-24",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.27.zip",
+  "file_name": "sentinelvision_update_v4.7.27.zip",
   "file_size": "0.33 MB",
   "changes": [
-    "IMPROVE: Post-install migration now covers all database columns - no missing column errors when upgrading from any older version",
-    "FIX: Event snapshot lightbox displays correctly - clicking an event image opens the full-size photo modal",
-    "FIX: Tamper false alarms on IR day/night switch eliminated",
-    "FEATURE: PTZ Control Panel with live preview, d-pad, zoom and presets",
-    "UX: Navbar brand refresh - gradient Pro accent and Security Platform subtitle"
+    "UI fixes and improvements"
   ]
 }
