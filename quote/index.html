@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -138,7 +138,7 @@
             </select>
           </div>
 
-          <!-- Channel selector â€” shown only for Devices -->
+          <!-- Channel selector — shown only for Devices -->
           <div class="form-group channel-row" id="channel-row">
             <label>Channel Count <span style="color:#f87171">*</span></label>
             <p style="font-size:0.83rem;color:var(--muted);margin:0.25rem 0 0.75rem">Choose how many cameras your unit should support:</p>
@@ -162,7 +162,7 @@
             <input type="hidden" id="q-channels" value="">
           </div>
 
-          <!-- Bundle sub-choice â€” shown only for Camera Bundles -->
+          <!-- Bundle sub-choice — shown only for Camera Bundles -->
           <div class="form-group channel-row" id="bundle-row">
             <label>Choose a Bundle <span style="color:#f87171">*</span></label>
             <p style="font-size:0.83rem;color:var(--muted);margin:0.25rem 0 0.75rem">Pick the bundle that suits your site:</p>
@@ -303,11 +303,21 @@
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
-   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+<!-- Social Float Buttons -->
+<div class="social-float-stack">
+  <a href="https://www.facebook.com/share/1Az3bmJ3Cc/?mibextid=wwXIfr"
+     class="social-float facebook-float" target="_blank" rel="noopener" aria-label="Follow on Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://www.instagram.com/_sentinelvision_?igsh=MTUzNGM3NXlmajFnaA%3D%3D&utm_source=qr"
+     class="social-float instagram-float" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/27725714142?text=Hi%2C%20I%27m%20interested%20in%20SentinelVision%20Pro"
+     class="social-float whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
 
 <script src="/js/main.js"></script>
 <script>
@@ -523,7 +533,7 @@
       });
     } catch (_) {
       resultEl.textContent =
-        "Network error â€” please check your connection and try again, or contact us directly at info.sentinelvision@gmail.com";
+        "Network error — please check your connection and try again, or contact us directly at info.sentinelvision@gmail.com";
       resultEl.className = "form-result error";
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Device Request';

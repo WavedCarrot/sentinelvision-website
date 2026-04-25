@@ -446,16 +446,34 @@ img { max-width: 100%; }
 .footer-copy { font-size: 0.8rem; color: var(--muted); }
 .footer-copy a { color: var(--muted); }
 .footer-copy a:hover { color: var(--text); }
-/* ── WHATSAPP FLOAT BUTTON ────────────────────────────── */
-.whatsapp-float {
+/* ── SOCIAL FLOAT BUTTONS ─────────────────────────────── */
+.social-float-stack {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-  width: 58px; height: 58px; border-radius: 50%;
-  background: #25d366; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.65rem; box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-  transition: all 0.2s; text-decoration: none;
+  display: flex; flex-direction: column; align-items: center; gap: .65rem;
 }
-.whatsapp-float:hover { transform: scale(1.1); background: #1da855; text-decoration: none; box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+.social-float-stack a {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; text-decoration: none; color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.social-float-stack a:hover { transform: scale(1.1); text-decoration: none; }
+/* WhatsApp — bottom / largest */
+.whatsapp-float {
+  width: 58px !important; height: 58px !important; font-size: 1.65rem !important;
+  background: #25d366; box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+}
+.whatsapp-float:hover { background: #1da855; box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+/* Facebook */
+.facebook-float { background: #1877f2; box-shadow: 0 4px 18px rgba(24,119,242,0.4); }
+.facebook-float:hover { background: #1260c4; box-shadow: 0 6px 24px rgba(24,119,242,0.6); }
+/* Instagram */
+.instagram-float {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  box-shadow: 0 4px 18px rgba(214,36,159,0.4);
+}
+.instagram-float:hover { box-shadow: 0 6px 24px rgba(214,36,159,0.6); }
 
 /* ── TESTIMONIALS ─────────────────────────────────────── */
 .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -782,16 +800,18 @@ img { max-width: 100%; }
 /* ── ACTIVE NAV LINK ───────────────────────────────── */
 .nav-links li a.nav-active { color: var(--text) !important; background: rgba(59,130,246,0.1); border-radius: 6px; }
 
-/* ── WHATSAPP FLOAT — HOVER TOOLTIP ──────────────────── */
-.whatsapp-float::after {
-  content: 'Chat on WhatsApp';
+/* ── SOCIAL FLOAT — HOVER TOOLTIPS ───────────────────── */
+.social-float-stack a::after {
   position: absolute; right: calc(100% + 12px); top: 50%; transform: translateY(-50%);
   background: #111c2d; border: 1px solid var(--border); color: var(--text);
   font-size: 0.78rem; white-space: nowrap; padding: 0.35rem 0.75rem;
   border-radius: 6px; opacity: 0; pointer-events: none; transition: opacity 0.2s;
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
-.whatsapp-float:hover::after { opacity: 1; }
+.whatsapp-float::after   { content: 'Chat on WhatsApp'; }
+.facebook-float::after   { content: 'Follow on Facebook'; }
+.instagram-float::after  { content: 'Follow on Instagram'; }
+.social-float-stack a:hover::after { opacity: 1; }
 
 /* ── TOAST NOTIFICATION ────────────────────────────── */
 .web-toast {
