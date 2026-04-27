@@ -1,10 +1,11 @@
 ﻿{
-  "version": "4.7.27",
-  "release_date": "2026-04-24",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.27.zip",
-  "file_name": "sentinelvision_update_v4.7.27.zip",
+  "version": "4.7.28",
+  "release_date": "2026-04-27",
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.28.zip",
+  "file_name": "sentinelvision_update_v4.7.28.zip",
   "file_size": "0.33 MB",
+  "changelog": "Auto update notifications, channel tier locking, license improvements",
   "changes": [
-    "UI fixes and improvements"
+    "Auto update notifications, channel tier locking, license improvements"
   ]
 }
