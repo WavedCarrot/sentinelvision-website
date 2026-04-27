@@ -1,11 +1,11 @@
-﻿{
-  "version": "4.7.28",
-  "release_date": "2026-04-27",
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.28.zip",
-  "file_name": "sentinelvision_update_v4.7.28.zip",
-  "file_size": "0.33 MB",
-  "changelog": "UI fixes and changes",
-  "changes": [
-    "UI fixes and changes"
-  ]
+{
+    "file_name":  "sentinelvision_update_v4.7.29.zip",
+    "version":  "4.7.29",
+    "changelog":  "Stability fix",
+    "download_url":  "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.29.zip",
+    "file_size":  "0.33 MB",
+    "changes":  [
+                    "Stability fix"
+                ],
+    "release_date":  "2026-04-27"
 }
