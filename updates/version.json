@@ -4,8 +4,8 @@
   "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.28.zip",
   "file_name": "sentinelvision_update_v4.7.28.zip",
   "file_size": "0.33 MB",
-  "changelog": "Auto update notifications, channel tier locking, license improvements",
+  "changelog": "UI fixes and changes",
   "changes": [
-    "Auto update notifications, channel tier locking, license improvements"
+    "UI fixes and changes"
   ]
 }
