@@ -251,7 +251,7 @@ function setupForm(formId, resultId, submitId) {
       result.className = 'form-result error';
       result.innerHTML =
         '<i class="fas fa-exclamation-circle"></i> Something went wrong. ' +
-        'Please email us directly at <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a>';
+        'Please email us directly at <a href="mailto:info@sentinelvision.net.za">info@sentinelvision.net.za</a>';
       showWebToast('Something went wrong. Please try again.', 'error');
     } finally {
       if (submit) {
@@ -332,7 +332,7 @@ function setupForm(formId, resultId, submitId) {
       result.className = 'form-result error';
       result.innerHTML =
         '<i class="fas fa-exclamation-circle"></i> ' + (err.message || 'Something went wrong') +
-        '. Please email <a href="mailto:info.sentinelvision@gmail.com">info.sentinelvision@gmail.com</a>';
+        '. Please email <a href="mailto:info@sentinelvision.net.za">info@sentinelvision.net.za</a>';
       showWebToast(err.message || 'Something went wrong. Please try again.', 'error');
       if (submit) {
         submit.disabled = false;
