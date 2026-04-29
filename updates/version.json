@@ -1,10 +1,8 @@
 {
   "version": "4.7.30",
   "updated_at": "2026-04-29T00:00:00.000000",
-  "changelog": "Email update, camera password toggle, improved event search with date filters",
+  "changelog": "Improved event search with date filters, events page enhancements",
   "changes": [
-    "UX: Contact email updated to info@sentinelvision.net.za across all pages",
-    "UX: Camera scan -- password fields now have show/hide toggle eye button",
     "UX: Events page -- search now matches camera name, location, date and detection type",
     "UX: Events page -- date range From/To filters added to narrow events by date",
     "UX: Events page -- search box has clear (x) button",
