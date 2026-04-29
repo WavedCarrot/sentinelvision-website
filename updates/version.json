@@ -1,11 +1,14 @@
 {
-    "file_name":  "sentinelvision_update_v4.7.29.zip",
-    "version":  "4.7.29",
-    "changelog":  "Stability fix",
-    "download_url":  "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.29.zip",
-    "file_size":  "0.33 MB",
-    "changes":  [
-                    "Stability fix"
-                ],
-    "release_date":  "2026-04-27"
+  "version": "4.7.30",
+  "updated_at": "2026-04-29T00:00:00.000000",
+  "changelog": "Email update, camera password toggle, improved event search with date filters",
+  "changes": [
+    "UX: Contact email updated to info@sentinelvision.net.za across all pages",
+    "UX: Camera scan -- password fields now have show/hide toggle eye button",
+    "UX: Events page -- search now matches camera name, location, date and detection type",
+    "UX: Events page -- date range From/To filters added to narrow events by date",
+    "UX: Events page -- search box has clear (x) button",
+    "UX: Website -- Weapon Detection now clearly labelled as BETA with accuracy disclaimer"
+  ],
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.30.zip"
 }
