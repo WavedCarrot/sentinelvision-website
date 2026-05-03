@@ -3,15 +3,7 @@
   "updated_at": "2026-05-03T00:00:00.000000",
   "changelog": "Live view fixes: smooth stream, persistent labels, 15s refresh while watching. Fewer false alerts, mobile navbar fixed.",
   "changes": [
-    "Live View: Smooth stream -- labels drawn on every frame, no more frozen frames",
-    "Live View: YOLO refreshes every 15s while live view is open (120s when closed)",
-    "Live View: Persistent label cache keeps objects visible between YOLO passes",
-    "AI: Confidence threshold raised to 80% -- significantly fewer false alerts",
-    "AI: Night/IR threshold raised to 88% for extra accuracy in low light",
-    "AI: Alert requires 3 consecutive confirmed frames (was 2) before triggering",
-    "Mobile: Hamburger menu button fully visible and easy to tap on all phones",
-    "Mobile: Navbar layout fixed for iPhone -- logo, title and buttons always on screen",
-    "Fix: bullet separator in Events page was showing as &bull; literal text"
+    "Live View: Smooth stream -- labels drawn on every frame, no more frozen frames"
   ],
   "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.8.0.zip"
 }
