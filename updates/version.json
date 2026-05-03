@@ -1,12 +1,17 @@
 {
-  "version": "4.7.30",
-  "updated_at": "2026-04-29T00:00:00.000000",
-  "changelog": "Improved event search with date filters, events page enhancements",
+  "version": "4.8.0",
+  "updated_at": "2026-05-03T00:00:00.000000",
+  "changelog": "Live view fixes: smooth stream, persistent labels, 15s refresh while watching. Fewer false alerts, mobile navbar fixed.",
   "changes": [
-    "UX: Events page -- search now matches camera name, location, date and detection type",
-    "UX: Events page -- date range From/To filters added to narrow events by date",
-    "UX: Events page -- search box has clear (x) button",
-    "UX: Website -- Weapon Detection now clearly labelled as BETA with accuracy disclaimer"
+    "Live View: Smooth stream -- labels drawn on every frame, no more frozen frames",
+    "Live View: YOLO refreshes every 15s while live view is open (120s when closed)",
+    "Live View: Persistent label cache keeps objects visible between YOLO passes",
+    "AI: Confidence threshold raised to 80% -- significantly fewer false alerts",
+    "AI: Night/IR threshold raised to 88% for extra accuracy in low light",
+    "AI: Alert requires 3 consecutive confirmed frames (was 2) before triggering",
+    "Mobile: Hamburger menu button fully visible and easy to tap on all phones",
+    "Mobile: Navbar layout fixed for iPhone -- logo, title and buttons always on screen",
+    "Fix: bullet separator in Events page was showing as &bull; literal text"
   ],
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.7.30.zip"
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.8.0.zip"
 }
