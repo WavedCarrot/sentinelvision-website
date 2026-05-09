@@ -1,9 +1,9 @@
 {
-  "version": "4.8.0",
-  "updated_at": "2026-05-03T00:00:00.000000",
-  "changelog": "Live view fixes: smooth stream, persistent labels, 15s refresh while watching. Fewer false alerts, mobile navbar fixed.",
+  "version": "4.8.1",
+  "updated_at": "2026-05-09T00:00:00.000000",
+  "changelog": "Bug fix: resolves database migration error on fresh installs or upgrades.",
   "changes": [
-    "Live View: Smooth stream -- labels drawn on every frame, no more frozen frames"
+    "Fix: DB migration error on fresh installs (camera_channel_locked column)"
   ],
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.8.0.zip"
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.8.1.zip"
 }

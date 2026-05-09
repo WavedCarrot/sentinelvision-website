@@ -1,6 +1,12 @@
 ﻿{
     "releases":  [
                      {
+                         "date":  "2026-05-09",
+                         "version":  "4.8.1",
+                         "size":  "0.33 MB",
+                         "file":  "sentinelvision_update_v4.8.1.zip"
+                     },
+                     {
                          "date":  "2026-05-03",
                          "version":  "4.8.0",
                          "size":  "0.33 MB",
