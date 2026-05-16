@@ -110,22 +110,22 @@
           <div class="form-row">
             <div class="form-group">
               <label for="q-fname">First Name <span style="color:#f87171">*</span></label>
-              <input type="text" id="q-fname" placeholder="Jane" required autocomplete="given-name">
+              <input type="text" id="q-fname" name="first_name" placeholder="Jane" required autocomplete="given-name">
             </div>
             <div class="form-group">
               <label for="q-lname">Last Name <span style="color:#f87171">*</span></label>
-              <input type="text" id="q-lname" placeholder="Smith" required autocomplete="family-name">
+              <input type="text" id="q-lname" name="last_name" placeholder="Smith" required autocomplete="family-name">
             </div>
           </div>
 
           <div class="form-group">
             <label for="q-email">Email Address <span style="color:#f87171">*</span></label>
-            <input type="email" id="q-email" placeholder="jane@example.com" required autocomplete="email">
+            <input type="email" id="q-email" name="email" placeholder="jane@example.com" required autocomplete="email">
           </div>
 
           <div class="form-group">
             <label for="q-phone">Phone / WhatsApp Number <span style="font-weight:400;color:var(--muted)">(optional &mdash; speeds things up)</span></label>
-            <input type="tel" id="q-phone" placeholder="+27 82 123 4567" autocomplete="tel">
+            <input type="tel" id="q-phone" name="phone" placeholder="+27 82 123 4567" autocomplete="tel">
           </div>
 
           <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0">
@@ -133,7 +133,7 @@
           <!-- Category selection -->
           <div class="form-group">
             <label for="q-bundle">Category <span style="color:#f87171">*</span></label>
-            <select id="q-bundle" required>
+            <select id="q-bundle" name="category" required>
               <option value="" disabled selected>Select a category</option>
               <option value="Devices">Devices &mdash; use your own cameras (from R8 000)</option>
               <option value="Camera Bundles">Camera Bundles &mdash; unit + cameras included</option>
@@ -162,7 +162,7 @@
                 <div class="ch-price">R22 000</div>
               </div>
             </div>
-            <input type="hidden" id="q-channels" value="">
+            <input type="hidden" id="q-channels" name="channel_count" value="">
           </div>
 
           <!-- Bundle sub-choice � shown only for Camera Bundles -->
@@ -186,13 +186,13 @@
                 <div class="ch-price">R28 300</div>
               </div>
             </div>
-            <input type="hidden" id="q-bundle-choice" value="">
+            <input type="hidden" id="q-bundle-choice" name="bundle_choice" value="">
           </div>
 
           <!-- Property type -->
           <div class="form-group">
             <label for="q-property">Property Type <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-            <select id="q-property">
+            <select id="q-property" name="property_type">
               <option value="" disabled selected>Select property type</option>
               <option value="Home / Residence">Home / Residence</option>
               <option value="Small Office">Small Office</option>
@@ -206,7 +206,7 @@
           <!-- Notes -->
           <div class="form-group">
             <label for="q-notes">Additional Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-            <textarea id="q-notes" rows="3" placeholder="e.g. number of cameras, site details, specific questions..."></textarea>
+            <textarea id="q-notes" name="notes" rows="3" placeholder="e.g. number of cameras, site details, specific questions..."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary btn-full" id="q-submit">
