@@ -143,7 +143,10 @@
 <script>
 (function () {
   const BACKEND = 'https://tribunal-carbon-atlantic.ngrok-free.dev';
-  const checkoutId = localStorage.getItem('sv_checkout_id');
+
+  // Prefer URL params (Yoco appends ?id=ch_xxx on redirect) over localStorage
+  const params = new URLSearchParams(window.location.search);
+  const checkoutId = params.get('id') || params.get('checkoutId') || params.get('checkout_id') || localStorage.getItem('sv_checkout_id');
 
   const icon      = document.getElementById('status-icon');
   const title     = document.getElementById('status-title');
@@ -203,23 +206,39 @@
     return;
   }
 
-  fetch(BACKEND + '/verify-payment', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
-    body: JSON.stringify({ checkoutId: checkoutId }),
-  })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    if (data.success) {
-      showSuccess(data);
-    } else {
-      showError((data.error || 'Payment confirmed but key not ready yet.') +
-        ' Please check your email &mdash; your key may have already been sent. If not, contact <a href="mailto:info@sentinelvision.net.za">info@sentinelvision.net.za</a>.');
-    }
-  })
-  .catch(function() {
-    showError('Could not reach the license server. Your payment was received &mdash; please check your email for your license key, or contact <a href="mailto:info@sentinelvision.net.za">info@sentinelvision.net.za</a>.');
-  });
+  // Store the resolved ID in localStorage so refresh works
+  localStorage.setItem('sv_checkout_id', checkoutId);
+
+  function tryVerify(attemptsLeft) {
+    fetch(BACKEND + '/verify-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
+      body: JSON.stringify({ checkoutId: checkoutId }),
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success) {
+        showSuccess(data);
+        localStorage.removeItem('sv_checkout_id');
+      } else if (attemptsLeft > 0) {
+        // Webhook may not have fired yet — retry after 3 seconds
+        sub.textContent = 'Payment received. Generating your license key\u2026';
+        setTimeout(function() { tryVerify(attemptsLeft - 1); }, 3000);
+      } else {
+        showError((data.error || 'Payment confirmed but key not ready yet.') +
+          ' Please check your email &mdash; your key may have already been sent. If not, contact <a href="mailto:info@sentinelvision.net.za">info@sentinelvision.net.za</a>.');
+      }
+    })
+    .catch(function() {
+      if (attemptsLeft > 0) {
+        setTimeout(function() { tryVerify(attemptsLeft - 1); }, 3000);
+      } else {
+        showError('Could not reach the license server. Your payment was received &mdash; please check your email for your license key, or contact <a href="mailto:info@sentinelvision.net.za">info@sentinelvision.net.za</a>.');
+      }
+    });
+  }
+
+  tryVerify(4); // up to 5 attempts total (0 + 4 retries = ~15 seconds)
 })();
 </script>
 
