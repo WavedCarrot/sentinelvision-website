@@ -144,9 +144,10 @@
 (function () {
   const BACKEND = 'https://tribunal-carbon-atlantic.ngrok-free.dev';
 
-  // Prefer URL params (Yoco appends ?id=ch_xxx on redirect) over localStorage
+  // Yoco preserves our ?token= query param in the successUrl redirect
   const params = new URLSearchParams(window.location.search);
-  const checkoutId = params.get('id') || params.get('checkoutId') || params.get('checkout_id') || localStorage.getItem('sv_checkout_id');
+  const orderToken  = params.get('token') || '';
+  const checkoutId  = params.get('id') || params.get('checkoutId') || params.get('checkout_id') || localStorage.getItem('sv_checkout_id') || '';
 
   const icon      = document.getElementById('status-icon');
   const title     = document.getElementById('status-title');
@@ -201,19 +202,19 @@
     });
   };
 
-  if (!checkoutId) {
+  if (!orderToken && !checkoutId) {
     showError('No checkout session found. If you just paid, please check your email for your license key, or contact <a href="mailto:info@sentinelvision.net.za">info@sentinelvision.net.za</a> with your order details.');
     return;
   }
 
-  // Store the resolved ID in localStorage so refresh works
-  localStorage.setItem('sv_checkout_id', checkoutId);
+  // Store for refresh fallback
+  if (checkoutId) localStorage.setItem('sv_checkout_id', checkoutId);
 
   function tryVerify(attemptsLeft) {
     fetch(BACKEND + '/verify-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
-      body: JSON.stringify({ checkoutId: checkoutId }),
+      body: JSON.stringify({ token: orderToken, checkoutId: checkoutId }),
     })
     .then(function(r) { return r.json(); })
     .then(function(data) {
