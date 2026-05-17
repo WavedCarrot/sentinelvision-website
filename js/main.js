@@ -386,7 +386,7 @@ function setupForm(formId, resultId, submitId) {
 })();
 
 setupForm('contact-form',  'contact-result',  'c-submit');
-setupForm('quote-form',    'quote-result');
+// quote-form is handled by its own inline script (posts to backend for email)
 setupForm('update-form',   'update-result');
 setupForm('download-form', 'download-result');
 
