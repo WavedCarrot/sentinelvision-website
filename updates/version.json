@@ -1,9 +1,9 @@
 {
-  "version": "4.8.1",
-  "updated_at": "2026-05-09T00:00:00.000000",
-  "changelog": "Bug fix: resolves database migration error on fresh installs or upgrades.",
+  "version": "4.8.2",
+  "updated_at": "2026-05-17T00:00:00.000000",
+  "changelog": "Performance improvements and stability fixes.",
   "changes": [
-    "Fix: DB migration error on fresh installs (camera_channel_locked column)"
+    "Performance improvements and stability fixes"
   ],
-  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.8.1.zip"
+  "download_url": "https://sentinelvision.net.za/updates/files/sentinelvision_update_v4.8.2.zip"
 }
