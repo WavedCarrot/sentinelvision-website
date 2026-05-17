@@ -531,7 +531,7 @@
     try {
       res = await fetch(RAILWAY + "/api/quote-request", {
         method:  "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "1" },
         body:    JSON.stringify(payload),
       });
     } catch (_) {

@@ -308,7 +308,7 @@ function setupForm(formId, resultId, submitId) {
     try {
       const resp = await fetch(LICENSING_BACKEND + '/create-checkout', {
         method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
         body: JSON.stringify({
           name:          (firstName + ' ' + lastName).trim(),
           email:         email,

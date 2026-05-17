@@ -418,7 +418,7 @@ async function runVerify() {
     var timer = setTimeout(function() { controller.abort(); }, 25000);
     var resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
       method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
       body:    JSON.stringify({ checkoutId: _pendingCheckoutId }),
       signal:  controller.signal,
     });
