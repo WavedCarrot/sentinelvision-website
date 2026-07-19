@@ -285,6 +285,300 @@
 
 
 
+<!-- ----------- INTERACTIVE DEMO ----------- -->
+
+<section class="section section-dark" id="interactive-demo">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-badge">See It In Action</div>
+
+      <h2>Live Dashboard Demo</h2>
+
+      <p>See the complete SentinelVision interface in action. Click to navigate through a live demo scenario.</p>
+
+    </div>
+
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;max-width:1100px;margin:0 auto">
+
+      <!-- Demo Container with Dashboard Mockup -->
+      <div style="display:grid;grid-template-columns:1fr 220px;gap:0;min-height:600px;background:#0a0f1f">
+
+        <!-- Main Dashboard Screen -->
+        <div id="demo-screen" style="background:#0a0f1f;position:relative;overflow:hidden;display:flex;flex-direction:column">
+
+          <!-- Navbar -->
+          <div style="background:#0d1220;border-bottom:1px solid rgba(59,130,246,0.2);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center">
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <div style="width:32px;height:32px;background:linear-gradient(135deg,var(--accent),#7c3aed);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold">SV</div>
+              <span style="color:var(--text);font-weight:600">SentinelVision</span>
+            </div>
+            <div style="display:flex;gap:1.5rem;font-size:0.85rem;color:var(--muted)">
+              <span style="cursor:pointer;color:var(--accent)">Dashboard</span>
+              <span>Cameras</span>
+              <span>Zones</span>
+              <span>Settings</span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div id="demo-content" style="flex:1;padding:2rem;overflow-y:auto;opacity:1;transition:opacity 0.5s">
+
+            <!-- Demo Step 1: Dashboard Overview -->
+            <div class="demo-step" id="step-1" style="display:none">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;padding:1rem 1.25rem;border-radius:14px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2)">
+                <div>
+                  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:0.5rem">SYSTEM STATUS</div>
+                  <div style="font-size:1.4rem;color:#f87171;font-weight:700">System is ARMED</div>
+                  <div style="color:var(--muted);font-size:0.9rem">All active cameras are monitoring and sending alerts</div>
+                </div>
+                <button style="background:#1d4ed8;color:#fff;border:none;border-radius:999px;padding:0.7rem 1rem;font-size:0.85rem;cursor:pointer">⚡ Disarm</button>
+              </div>
+
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem">
+                <div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:14px;padding:1.25rem">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.6rem">Active Cameras</div>
+                  <div style="font-size:2rem;color:var(--accent);font-weight:700">0</div>
+                  <div style="font-size:0.8rem;color:var(--text);margin-top:0.75rem">All online</div>
+                </div>
+                <div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:1.25rem">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.6rem">Detections Today</div>
+                  <div style="font-size:2rem;color:var(--green);font-weight:700">0</div>
+                  <div style="font-size:0.8rem;color:var(--text);margin-top:0.75rem">Since midnight</div>
+                </div>
+                <div style="background:rgba(234,179,8,0.1);border:1px solid rgba(234,179,8,0.2);border-radius:14px;padding:1.25rem">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.6rem">Alerts Sent</div>
+                  <div style="font-size:2rem;color:#d97706;font-weight:700">0</div>
+                  <div style="font-size:0.8rem;color:var(--text);margin-top:0.75rem">Telegram</div>
+                </div>
+                <div style="background:rgba(79,70,229,0.1);border:1px solid rgba(79,70,229,0.2);border-radius:14px;padding:1.25rem">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.6rem">People Now</div>
+                  <div style="font-size:2rem;color:#8b5cf6;font-weight:700">0</div>
+                  <div style="font-size:0.8rem;color:var(--text);margin-top:0.75rem">Live count</div>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;margin-bottom:1.5rem">
+                <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.18);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.9rem;color:var(--text);font-weight:700">Persons</div>
+                  <div style="font-size:1.5rem;color:var(--accent);font-weight:700;margin-top:0.5rem">0</div>
+                </div>
+                <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.9rem;color:var(--text);font-weight:700">Vehicles</div>
+                  <div style="font-size:1.5rem;color:var(--green);font-weight:700;margin-top:0.5rem">0</div>
+                </div>
+                <div style="background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.18);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.9rem;color:var(--text);font-weight:700">Animals</div>
+                  <div style="font-size:1.5rem;color:#d97706;font-weight:700;margin-top:0.5rem">0</div>
+                </div>
+                <div style="background:rgba(79,70,229,0.08);border:1px solid rgba(79,70,229,0.18);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.9rem;color:var(--text);font-weight:700">Objects</div>
+                  <div style="font-size:1.5rem;color:#8b5cf6;font-weight:700;margin-top:0.5rem">0</div>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.2);border-radius:14px;padding:1.5rem">
+                  <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.8rem">System Metrics</div>
+                  <div style="display:grid;gap:0.75rem;color:var(--text);font-size:0.9rem">
+                    <div>CPU: 1%</div>
+                    <div>RAM: 35%</div>
+                    <div>Disk: 29GB</div>
+                    <div>Temp: 28°C</div>
+                  </div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.2);border-radius:14px;padding:1.5rem">
+                  <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.8rem">24h Activity</div>
+                  <div style="height:140px;border-radius:14px;background:linear-gradient(180deg,rgba(59,130,246,0.15),transparent);display:flex;align-items:flex-end">
+                    <div style="flex:1;height:35%;margin:0 4px;background:rgba(59,130,246,0.7);border-radius:4px"></div>
+                    <div style="flex:1;height:55%;margin:0 4px;background:rgba(59,130,246,0.85);border-radius:4px"></div>
+                    <div style="flex:1;height:70%;margin:0 4px;background:rgba(59,130,246,0.65);border-radius:4px"></div>
+                    <div style="flex:1;height:45%;margin:0 4px;background:rgba(59,130,246,0.6);border-radius:4px"></div>
+                    <div style="flex:1;height:60%;margin:0 4px;background:rgba(59,130,246,0.75);border-radius:4px"></div>
+                    <div style="flex:1;height:50%;margin:0 4px;background:rgba(59,130,246,0.68);border-radius:4px"></div>
+                    <div style="flex:1;height:80%;margin:0 4px;background:rgba(59,130,246,0.9);border-radius:4px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Demo Step 2: Camera Management -->
+            <div class="demo-step" id="step-2" style="display:none">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem">
+                <div>
+                  <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.35rem">CAMERA MANAGEMENT</div>
+                  <div style="font-size:1.35rem;color:var(--text);font-weight:700">No cameras configured yet</div>
+                </div>
+                <button style="background:var(--accent);color:#fff;border:none;border-radius:999px;padding:0.8rem 1rem;font-size:0.85rem;cursor:pointer">+ Add Camera</button>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem">
+                <div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:14px;padding:1.25rem">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">TOTAL CAMERAS</div>
+                  <div style="font-size:1.7rem;color:var(--accent);font-weight:700">0</div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.2);border-radius:14px;padding:1.25rem">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">ONLINE NOW</div>
+                  <div style="font-size:1.7rem;color:var(--text);font-weight:700">--</div>
+                </div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.2);border-radius:16px;padding:1.5rem;text-align:center">
+                <div style="font-size:2rem;margin-bottom:0.75rem">📷</div>
+                <div style="font-size:1rem;color:var(--text);font-weight:700;margin-bottom:0.5rem">Welcome to SentinelVision Pro</div>
+                <div style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem">No cameras configured yet. Follow these steps to start monitoring your property.</div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+                  <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:left">
+                    <div style="font-size:1.1rem">🔍</div>
+                    <div style="font-size:0.85rem;font-weight:700;margin:0.5rem 0">Step 1: Scan Network</div>
+                    <div style="font-size:0.8rem;color:var(--muted)">Auto-discover cameras on your LAN.</div>
+                  </div>
+                  <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:left">
+                    <div style="font-size:1.1rem">✏️</div>
+                    <div style="font-size:0.85rem;font-weight:700;margin:0.5rem 0">Step 2: Add Manually</div>
+                    <div style="font-size:0.8rem;color:var(--muted)">Enter RTSP URL directly.</div>
+                  </div>
+                  <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:left">
+                    <div style="font-size:1.1rem">ℹ️</div>
+                    <div style="font-size:0.85rem;font-weight:700;margin:0.5rem 0">Step 3: Common RTSP</div>
+                    <div style="font-size:0.8rem;color:var(--muted)">Use common camera stream formats.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Demo Step 3: Zone Detection -->
+            <div class="demo-step" id="step-3" style="display:none">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem">
+                <div>
+                  <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.35rem">ZONE DETECTION</div>
+                  <div style="font-size:1.35rem;color:var(--text);font-weight:700">No zones configured yet</div>
+                </div>
+                <button style="background:rgba(59,130,246,0.08);color:var(--muted);border:1px solid rgba(59,130,246,0.18);border-radius:999px;padding:0.8rem 1rem;font-size:0.85rem;cursor:not-allowed" disabled>Draw Zone</button>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin-bottom:1.5rem">
+                <div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">TOTAL ZONES</div>
+                  <div style="font-size:1.4rem;color:var(--accent);font-weight:700">0</div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">ACTIVE</div>
+                  <div style="font-size:1.4rem;color:var(--text);font-weight:700">0</div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">ALERT ZONES</div>
+                  <div style="font-size:1.4rem;color:var(--text);font-weight:700">0</div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">COUNTING</div>
+                  <div style="font-size:1.4rem;color:var(--text);font-weight:700">0</div>
+                </div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:16px;padding:1.5rem;text-align:center">
+                <div style="font-size:2rem;margin-bottom:0.75rem">📍</div>
+                <div style="font-size:1rem;color:var(--text);font-weight:700;margin-bottom:0.5rem">No zones configured yet</div>
+                <div style="color:var(--muted);font-size:0.9rem">Select a camera above and click Draw Zone to get started. Zones allow you to create detection areas and tripwires.</div>
+              </div>
+            </div>
+
+            <!-- Demo Step 4: Settings -->
+            <div class="demo-step" id="step-4" style="display:none">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem">
+                <div>
+                  <div style="font-size:0.85rem;color:var(--muted);margin-bottom:0.35rem">SETTINGS</div>
+                  <div style="font-size:1.35rem;color:var(--text);font-weight:700">System Configuration</div>
+                </div>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <button style="background:rgba(59,130,246,0.1);color:var(--text);border:1px solid rgba(59,130,246,0.18);border-radius:999px;padding:0.75rem 1rem;font-size:0.85rem;cursor:pointer">🔐 Manage Licenses</button>
+                  <button style="background:rgba(59,130,246,0.1);color:var(--text);border:1px solid rgba(59,130,246,0.18);border-radius:999px;padding:0.75rem 1rem;font-size:0.85rem;cursor:pointer">✏️ Change Password</button>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem">
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:14px;padding:1.5rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">CPU USAGE</div>
+                  <div style="font-size:2rem;color:var(--accent);font-weight:700">1%</div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:14px;padding:1.5rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">MEMORY</div>
+                  <div style="font-size:2rem;color:var(--accent);font-weight:700">35%</div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:14px;padding:1.5rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">DISK</div>
+                  <div style="font-size:2rem;color:var(--accent);font-weight:700">7%</div>
+                </div>
+                <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:14px;padding:1.5rem;text-align:center">
+                  <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">TEMPERATURE</div>
+                  <div style="font-size:2rem;color:var(--accent);font-weight:700">28°C</div>
+                </div>
+              </div>
+              <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:16px;padding:1.5rem">
+                <div style="font-size:1rem;color:var(--text);font-weight:700;margin-bottom:1rem">Site Configuration</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(59,130,246,0.12);border-radius:10px;padding:1rem">
+                    <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem">Site Name</div>
+                    <div style="color:var(--text);font-weight:600">Main Site</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(59,130,246,0.12);border-radius:10px;padding:1rem">
+                    <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem">Site ID</div>
+                    <div style="color:var(--text);font-weight:600">1424c12d</div>
+                  </div>
+                </div>
+                <div style="margin-top:1rem;color:var(--muted);font-size:0.85rem">This ID appears in Telegram alerts and system summaries to identify your location.</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Demo Steps Sidebar -->
+        <div style="background:rgba(59,130,246,0.05);border-left:1px solid rgba(59,130,246,0.2);display:flex;flex-direction:column;padding:0.5rem">
+
+          <div class="demo-sidebar-step" data-step="1" style="padding:1rem 0.75rem;border-bottom:1px solid rgba(59,130,246,0.1);cursor:pointer;transition:all 0.2s;background:rgba(59,130,246,0.15);border-left:3px solid var(--accent)">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--accent);margin-bottom:0.25rem">01</div>
+            <div style="font-size:0.7rem;color:var(--text);line-height:1.2">Dashboard</div>
+          </div>
+
+          <div class="demo-sidebar-step" data-step="2" style="padding:1rem 0.75rem;border-bottom:1px solid rgba(59,130,246,0.1);cursor:pointer;transition:all 0.2s;opacity:0.5">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--text);margin-bottom:0.25rem">02</div>
+            <div style="font-size:0.7rem;color:var(--muted);line-height:1.2">Cameras</div>
+          </div>
+
+          <div class="demo-sidebar-step" data-step="3" style="padding:1rem 0.75rem;border-bottom:1px solid rgba(59,130,246,0.1);cursor:pointer;transition:all 0.2s;opacity:0.5">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--text);margin-bottom:0.25rem">03</div>
+            <div style="font-size:0.7rem;color:var(--muted);line-height:1.2">Zones</div>
+          </div>
+
+          <div class="demo-sidebar-step" data-step="4" style="padding:1rem 0.75rem;cursor:pointer;transition:all 0.2s;opacity:0.5">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--text);margin-bottom:0.25rem">04</div>
+            <div style="font-size:0.7rem;color:var(--muted);line-height:1.2">Settings</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Demo Controls -->
+      <div style="background:var(--bg2);border-top:1px solid var(--border);padding:1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+
+        <div style="color:var(--muted);font-size:0.85rem"><span id="demo-current-step">1</span> / 4</div>
+
+        <div style="display:flex;gap:0.5rem">
+          <button id="demo-prev" class="btn btn-ghost btn-sm" style="padding:0.4rem 0.8rem;font-size:0.8rem" onclick="demoPrevStep()"><i class="fas fa-chevron-left"></i> Back</button>
+          <button id="demo-play" class="btn btn-primary btn-sm" style="padding:0.4rem 0.8rem;font-size:0.8rem" onclick="demoToggleAutoPlay()"><i class="fas fa-play"></i> <span id="play-text">Auto-Play</span></button>
+          <button id="demo-next" class="btn btn-ghost btn-sm" style="padding:0.4rem 0.8rem;font-size:0.8rem" onclick="demoNextStep()">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <!-- ----------- FEATURES ----------- -->
 
 <section class="section" id="features">
@@ -486,6 +780,111 @@
         <p>Connect to your network, add your cameras, and you're live within minutes. SentinelVision monitors 24/7 and sends instant Telegram photo alerts the moment something happens.</p>
 
       </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="/docs/#quickstart" class="btn btn-outline"><i class="fas fa-book"></i> View Startup Guide</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ----------- AI DETECTION EXPLAINED ----------- -->
+
+<section class="section" id="ai-detection">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-badge">How AI Detection Works</div>
+
+      <h2>Intelligent Visual Recognition in Real Time</h2>
+
+      <p>SentinelVision uses advanced machine learning models to understand what's happening in your camera feeds—without sending video to the cloud.</p>
+
+    </div>
+
+    <div class="ai-grid">
+
+      <div class="ai-card">
+
+        <div class="ai-icon" style="background:rgba(59,130,246,0.15);color:#3b82f6"><i class="fas fa-eye"></i></div>
+
+        <h3>What It Detects</h3>
+
+        <ul style="text-align:left;color:var(--muted);font-size:0.92rem;line-height:1.8">
+          <li><strong style="color:var(--text)">People:</strong> Accurately identifies humans in any pose or orientation.</li>
+          <li><strong style="color:var(--text)">Vehicles:</strong> Cars, trucks, buses, motorcycles, bicycles and other traffic.</li>
+          <li><strong style="color:var(--text)">Objects:</strong> Bags, backpacks, furniture, electronics and 80+ everyday items.</li>
+          <li><strong style="color:var(--text)">Animals:</strong> Dogs, cats, birds and other common animals on your property.</li>
+          <li><strong style="color:var(--text)">Loitering:</strong> Flags when someone lingers beyond your configurable time threshold.</li>
+          <li><strong style="color:var(--text)">Weapons (Beta):</strong> AI trained to detect firearms and threatening objects in real-time.</li>
+        </ul>
+
+      </div>
+
+      <div class="ai-card">
+
+        <div class="ai-icon" style="background:rgba(16,185,129,0.15);color:#10b981"><i class="fas fa-lightning-bolt"></i></div>
+
+        <h3>Local Processing Speed</h3>
+
+        <p style="color:var(--muted)">All AI detection happens on your device in real time. A typical frame is analyzed in <strong style="color:var(--text)">100–200 milliseconds</strong> — fast enough to catch activity your naked eye would miss. No cloud latency. No internet required. No processing delays.</p>
+
+      </div>
+
+      <div class="ai-card">
+
+        <div class="ai-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b"><i class="fas fa-map-pin"></i></div>
+
+        <h3>Zone-Based Alerts</h3>
+
+        <p style="color:var(--muted)">Draw custom detection zones directly on your camera feed. You control exactly where SentinelVision should monitor—driveway, storefront, warehouse perimeter, or anywhere else. Objects outside your zones are ignored.</p>
+
+      </div>
+
+      <div class="ai-card">
+
+        <div class="ai-icon" style="background:rgba(239,68,68,0.15);color:#ef4444"><i class="fas fa-bell"></i></div>
+
+        <h3>Instant Photo Alerts</h3>
+
+        <p style="color:var(--muted)">The moment a detection occurs, SentinelVision captures a snapshot and sends it directly to your Telegram with details—camera name, detection type, confidence score, and timestamp. You're informed instantly, anywhere in the world.</p>
+
+      </div>
+
+      <div class="ai-card">
+
+        <div class="ai-icon" style="background:rgba(99,102,241,0.15);color:#6366f1"><i class="fas fa-chart-line"></i></div>
+
+        <h3>Analytics &amp; Reporting</h3>
+
+        <p style="color:var(--muted)">Built-in dashboard shows detection trends, people counting per zone, occupancy over time, and historical alerts. Export data for reports or compliance audits.</p>
+
+      </div>
+
+      <div class="ai-card">
+
+        <div class="ai-icon" style="background:rgba(139,92,246,0.15);color:#8b5cf6"><i class="fas fa-sliders-h"></i></div>
+
+        <h3>Fully Tunable</h3>
+
+        <p style="color:var(--muted)">Adjust confidence thresholds, detection sensitivity, alert cooldowns, and schedule armed/disarmed modes per camera. Fine-tune detection to match your specific environment and security needs.</p>
+
+      </div>
+
+    </div>
+
+    <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:12px;padding:1.5rem;margin-top:2.5rem;text-align:center">
+
+      <p style="color:var(--muted);margin-bottom:1rem"><i class="fas fa-shield-halved" style="color:var(--accent);margin-right:0.5rem"></i>All AI processing is <strong>local</strong>, <strong>private</strong>, and <strong>secure</strong>. Your video never leaves your network.</p>
+
+      <a href="/docs/" class="btn btn-primary"><i class="fas fa-book"></i> Learn More in Docs</a>
 
     </div>
 
@@ -1315,6 +1714,113 @@
 
 
 <script src="js/main.js"></script>
+
+<!-- Interactive Demo Script -->
+<script>
+  let currentDemoStep = 1;
+  let demoAutoPlayActive = false;
+  let demoAutoPlayInterval = null;
+  const demoSteps = [1, 2, 3, 4];
+
+  function showDemoStep(step) {
+    // Hide all steps
+    document.querySelectorAll('.demo-step').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.demo-sidebar-step').forEach(el => {
+      el.style.opacity = '0.5';
+      el.style.background = 'transparent';
+      el.style.borderLeft = 'none';
+    });
+
+    // Show current step
+    const stepEl = document.getElementById('step-' + step);
+    if (stepEl) {
+      stepEl.style.display = 'block';
+      document.getElementById('demo-content').style.opacity = '1';
+    }
+
+    // Update sidebar
+    const sidebarEl = document.querySelector(`[data-step="${step}"]`);
+    if (sidebarEl) {
+      sidebarEl.style.opacity = '1';
+      sidebarEl.style.background = 'rgba(59,130,246,0.15)';
+      sidebarEl.style.borderLeft = '3px solid var(--accent)';
+    }
+
+    // Update counter
+    const stepIndex = demoSteps.indexOf(step) + 1;
+    document.getElementById('demo-current-step').textContent = stepIndex;
+    currentDemoStep = step;
+
+    // Update button states
+    document.getElementById('demo-prev').style.opacity = stepIndex === 1 ? '0.5' : '1';
+    document.getElementById('demo-next').style.opacity = stepIndex === demoSteps.length ? '0.5' : '1';
+  }
+
+  function demoNextStep() {
+    const currentIndex = demoSteps.indexOf(currentDemoStep);
+    if (currentIndex < demoSteps.length - 1) {
+      showDemoStep(demoSteps[currentIndex + 1]);
+    }
+  }
+
+  function demoPrevStep() {
+    const currentIndex = demoSteps.indexOf(currentDemoStep);
+    if (currentIndex > 0) {
+      showDemoStep(demoSteps[currentIndex - 1]);
+    }
+  }
+
+  function demoToggleAutoPlay() {
+    const btn = document.getElementById('demo-play');
+
+    if (demoAutoPlayActive) {
+      clearInterval(demoAutoPlayInterval);
+      demoAutoPlayActive = false;
+      btn.innerHTML = '<i class="fas fa-play"></i> <span id="play-text">Auto-Play</span>';
+    } else {
+      demoAutoPlayActive = true;
+      btn.innerHTML = '<i class="fas fa-pause"></i> <span id="play-text">Pause</span>';
+
+      let stepIndex = demoSteps.indexOf(currentDemoStep);
+      demoAutoPlayInterval = setInterval(() => {
+        stepIndex++;
+        if (stepIndex >= demoSteps.length) {
+          stepIndex = 0;
+        }
+        showDemoStep(demoSteps[stepIndex]);
+      }, 4000);
+    }
+  }
+
+  // Sidebar step click handlers
+  document.querySelectorAll('.demo-sidebar-step').forEach(el => {
+    el.addEventListener('click', function() {
+      const step = parseInt(this.getAttribute('data-step'));
+      if (!Number.isNaN(step)) {
+        showDemoStep(step);
+      }
+      if (demoAutoPlayActive) {
+        demoToggleAutoPlay();
+      }
+    });
+  });
+
+  // Initialize demo - start with step 1
+  showDemoStep(1);
+
+  if ('IntersectionObserver' in window) {
+    const demoSection = document.getElementById('interactive-demo');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !demoAutoPlayActive) {
+          // Uncomment to auto-start demo when visible
+          // demoToggleAutoPlay();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(demoSection);
+  }
+</script>
 
 </body>
 
