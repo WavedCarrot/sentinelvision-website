@@ -235,9 +235,20 @@ img { max-width: 100%; }
 .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
 .why-item {
   display: flex; gap: 1rem; align-items: flex-start;
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(17,28,45,0.96), var(--card));
+  border: 1.5px solid rgba(255,255,255,0.035);
+  border-radius: calc(var(--radius) + 2px); padding: 1.5rem;
+  position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
 }
+.why-item::before {
+  content: '';
+  position: absolute; left: 1.25rem; right: 1.25rem; top: 0.75rem; height: 6px;
+  border-radius: 6px; display: block;
+  background: linear-gradient(90deg, rgba(59,130,246,0.95), rgba(99,102,241,0.95));
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+.why-item:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.14); box-shadow: 0 12px 32px rgba(0,0,0,0.55); }
 .why-item > i  { font-size: 1.5rem; flex-shrink: 0; width: 24px; text-align: center; margin-top: 3px; }
 .why-item h4   { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.3rem; }
 .why-item p    { font-size: 0.88rem; color: var(--muted); }
