@@ -180,6 +180,15 @@ img { max-width: 100%; }
 .feature-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;
 }
+.inline-beta {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  margin-left: 0.4rem; padding: 0.15rem 0.5rem;
+  border-radius: 999px; font-size: 0.63rem; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: rgba(239,68,68,0.16); color: #fecaca;
+  border: 1px solid rgba(239,68,68,0.3);
+  vertical-align: middle;
+}
 .feature-card {
   background: var(--card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 1.75rem; position: relative;
@@ -202,6 +211,54 @@ img { max-width: 100%; }
 }
 .featured-tag { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
 .bundle-tag   { background: rgba(99,102,241,0.15); color: #818cf8; border: 1px solid rgba(99,102,241,0.3); }
+
+/* ── DEMO SECTION ─────────────────────────────────── */
+.demo-shell {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  overflow: hidden; max-width: 1100px; margin: 0 auto; box-shadow: var(--shadow);
+}
+.demo-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 0; min-height: 600px; background: #0a0f1f;
+}
+.demo-screen {
+  background: #0a0f1f; position: relative; overflow: hidden; display: flex; flex-direction: column; min-width: 0;
+}
+.demo-topbar {
+  background: #0d1220; border-bottom: 1px solid rgba(59,130,246,0.2);
+  padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+}
+.demo-nav-links {
+  display: flex; gap: 1.25rem; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap;
+}
+.demo-content {
+  flex: 1; padding: clamp(1rem, 2vw, 2rem); overflow-y: auto; opacity: 1; transition: opacity 0.5s;
+}
+.demo-sidebar {
+  background: rgba(59,130,246,0.05); border-left: 1px solid rgba(59,130,246,0.2);
+  display: flex; flex-direction: column; padding: 0.5rem;
+}
+.demo-sidebar-step {
+  padding: 1rem 0.75rem; border-bottom: 1px solid rgba(59,130,246,0.1); cursor: pointer; transition: all 0.2s; opacity: 0.5;
+}
+.demo-sidebar-step:last-child { border-bottom: none; }
+.demo-controls {
+  background: var(--bg2); border-top: 1px solid var(--border); padding: 1rem;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.demo-step-grid { margin-bottom: 1.5rem; }
+.demo-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.demo-grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.demo-grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; }
+.license-select {
+  color: var(--text); transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+.license-select.is-weapon-license {
+  border-color: rgba(239,68,68,0.55); background-color: rgba(239,68,68,0.08);
+  box-shadow: 0 0 0 1px rgba(239,68,68,0.2);
+}
+.license-select option[value="weapon_detection"] {
+  color: #ef4444;
+}
 
 /* ── HOW IT WORKS ─────────────────────────────────── */
 .steps-grid { display: flex; align-items: flex-start; gap: 1rem; }
@@ -779,6 +836,26 @@ img { max-width: 100%; }
   .docs-layout       { grid-template-columns: 1fr; }
   .docs-sidebar      { position: static; }
   .platform-unit-grid{ grid-template-columns: 1fr; }
+  .demo-layout { grid-template-columns: 1fr; min-height: auto; }
+  .demo-sidebar {
+    flex-direction: row; overflow-x: auto; border-left: none; border-top: 1px solid rgba(59,130,246,0.2);
+    padding: 0.45rem;
+  }
+  .demo-sidebar-step {
+    min-width: 92px; border-bottom: none; border-right: 1px solid rgba(59,130,246,0.1); border-left: 3px solid transparent;
+    padding: 0.7rem 0.65rem;
+  }
+  .demo-sidebar-step:last-child { border-right: none; }
+  .demo-grid-2, .demo-grid-3, .demo-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .demo-topbar { padding: 0.9rem 1rem; }
+  .demo-nav-links { gap: 0.7rem; font-size: 0.75rem; }
+  .demo-content { padding: 1rem; }
+  .demo-controls { flex-direction: column; align-items: stretch; }
+  .demo-controls .btn-sm { width: 100%; justify-content: center; }
+  .demo-grid-2, .demo-grid-3, .demo-grid-4 { grid-template-columns: 1fr; }
 }
 
 /* ── NAV COLLAPSE — fires at 1100px so snapped/side-by-side windows get a hamburger ── */

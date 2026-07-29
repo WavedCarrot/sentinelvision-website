@@ -301,21 +301,21 @@
 
     </div>
 
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;max-width:1100px;margin:0 auto">
+    <div class="demo-shell">
 
       <!-- Demo Container with Dashboard Mockup -->
-      <div style="display:grid;grid-template-columns:1fr 220px;gap:0;min-height:600px;background:#0a0f1f">
+      <div class="demo-layout">
 
         <!-- Main Dashboard Screen -->
-        <div id="demo-screen" style="background:#0a0f1f;position:relative;overflow:hidden;display:flex;flex-direction:column">
+        <div id="demo-screen" class="demo-screen">
 
           <!-- Navbar -->
-          <div style="background:#0d1220;border-bottom:1px solid rgba(59,130,246,0.2);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center">
+          <div class="demo-topbar">
             <div style="display:flex;align-items:center;gap:0.75rem">
               <div style="width:32px;height:32px;background:linear-gradient(135deg,var(--accent),#7c3aed);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold">SV</div>
               <span style="color:var(--text);font-weight:600">SentinelVision</span>
             </div>
-            <div style="display:flex;gap:1.5rem;font-size:0.85rem;color:var(--muted)">
+            <div class="demo-nav-links">
               <span style="cursor:pointer;color:var(--accent)">Dashboard</span>
               <span>Cameras</span>
               <span>Zones</span>
@@ -324,7 +324,7 @@
           </div>
 
           <!-- Content -->
-          <div id="demo-content" style="flex:1;padding:2rem;overflow-y:auto;opacity:1;transition:opacity 0.5s">
+          <div id="demo-content" class="demo-content">
 
             <!-- Demo Step 1: Dashboard Overview -->
             <div class="demo-step" id="step-1" style="display:none">
@@ -360,7 +360,7 @@
                 </div>
               </div>
 
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;margin-bottom:1.5rem">
+              <div class="demo-step-grid demo-grid-4">
                 <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.18);border-radius:12px;padding:1rem;text-align:center">
                   <div style="font-size:0.9rem;color:var(--text);font-weight:700">Persons</div>
                   <div style="font-size:1.5rem;color:var(--accent);font-weight:700;margin-top:0.5rem">0</div>
@@ -427,7 +427,7 @@
                 <div style="font-size:2rem;margin-bottom:0.75rem">📷</div>
                 <div style="font-size:1rem;color:var(--text);font-weight:700;margin-bottom:0.5rem">Welcome to SentinelVision Pro</div>
                 <div style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem">No cameras configured yet. Follow these steps to start monitoring your property.</div>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+                <div class="demo-step-grid demo-grid-3">
                   <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:left">
                     <div style="font-size:1.1rem">🔍</div>
                     <div style="font-size:0.85rem;font-weight:700;margin:0.5rem 0">Step 1: Scan Network</div>
@@ -456,7 +456,7 @@
                 </div>
                 <button style="background:rgba(59,130,246,0.08);color:var(--muted);border:1px solid rgba(59,130,246,0.18);border-radius:999px;padding:0.8rem 1rem;font-size:0.85rem;cursor:not-allowed" disabled>Draw Zone</button>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin-bottom:1.5rem">
+              <div class="demo-step-grid demo-grid-4">
                 <div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.15);border-radius:12px;padding:1rem;text-align:center">
                   <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem">TOTAL ZONES</div>
                   <div style="font-size:1.4rem;color:var(--accent);font-weight:700">0</div>
@@ -513,7 +513,7 @@
               </div>
               <div style="background:rgba(15,23,42,0.85);border:1px solid rgba(59,130,246,0.15);border-radius:16px;padding:1.5rem">
                 <div style="font-size:1rem;color:var(--text);font-weight:700;margin-bottom:1rem">Site Configuration</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div class="demo-step-grid demo-grid-2">
                   <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(59,130,246,0.12);border-radius:10px;padding:1rem">
                     <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem">Site Name</div>
                     <div style="color:var(--text);font-weight:600">Main Site</div>
@@ -532,24 +532,24 @@
         </div>
 
         <!-- Demo Steps Sidebar -->
-        <div style="background:rgba(59,130,246,0.05);border-left:1px solid rgba(59,130,246,0.2);display:flex;flex-direction:column;padding:0.5rem">
+        <div class="demo-sidebar">
 
-          <div class="demo-sidebar-step" data-step="1" style="padding:1rem 0.75rem;border-bottom:1px solid rgba(59,130,246,0.1);cursor:pointer;transition:all 0.2s;background:rgba(59,130,246,0.15);border-left:3px solid var(--accent)">
+          <div class="demo-sidebar-step" data-step="1" style="background:rgba(59,130,246,0.15);border-left:3px solid var(--accent);opacity:1">
             <div style="font-size:0.7rem;font-weight:700;color:var(--accent);margin-bottom:0.25rem">01</div>
             <div style="font-size:0.7rem;color:var(--text);line-height:1.2">Dashboard</div>
           </div>
 
-          <div class="demo-sidebar-step" data-step="2" style="padding:1rem 0.75rem;border-bottom:1px solid rgba(59,130,246,0.1);cursor:pointer;transition:all 0.2s;opacity:0.5">
+          <div class="demo-sidebar-step" data-step="2" style="opacity:0.5">
             <div style="font-size:0.7rem;font-weight:700;color:var(--text);margin-bottom:0.25rem">02</div>
             <div style="font-size:0.7rem;color:var(--muted);line-height:1.2">Cameras</div>
           </div>
 
-          <div class="demo-sidebar-step" data-step="3" style="padding:1rem 0.75rem;border-bottom:1px solid rgba(59,130,246,0.1);cursor:pointer;transition:all 0.2s;opacity:0.5">
+          <div class="demo-sidebar-step" data-step="3" style="opacity:0.5">
             <div style="font-size:0.7rem;font-weight:700;color:var(--text);margin-bottom:0.25rem">03</div>
             <div style="font-size:0.7rem;color:var(--muted);line-height:1.2">Zones</div>
           </div>
 
-          <div class="demo-sidebar-step" data-step="4" style="padding:1rem 0.75rem;cursor:pointer;transition:all 0.2s;opacity:0.5">
+          <div class="demo-sidebar-step" data-step="4" style="opacity:0.5">
             <div style="font-size:0.7rem;font-weight:700;color:var(--text);margin-bottom:0.25rem">04</div>
             <div style="font-size:0.7rem;color:var(--muted);line-height:1.2">Settings</div>
           </div>
@@ -559,7 +559,7 @@
       </div>
 
       <!-- Demo Controls -->
-      <div style="background:var(--bg2);border-top:1px solid var(--border);padding:1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <div class="demo-controls">
 
         <div style="color:var(--muted);font-size:0.85rem"><span id="demo-current-step">1</span> / 4</div>
 
@@ -681,7 +681,7 @@
 
         </div>
 
-        <h3>Object Detection</h3>
+        <h3>Object Detection <span class="inline-beta">Beta</span></h3>
 
         <p>Detect bags, backpacks, furniture, electronics and 80+ everyday object classes in live feeds. Ideal for loss prevention and access control.</p>
 
@@ -1388,7 +1388,7 @@
 
         <div class="pp-icon" style="color:#8b5cf6"><i class="fas fa-cube"></i></div>
 
-        <div class="pp-name">Object Detection</div>
+        <div class="pp-name">Object Detection <span class="inline-beta">Beta</span></div>
 
         <div class="pp-price">R100 <span>/mo</span></div>
 

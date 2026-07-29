@@ -113,11 +113,17 @@ const LICENSE_NAMES = {
   'weapon_detection':  'Weapon Detection (Beta)',
   'people_counting':   'People Counting & Analytics',
   'vehicle_detection': 'Vehicle Detection',
-  'object_detection':  'Object Detection',
+  'object_detection':  'Object Detection (Beta)',
   'all':               'Full Feature Bundle',
 };
 
 const DUR_INDEX = { '1': 0, '3': 1, 'Y': 2 };
+
+function updateLicenseSelectState() {
+  const licenseSelect = document.getElementById('o-license');
+  if (!licenseSelect) return;
+  licenseSelect.classList.toggle('is-weapon-license', licenseSelect.value === 'weapon_detection');
+}
 
 function updateOrderPrice() {
   const licenseSelect = document.getElementById('o-license');
@@ -147,13 +153,17 @@ function updateOrderPrice() {
 
   pdAmount.innerHTML = `<span style="font-size:2.8rem;font-weight:900">R${price.toLocaleString('en-ZA')}</span>`;
   pdName.textContent = `${name} / ${durVal}`;
+  updateLicenseSelectState();
   if (hiddenPrice)   hiddenPrice.value   = `R${price.toLocaleString('en-ZA')}`;
   if (hiddenSummary) hiddenSummary.value = summary;
 }
 
 const licenseSelect = document.getElementById('o-license');
 if (licenseSelect) {
-  licenseSelect.addEventListener('change', updateOrderPrice);
+  licenseSelect.addEventListener('change', () => {
+    updateLicenseSelectState();
+    updateOrderPrice();
+  });
   // Pre-select from URL param: ?license=full_bundle
   const urlParam = new URLSearchParams(window.location.search).get('license');
   if (urlParam) {
@@ -169,9 +179,11 @@ if (licenseSelect) {
     };
     if (map[urlParam]) {
       licenseSelect.value = map[urlParam];
+      updateLicenseSelectState();
       updateOrderPrice();
     }
   }
+  updateLicenseSelectState();
 }
 
 document.querySelectorAll('input[name="duration"]').forEach(radio => {
