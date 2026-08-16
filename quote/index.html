@@ -136,7 +136,6 @@
             <select id="q-bundle" name="category" required>
               <option value="" disabled selected>Select a category</option>
               <option value="Devices">Devices &mdash; use your own cameras (from R8 000)</option>
-              <option value="Camera Bundles">Camera Bundles &mdash; unit + cameras included</option>
               <option value="Custom">Custom / I&rsquo;m not sure yet &mdash; tell me more</option>
             </select>
           </div>
@@ -165,27 +164,8 @@
             <input type="hidden" id="q-channels" name="channel_count" value="">
           </div>
 
-          <!-- Bundle sub-choice � shown only for Camera Bundles -->
-          <div class="form-group channel-row" id="bundle-row">
-            <label>Choose a Bundle <span style="color:#f87171">*</span></label>
-            <p style="font-size:0.83rem;color:var(--muted);margin:0.25rem 0 0.75rem">Pick the bundle that suits your site:</p>
-            <div class="channel-cards">
-              <div class="channel-card bundle-choice-card" data-bundle="Starter Bundle" data-price="13700" tabindex="0" role="button" aria-pressed="false">
-                <div class="ch-name">Starter</div>
-                <div class="ch-desc">Unit + 2 Cameras</div>
-                <div class="ch-price">R13 700</div>
-              </div>
-              <div class="channel-card bundle-choice-card" data-bundle="Pro Bundle" data-price="20300" tabindex="0" role="button" aria-pressed="false">
-                <div class="ch-name">Pro</div>
-                <div class="ch-desc">Unit + 4 Cameras</div>
-                <div class="ch-price">R20 300</div>
-              </div>
-              <div class="channel-card bundle-choice-card" data-bundle="Business Bundle" data-price="28300" tabindex="0" role="button" aria-pressed="false">
-                <div class="ch-name">Business</div>
-                <div class="ch-desc">Unit + 6 Cameras</div>
-                <div class="ch-price">R28 300</div>
-              </div>
-            </div>
+          <!-- Bundle sub-choice - HIDDEN: removed Camera Bundles option -->
+          <div class="form-group channel-row" id="bundle-row" style="display:none;">
             <input type="hidden" id="q-bundle-choice" name="bundle_choice" value="">
           </div>
 
@@ -244,21 +224,28 @@
           This is just a device request. We will send full pricing and banking details by email before anything is due.
         </div>
 
-        <!-- Bundle overview -->
+        <!-- Unit Only Options - Enhanced -->
         <div class="order-info-box" style="margin-top:1.25rem">
-          <h4><i class="fas fa-cube" style="color:var(--accent);margin-right:.5rem"></i>Bundle Overview</h4>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;font-size:0.88rem;color:var(--muted)">
-            <li>
-              <strong style="color:var(--text)">Unit Only</strong>
-              <span class="bundle-price-tag">from R8 000</span><br>
-              Use your own existing IP cameras<br>
-              <span style="font-size:0.78rem">4ch &mdash; R8 000 &bull; 8ch &mdash; R12 500 &bull; 16ch &mdash; R22 000</span>
-            </li>
-            <li><strong style="color:var(--text)">Starter</strong> <span class="bundle-price-tag">R13 700</span><br>Unit + 2 IP cameras</li>
-            <li><strong style="color:var(--text)">Pro</strong> <span class="bundle-price-tag">R20 300</span><br>Unit + 4 IP cameras</li>
-            <li><strong style="color:var(--text)">Business</strong> <span class="bundle-price-tag">R28 300</span><br>Unit + 6 IP cameras + custom zone setup</li>
-          </ul>
-          <p style="margin-top:0.85rem;font-size:0.82rem;color:var(--muted)">All prices include VAT. Custom configurations available.</p>
+          <h4><i class="fas fa-cube" style="color:var(--accent);margin-right:.5rem"></i>Unit Only Options</h4>
+          <p style="font-size:0.85rem;color:var(--muted);margin:0 0 1rem;line-height:1.5">Choose the channel capacity that fits your site. Use your own existing IP cameras or expand later.</p>
+          <div style="display:flex;flex-direction:column;gap:0.95rem">
+            <div style="padding:0.9rem;border-radius:8px;background:rgba(99,102,241,0.08);border-left:3px solid var(--accent)">
+              <div style="font-weight:700;color:var(--text);font-size:0.95rem">4 Channel Unit</div>
+              <div style="font-size:0.85rem;color:var(--muted);margin:0.3rem 0">Support up to 4 IP cameras</div>
+              <div style="font-weight:700;color:var(--accent);font-size:1rem;margin-top:0.4rem">R8 000</div>
+            </div>
+            <div style="padding:0.9rem;border-radius:8px;background:rgba(99,102,241,0.08);border-left:3px solid var(--accent)">
+              <div style="font-weight:700;color:var(--text);font-size:0.95rem">8 Channel Unit</div>
+              <div style="font-size:0.85rem;color:var(--muted);margin:0.3rem 0">Support up to 8 IP cameras</div>
+              <div style="font-weight:700;color:var(--accent);font-size:1rem;margin-top:0.4rem">R12 500</div>
+            </div>
+            <div style="padding:0.9rem;border-radius:8px;background:rgba(99,102,241,0.08);border-left:3px solid var(--accent)">
+              <div style="font-weight:700;color:var(--text);font-size:0.95rem">16 Channel Unit</div>
+              <div style="font-size:0.85rem;color:var(--muted);margin:0.3rem 0">Support up to 16 IP cameras</div>
+              <div style="font-weight:700;color:var(--accent);font-size:1rem;margin-top:0.4rem">R22 000</div>
+            </div>
+          </div>
+          <p style="margin-top:1rem;font-size:0.82rem;color:var(--muted);line-height:1.5"><strong>All prices include VAT.</strong> Units work with any IP cameras. Need camera recommendations? Let us know in the form &mdash; we can assist with sourcing.</p>
         </div>
 
         <!-- Direct contact -->
