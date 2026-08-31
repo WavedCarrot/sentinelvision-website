@@ -150,10 +150,10 @@
                 <div class="ch-desc">Up to 4 cameras</div>
                 <div class="ch-price">R8 000</div>
               </div>
-              <div class="channel-card" data-ch="8" data-price="12500" tabindex="0" role="button" aria-pressed="false">
+              <div class="channel-card" data-ch="8" data-price="13800" tabindex="0" role="button" aria-pressed="false">
                 <div class="ch-name">8 Channel</div>
                 <div class="ch-desc">Up to 8 cameras</div>
-                <div class="ch-price">R12 500</div>
+                <div class="ch-price">R13 800</div>
               </div>
               <div class="channel-card" data-ch="16" data-price="22000" tabindex="0" role="button" aria-pressed="false">
                 <div class="ch-name">16 Channel</div>
@@ -237,7 +237,7 @@
             <div style="padding:0.9rem;border-radius:8px;background:rgba(99,102,241,0.08);border-left:3px solid var(--accent)">
               <div style="font-weight:700;color:var(--text);font-size:0.95rem">8 Channel Unit</div>
               <div style="font-size:0.85rem;color:var(--muted);margin:0.3rem 0">Support up to 8 IP cameras</div>
-              <div style="font-weight:700;color:var(--accent);font-size:1rem;margin-top:0.4rem">R12 500</div>
+              <div style="font-weight:700;color:var(--accent);font-size:1rem;margin-top:0.4rem">R13 800</div>
             </div>
             <div style="padding:0.9rem;border-radius:8px;background:rgba(99,102,241,0.08);border-left:3px solid var(--accent)">
               <div style="font-weight:700;color:var(--text);font-size:0.95rem">16 Channel Unit</div>
@@ -319,7 +319,7 @@
     "Pro Bundle":     20300,
     "Business Bundle":28300,
   };
-  var CHANNEL_PRICES = { "4": 8000, "8": 12500, "16": 22000 };
+  var CHANNEL_PRICES = { "4": 8000, "8": 13800, "16": 22000 };
 
   var bundleSel        = document.getElementById("q-bundle");
   var channelRow       = document.getElementById("channel-row");
@@ -495,7 +495,7 @@
     // Build human-readable bundle label
     var bundleLabel = cat;
     if (cat === "Devices" && ch) {
-      var pmap = { "4": "R8 000", "8": "R12 500", "16": "R22 000" };
+      var pmap = { "4": "R8 000", "8": "R13 800", "16": "R22 000" };
       bundleLabel = "Unit Only \u2014 " + ch + "ch (" + (pmap[ch] || "") + ")";
     } else if (cat === "Camera Bundles" && bch) {
       var bpmap = { "Starter Bundle": "R13 700", "Pro Bundle": "R20 300", "Business Bundle": "R28 300" };
