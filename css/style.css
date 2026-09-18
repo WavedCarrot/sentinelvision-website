@@ -60,6 +60,8 @@ img { max-width: 100%; }
 .btn:hover { text-decoration: none; }
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(59,130,246,0.4); }
+.btn-device { background: #7c3aed; color: #fff; }
+.btn-device:hover { background: #6d28d9; color: #fff; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(124,58,237,0.45); }
 .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
 .btn-outline:hover { background: var(--glow); transform: translateY(-1px); }
 .btn-ghost { background: transparent; color: var(--muted); border: 1.5px solid var(--border); }
@@ -97,6 +99,10 @@ img { max-width: 100%; }
 }
 .nav-links li a:hover { color: var(--text); text-decoration: none; }
 .nav-links .btn { margin-left: 0.5rem; }
+.nav-links li a.btn-device { color: #fff; }
+.nav-links li a.btn-device:hover { color: #fff; }
+.nav-links li:has(.btn-device) { order: 10; }
+.nav-links li:has(.btn-primary) { order: 11; }
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer;

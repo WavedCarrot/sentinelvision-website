@@ -155,7 +155,7 @@
 
     <ul class="nav-links" id="nav-links">
 
-      <li><a href="/platform/">Platform</a></li>
+      <li><a href="/platform/" class="btn btn-device btn-sm"><i class="fas fa-microchip"></i> Devices</a></li>
 
       <li><a href="/gallery/">Gallery</a></li>
 
@@ -352,7 +352,7 @@
 <script src="/js/main.js?v=4"></script>
 
 <script>
-const LICENSING_BACKEND = 'https://tribunal-carbon-atlantic.ngrok-free.dev';
+const LICENSING_BACKEND = 'https://portal.sentinelvision.net.za';
 
 // Capture checkoutId once on load; keep it for retries
 var _pendingCheckoutId = (function() {
@@ -418,7 +418,7 @@ async function runVerify() {
     var timer = setTimeout(function() { controller.abort(); }, 25000);
     var resp = await fetch(LICENSING_BACKEND + '/verify-payment', {
       method:  'POST',
-      headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
+      headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ checkoutId: _pendingCheckoutId }),
       signal:  controller.signal,
     });
