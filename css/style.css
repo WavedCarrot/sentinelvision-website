@@ -576,6 +576,7 @@ img { max-width: 100%; }
 }
 .device-requirement i { color: #a78bfa; margin-top: .2rem; }
 .device-requirement strong { color: var(--text); }
+.device-requirement .btn { flex-shrink: 0; align-self: center; }
 .order-form-box { box-shadow: 0 18px 50px rgba(0,0,0,.16); }
 .order-form-box h2 { color: var(--text); }
 .order-form-box hr { opacity: .7; }
@@ -907,6 +908,8 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 640px) {
+  .device-requirement { flex-wrap: wrap; }
+  .device-requirement .btn { margin-left: 1.7rem; }
   .demo-topbar { padding: 0.9rem 1rem; }
   .demo-nav-links { gap: 0.7rem; font-size: 0.75rem; }
   .demo-content { padding: 1rem; }
