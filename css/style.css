@@ -96,6 +96,8 @@ img { max-width: 100%; }
 .nav-links li a {
   color: var(--muted); font-size: 0.92rem; font-weight: 500;
   padding: 0.5rem 0.9rem; border-radius: 6px; transition: color 0.2s;
+  display: inline-flex; align-items: center; justify-content: center;
+  position: relative; isolation: isolate;
 }
 .nav-links li a:hover { color: var(--text); text-decoration: none; }
 .nav-links .btn { margin-left: 0.5rem; }
@@ -103,43 +105,33 @@ img { max-width: 100%; }
 .nav-links li a.btn-device:hover { color: #fff; }
 .nav-links li a.nav-active:not(.btn) {
   color: var(--text);
-  background: rgba(99,102,241,0.14);
+  background: linear-gradient(110deg, rgba(99,102,241,0.12), rgba(165,180,252,0.28), rgba(99,102,241,0.12));
+  background-size: 220% 100%;
   box-shadow: 0 0 0 1px rgba(129,140,248,0.28), 0 0 18px rgba(99,102,241,0.22);
-  position: relative;
   overflow: hidden;
-  animation: activeNavGlow 3.8s ease-in-out infinite;
+  animation: activeNavGlow 3.8s ease-in-out infinite, activeNavSweep 4.8s ease-in-out infinite;
 }
 .nav-links li a.btn-device.nav-active {
+  background: linear-gradient(110deg, #6d28d9, #a78bfa, #6d28d9);
+  background-size: 220% 100%;
   box-shadow: 0 0 0 2px rgba(167,139,250,0.62), 0 0 22px rgba(124,58,237,0.58);
 }
 @keyframes activeNavGlow {
   0%, 100% { box-shadow: 0 0 0 1px rgba(129,140,248,0.25), 0 0 12px rgba(99,102,241,0.16); }
   50% { box-shadow: 0 0 0 1px rgba(165,180,252,0.52), 0 0 24px rgba(99,102,241,0.38); }
 }
-.nav-links li a.nav-active::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.18) 50%, transparent 75%);
-  transform: translateX(-130%);
-  animation: activeNavSweep 4.8s ease-in-out infinite;
-  pointer-events: none;
-}
 @keyframes activeNavSweep {
-  0%, 45% { transform: translateX(-130%); }
-  70%, 100% { transform: translateX(130%); }
+  0%, 45% { background-position: 100% 50%; }
+  70%, 100% { background-position: 0% 50%; }
 }
-.nav-links li a.btn-device.nav-active { animation-name: activeDeviceGlow; }
+.nav-links li a.btn-device.nav-active { animation: activeDeviceGlow 3.8s ease-in-out infinite, activeNavSweep 4.8s ease-in-out infinite; }
 @keyframes activeDeviceGlow {
   0%, 100% { box-shadow: 0 0 0 2px rgba(167,139,250,0.5), 0 0 14px rgba(124,58,237,0.35); }
   50% { box-shadow: 0 0 0 2px rgba(221,214,254,0.88), 0 0 30px rgba(124,58,237,0.72); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nav-links li a.nav-active,
-  .nav-links li a.nav-active::after { animation: none; }
+  .nav-links li a.nav-active { animation: none; }
 }
-.nav-links li:has(.btn-device) { order: 10; }
-.nav-links li:has(.btn-primary) { order: 11; }
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer;
@@ -977,8 +969,8 @@ img { max-width: 100%; }
 }
 
 /* ── ACTIVE NAV LINK ───────────────────────────────── */
-.nav-links li a.nav-active { color: var(--text) !important; background: rgba(59,130,246,0.1); border-radius: 6px; }
-.nav-links li a.btn-device.nav-active { color: #fff !important; background: #7c3aed; }
+.nav-links li a.nav-active { color: var(--text) !important; border-radius: 6px; }
+.nav-links li a.btn-device.nav-active { color: #fff !important; }
 
 /* ── SOCIAL FLOAT — HOVER TOOLTIPS ───────────────────── */
 .social-float-stack a::after {
