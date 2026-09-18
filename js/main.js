@@ -38,12 +38,18 @@ if (hamburger && navLinks) {
   });
 }
 
-// ── Active nav link highlight ─────────────────────
+// ── Active nav link highlight ──────────────────────────
 (function() {
-  const page = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(function(a) {
-    const href = (a.getAttribute('href') || '').split('?')[0];
-    if (href === page) a.classList.add('nav-active');
+  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    const rawHref = (link.getAttribute('href') || '').split(/[?#]/)[0];
+    if (!rawHref || rawHref.startsWith('http') || rawHref.startsWith('#')) return;
+
+    const linkPath = new URL(rawHref, window.location.origin).pathname.replace(/\/+$/, '') || '/';
+    if (linkPath === currentPath) {
+      link.classList.add('nav-active');
+      link.setAttribute('aria-current', 'page');
+    }
   });
 })();
 

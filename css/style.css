@@ -101,6 +101,14 @@ img { max-width: 100%; }
 .nav-links .btn { margin-left: 0.5rem; }
 .nav-links li a.btn-device { color: #fff; }
 .nav-links li a.btn-device:hover { color: #fff; }
+.nav-links li a.nav-active:not(.btn) {
+  color: var(--text);
+  background: rgba(99,102,241,0.14);
+  box-shadow: 0 0 0 1px rgba(129,140,248,0.28), 0 0 18px rgba(99,102,241,0.22);
+}
+.nav-links li a.btn-device.nav-active {
+  box-shadow: 0 0 0 2px rgba(167,139,250,0.62), 0 0 22px rgba(124,58,237,0.58);
+}
 .nav-links li:has(.btn-device) { order: 10; }
 .nav-links li:has(.btn-primary) { order: 11; }
 .hamburger {
@@ -919,6 +927,7 @@ img { max-width: 100%; }
 
 /* ── ACTIVE NAV LINK ───────────────────────────────── */
 .nav-links li a.nav-active { color: var(--text) !important; background: rgba(59,130,246,0.1); border-radius: 6px; }
+.nav-links li a.btn-device.nav-active { color: #fff !important; background: #7c3aed; }
 
 /* ── SOCIAL FLOAT — HOVER TOOLTIPS ───────────────────── */
 .social-float-stack a::after {
