@@ -74,7 +74,7 @@
       <li><a href="/news/">News</a></li>
       <li><a href="/platform/" class="btn btn-device btn-sm"><i class="fas fa-microchip"></i> Devices</a></li>
 
-      <li><a href="/order/" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> Order License</a></li>
+      <li><a href="/order/" class="btn btn-primary btn-sm"><i class="fas fa-key"></i> License</a></li>
 
     </ul>
 
@@ -177,58 +177,122 @@
         <section id="quickstart" style="background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(16,185,129,.05));border:1px solid rgba(59,130,246,.2);border-radius:16px;padding:2rem 2rem 1.75rem;margin-bottom:2.5rem">
 
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;flex-wrap:wrap">
-            <span style="background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:.06em">&#9889; QUICK START</span>
+            <span style="background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:.06em">⚡ QUICK START</span>
             <span style="color:var(--muted);font-size:0.9rem">From box to live alerts in under 5 minutes</span>
           </div>
 
           <h2 style="font-size:1.3rem;margin-bottom:1.5rem;margin-top:0.75rem">Everything you need to go live</h2>
 
-          <div style="display:flex;flex-direction:column;gap:1.25rem">
+          <div style="display:flex;flex-direction:column;gap:1.5rem">
 
-            <div style="display:flex;gap:1rem;align-items:flex-start">
-              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">1</div>
-              <div>
-                <strong>Plug in &amp; connect to your router</strong>
-                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Connect your SentinelVision device via Ethernet and plug in the power supply. The system boots and is ready in about 60 seconds.</p>
+            <div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(59,130,246,0.06);padding:1.25rem;border-radius:10px;border-left:3px solid var(--accent)">
+              <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
+              <div style="flex:1">
+                <strong style="color:var(--text);font-size:1rem">Plug in & connect to your router</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">Your SentinelVision device is pre-configured and ships with all software installed. Simply:</p>
+                <ul style="margin:0.75rem 0 0;padding-left:1.25rem;color:var(--muted);font-size:0.85rem">
+                  <li>Connect the Ethernet cable from your router to the device</li>
+                  <li>Plug in the power adapter (12V DC)</li>
+                  <li>Wait 60 seconds for the system to boot</li>
+                  <li><strong style="color:var(--text)">Do not use Wi-Fi</strong> — Ethernet is required for stable video streaming</li>
+                </ul>
               </div>
             </div>
 
-            <div style="display:flex;gap:1rem;align-items:flex-start">
-              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">2</div>
-              <div>
-                <strong>Find your device IP and open the dashboard</strong>
-                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Log into your router and look for a device named <strong>sentinelvision</strong> in the connected device list. Open <code>http://&lt;device-ip&gt;:5000</code> in any browser on the same network.</p>
+            <div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(59,130,246,0.06);padding:1.25rem;border-radius:10px;border-left:3px solid var(--accent)">
+              <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
+              <div style="flex:1">
+                <strong style="color:var(--text);font-size:1rem">Find your device IP and open the dashboard</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">The device automatically gets an IP from your router:</p>
+                <ul style="margin:0.75rem 0 0;padding-left:1.25rem;color:var(--muted);font-size:0.85rem">
+                  <li>Open your router admin page (usually <strong>192.168.1.1</strong> or <strong>192.168.0.1</strong>)</li>
+                  <li>Find the <strong>Connected Devices</strong> or <strong>DHCP Client List</strong></li>
+                  <li>Look for a device named <strong>sentinelvision</strong></li>
+                  <li>Note its IP address (e.g., <strong>192.168.1.100</strong>)</li>
+                  <li>In your browser, go to <strong>http://192.168.1.100:5000</strong></li>
+                </ul>
+                <div style="background:rgba(245,158,11,0.1);border-left:2px solid var(--orange);padding:0.75rem;margin:0.75rem 0 0;border-radius:4px;font-size:0.85rem">
+                  <strong style="color:var(--orange)">💡 Pro Tip:</strong> Set a <strong>static IP</strong> in your router so the address never changes after a reboot.
+                </div>
               </div>
             </div>
 
-            <div style="display:flex;gap:1rem;align-items:flex-start">
-              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">3</div>
-              <div>
-                <strong>Log in and change your password</strong>
-                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Default credentials are <code>admin</code> / <code>Admin123</code>. Go to <strong>Settings &rarr; Change Password</strong> and update it immediately.</p>
+            <div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(59,130,246,0.06);padding:1.25rem;border-radius:10px;border-left:3px solid var(--accent)">
+              <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
+              <div style="flex:1">
+                <strong style="color:var(--text);font-size:1rem">Log in and change your password</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">Default credentials (change immediately for security):</p>
+                <div style="background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:0.75rem;margin:0.75rem 0;font-family:monospace;font-size:0.85rem;color:var(--text)">
+                  Username: <strong>admin</strong><br>Password: <strong>Admin123</strong>
+                </div>
+                <ul style="margin:0.5rem 0 0;padding-left:1.25rem;color:var(--muted);font-size:0.85rem">
+                  <li>Go to <strong>Settings → Change Password</strong></li>
+                  <li>Create a strong, unique password</li>
+                  <li>Save and re-login to confirm</li>
+                </ul>
+                <div style="background:rgba(239,68,68,0.1);border-left:2px solid var(--red);padding:0.75rem;margin:0.75rem 0 0;border-radius:4px;font-size:0.85rem">
+                  <strong style="color:var(--red)">⚠️ Security:</strong> Never leave default credentials on a network-accessible device.
+                </div>
               </div>
             </div>
 
-            <div style="display:flex;gap:1rem;align-items:flex-start">
-              <div style="min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">4</div>
-              <div>
-                <strong>Add your first camera</strong>
-                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">Go to <strong>Cameras &rarr; Add Camera</strong>, paste your camera&rsquo;s RTSP URL, and click <strong>Test Connection</strong>. The live feed appears on your dashboard immediately. Not sure of the URL? See the <a href="#rtsp">RTSP URL guide</a>.</p>
+            <div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(59,130,246,0.06);padding:1.25rem;border-radius:10px;border-left:3px solid var(--accent)">
+              <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div>
+              <div style="flex:1">
+                <strong style="color:var(--text);font-size:1rem">Add your first camera</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">SentinelVision connects to any RTSP-compatible camera:</p>
+                <ul style="margin:0.75rem 0 0;padding-left:1.25rem;color:var(--muted);font-size:0.85rem">
+                  <li>In your dashboard, go to <strong>Cameras → Add Camera</strong></li>
+                  <li>Enter your camera's RTSP URL (e.g., <strong>rtsp://user:pass@192.168.1.50:554/stream1</strong>)</li>
+                  <li>Click <strong>Test Connection</strong> — you should see a live preview within 2 seconds</li>
+                  <li>Click <strong>Save Camera</strong> — it will now appear on your dashboard</li>
+                </ul>
+                <div style="background:rgba(59,130,246,0.1);border-left:2px solid var(--accent);padding:0.75rem;margin:0.75rem 0 0;border-radius:4px;font-size:0.85rem">
+                  <strong style="color:var(--accent)">🔗 Don't know the URL?</strong> Check the <a href="#rtsp" style="color:var(--accent);text-decoration:underline">RTSP URL guide</a> for Hikvision, Provision, Dahua, and other brands.
+                </div>
               </div>
             </div>
 
-            <div style="display:flex;gap:1rem;align-items:flex-start">
-              <div style="min-width:30px;height:30px;border-radius:50%;background:#10b981;color:#fff;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">5</div>
-              <div>
-                <strong>Connect Telegram and receive your first alert</strong>
-                <p style="color:var(--muted);font-size:0.9rem;margin:0.25rem 0 0">The SentinelVision Telegram bot is already configured on your device &mdash; no bot setup required. You just need your personal <strong>Telegram Chat ID</strong>. Open Telegram, search for <strong>@userinfobot</strong>, send it any message, and it will reply with your Chat ID. Then go to <strong>Settings &rarr; Telegram</strong> in your dashboard, enter your Chat ID, and press <strong>Send Test Alert</strong>. Your phone should buzz within seconds. See the <a href="#telegram">full Telegram guide</a>.</p>
+            <div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(59,130,246,0.06);padding:1.25rem;border-radius:10px;border-left:3px solid var(--accent)">
+              <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">5</div>
+              <div style="flex:1">
+                <strong style="color:var(--text);font-size:1rem">Connect Telegram and receive your first alert</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">Get real-time photo alerts on your phone:</p>
+                <ul style="margin:0.75rem 0 0;padding-left:1.25rem;color:var(--muted);font-size:0.85rem">
+                  <li>In Telegram, search for and open <strong>@userinfobot</strong></li>
+                  <li>Send it any message — it will reply with your <strong>Chat ID</strong> (a long number)</li>
+                  <li>Copy your Chat ID and go to your SentinelVision dashboard</li>
+                  <li>Go to <strong>Settings → Telegram Alerts</strong> and paste your Chat ID</li>
+                  <li>Click <strong>Send Test Alert</strong> — check your Telegram within seconds</li>
+                  <li>If you got a message from the bot, you're all set!</li>
+                </ul>
+                <div style="background:rgba(16,185,129,0.1);border-left:2px solid var(--green);padding:0.75rem;margin:0.75rem 0 0;border-radius:4px;font-size:0.85rem">
+                  <strong style="color:var(--green)">✓ Ready!</strong> SentinelVision is now monitoring 24/7. See the <a href="#telegram" style="color:var(--green);text-decoration:underline">full Telegram guide</a> for group chats and advanced options.
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;align-items:flex-start;background:rgba(59,130,246,0.06);padding:1.25rem;border-radius:10px;border-left:3px solid var(--accent)">
+              <div style="min-width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">6</div>
+              <div style="flex:1">
+                <strong style="color:var(--text);font-size:1rem">(Optional) Set up detection zones and enable AI features</strong>
+                <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">Fine-tune exactly what SentinelVision monitors:</p>
+                <ul style="margin:0.75rem 0 0;padding-left:1.25rem;color:var(--muted);font-size:0.85rem">
+                  <li>Go to <strong>Zones → Create Zone</strong> and draw areas on your camera feed (driveway, storefront, etc.)</li>
+                  <li>Go to <strong>Cameras</strong> and enable <strong>Person Detection</strong>, <strong>Vehicle Detection</strong>, etc.</li>
+                  <li>Set your detection sensitivity and alert schedules</li>
+                  <li>Only alerts from within your zones will be sent to Telegram</li>
+                </ul>
+                <div style="background:rgba(139,92,246,0.1);border-left:2px solid var(--purple);padding:0.75rem;margin:0.75rem 0 0;border-radius:4px;font-size:0.85rem">
+                  <strong style="color:var(--purple)">🎯 Customization:</strong> All settings are per-camera, so you can have different detection on each camera.
+                </div>
               </div>
             </div>
 
           </div>
 
-          <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(59,130,246,.15);display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-            <span style="color:var(--muted);font-size:0.9rem"><i class="fas fa-check-circle" style="color:#10b981;margin-right:0.4rem"></i>That&rsquo;s it &mdash; you&rsquo;re live. The sections below cover advanced configuration.</span>
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(59,130,246,.15);display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+            <span style="color:var(--muted);font-size:0.9rem"><i class="fas fa-check-circle" style="color:#10b981;margin-right:0.4rem"></i><strong>You're live!</strong> The sections below cover advanced configuration, troubleshooting, and feature-specific guides.</span>
             <a href="/order/" class="btn btn-primary btn-sm" style="margin-left:auto"><i class="fas fa-key"></i> Get a License</a>
           </div>
 
