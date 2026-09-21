@@ -101,6 +101,18 @@ img { max-width: 100%; }
 }
 .nav-links li a:hover { color: var(--text); text-decoration: none; }
 .nav-links .btn { margin-left: 0.5rem; }
+.nav-links li a.btn-primary {
+  color: #fff;
+  background: linear-gradient(110deg, #2563eb, #60a5fa, #2563eb);
+  background-size: 220% 100%;
+  border: 1px solid rgba(147,197,253,.55);
+  box-shadow: 0 0 0 1px rgba(96,165,250,.18), 0 0 18px rgba(59,130,246,.28);
+  animation: licenseNavGlow 3.2s ease-in-out infinite, licenseNavSweep 4.8s ease-in-out infinite;
+}
+.nav-links li a.btn-primary:hover { color:#fff; box-shadow:0 0 0 2px rgba(147,197,253,.5),0 0 26px rgba(59,130,246,.52); }
+@keyframes licenseNavGlow { 0%,100%{box-shadow:0 0 0 1px rgba(96,165,250,.18),0 0 14px rgba(59,130,246,.22)} 50%{box-shadow:0 0 0 2px rgba(147,197,253,.42),0 0 26px rgba(59,130,246,.44)} }
+@keyframes licenseNavSweep { 0%,45%{background-position:100% 50%} 70%,100%{background-position:0 50%} }
+@media (prefers-reduced-motion: reduce) { .nav-links li a.btn-primary { animation:none; } }
 .nav-links li a.btn-device { color: #fff; }
 .nav-links li a.btn-device:hover { color: #fff; }
 .nav-links li a.nav-active:not(.btn) {
@@ -461,11 +473,12 @@ img { max-width: 100%; }
 }
 .dur-btn.active .save-badge { background: rgba(255,255,255,0.2); color: #fff; }
 
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; align-items: start; padding-top: 1rem; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: stretch; padding-top: 1rem; }
 .price-card {
   background: var(--card); border: 1px solid var(--border);
   border-radius: var(--radius); overflow: visible; position: relative;
   transition: border-color 0.2s, transform 0.2s;
+  display: flex; flex-direction: column; min-width: 0;
 }
 .price-card:hover { transform: translateY(-3px); border-color: rgba(59,130,246,0.4); }
 .price-card--popular {
@@ -475,18 +488,19 @@ img { max-width: 100%; }
 .popular-badge {
   background: var(--accent); color: #fff; font-size: 0.78rem; font-weight: 700;
   padding: 0.4rem 1rem; text-align: center; letter-spacing: 0.4px;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 .price-card-header { padding: 1.5rem 1.5rem 0; }
 .price-icon        { font-size: 1.8rem; margin-bottom: 0.9rem; }
 .price-card-header h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
 .price-card-header p  { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
-.price-card-body   { padding: 1.25rem 1.5rem 1.5rem; }
+.price-card-body   { padding: 1.25rem 1.5rem 1.5rem; display:flex; flex-direction:column; flex:1; }
 .price-amount      { display: flex; align-items: baseline; gap: 0.15rem; margin-bottom: 0.25rem; }
 .price-amount .currency { font-size: 1.2rem; font-weight: 700; }
 .price-amount .amount   { font-size: 2.5rem; font-weight: 900; line-height: 1; }
 .price-amount .per      { font-size: 0.83rem; color: var(--muted); margin-left: 0.1rem; }
 .bundle-saving { font-size: 0.78rem; color: var(--green); font-weight: 600; margin-bottom: 1rem; }
-.price-features { list-style: none; margin: 1.1rem 0 1.5rem; display: flex; flex-direction: column; gap: 0.55rem; }
+.price-features { list-style: none; margin: 1.1rem 0 1.5rem; display: flex; flex-direction: column; gap: 0.55rem; flex:1; }
 .price-features li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.87rem; color: var(--muted); }
 .price-features .fa-check { color: var(--green); font-size: 0.78rem; }
 .beta-tag {
@@ -975,6 +989,7 @@ img { max-width: 100%; }
   input, textarea, select { font-size: 16px !important; } /* prevents iOS zoom */
   .btn { min-height: 48px; }
   .section { padding: 3.5rem 0; }
+  .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 }
 
 @media (max-width: 480px) {
@@ -990,6 +1005,7 @@ img { max-width: 100%; }
   .compare-home-table { font-size: 0.8rem; }
   .compare-home-table th, .compare-home-table td { padding: 0.6rem 0.5rem; }
   .review-form-wrap { padding: 1.25rem; }
+  .pricing-grid { grid-template-columns: 1fr; }
 }
 
 /* ── ACTIVE NAV LINK ───────────────────────────────── */
