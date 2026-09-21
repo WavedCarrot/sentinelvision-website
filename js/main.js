@@ -410,6 +410,19 @@ setupForm('download-form', 'download-result');
 
 // ── Reviews ───────────────────────────────────────────────
 const SEED_REVIEWS = [];
+const REVIEWS_STORAGE_KEY = 'sv_reviews_v2';
+
+// Remove reviews saved by the previous website version so the public list starts empty.
+localStorage.removeItem('sv_reviews');
+
+function getStoredReviews() {
+  try {
+    const reviews = JSON.parse(localStorage.getItem(REVIEWS_STORAGE_KEY) || '[]');
+    return Array.isArray(reviews) ? reviews : [];
+  } catch (_) {
+    return [];
+  }
+}
 
 function escapeHtml(str) {
   return String(str)
@@ -430,7 +443,7 @@ function starsHtml(rating) {
 function renderReviews() {
   const grid = document.getElementById('reviews-grid');
   if (!grid) return;
-  const stored = JSON.parse(localStorage.getItem('sv_reviews') || '[]');
+  const stored = getStoredReviews();
   const all = [...SEED_REVIEWS, ...stored];
   if (all.length === 0) {
     grid.innerHTML = '<p class="reviews-empty">No reviews yet — be the first to share your experience!</p>';
@@ -551,9 +564,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const stars = parseInt(document.getElementById('review-rating').value) || 5;
 
     // Save to localStorage so it shows immediately
-    const stored = JSON.parse(localStorage.getItem('sv_reviews') || '[]');
+    const stored = getStoredReviews();
     stored.unshift({ stars, text: `"${text}"`, name, role, seed: false });
-    localStorage.setItem('sv_reviews', JSON.stringify(stored));
+    localStorage.setItem(REVIEWS_STORAGE_KEY, JSON.stringify(stored));
     renderReviews();
 
     // Notify owner via Web3Forms
