@@ -329,11 +329,7 @@
 
         <div class="price-card-body">
 
-          <div class="price-amount" data-prices="100,300,900">
-
-            <span class="currency">R</span><span class="amount">100</span><span class="per">/month</span>
-
-          </div>
+          <div class="unavailable-notice">Unavailable</div>
 
           <ul class="price-features">
 
@@ -359,41 +355,29 @@
 
       <!-- Object Detection -->
 
-      <div class="price-card" id="object">
+      <div class="price-card is-unavailable" id="object">
 
         <div class="price-card-header">
 
-          <div class="price-icon" style="color:#8b5cf6"><i class="fas fa-cube"></i></div>
+          <div class="price-icon" style="color:#ef4444"><i class="fas fa-cube"></i></div>
 
-          <h3>Object Detection</h3>
+          <h3 class="feature-unavailable">Object Detection</h3>
 
-          <p>Detect everyday objects &mdash; bags, furniture, electronics and more &mdash; in live camera feeds</p>
+          <p>Object Detection is temporarily unavailable while this feature is being repaired.</p>
 
         </div>
 
         <div class="price-card-body">
 
-          <div class="price-amount" data-prices="100,300,900">
-
-            <span class="currency">R</span><span class="amount">100</span><span class="per">/month</span>
-
-          </div>
+          <div class="unavailable-notice">Unavailable</div>
 
           <ul class="price-features">
 
-            <li><i class="fas fa-check"></i> Bags, backpacks, luggage</li>
-
-            <li><i class="fas fa-check"></i> Furniture &amp; electronics</li>
-
-            <li><i class="fas fa-check"></i> Per-camera enable/disable</li>
-
-            <li><i class="fas fa-check"></i> Photo alert with timestamp</li>
-
-            <li><i class="fas fa-check"></i> Instant Telegram notification</li>
+            <li class="feature-unavailable"><i class="fas fa-ban"></i> Not currently available</li>
 
           </ul>
 
-          <a href="/order/?license=object_detection" class="btn btn-outline btn-full">Order Object Detection</a>
+          <span class="unavailable-button">Object Detection Unavailable</span>
 
         </div>
 
@@ -413,7 +397,7 @@
 
           <h3>Full Feature Bundle</h3>
 
-          <p>All features with one key &mdash; maximum protection, best price</p>
+          <p>All currently available features with one key. Object Detection and Stock Control are unavailable while those features are being repaired.</p>
 
         </div>
 
@@ -437,7 +421,7 @@
 
             <li><i class="fas fa-check"></i> Vehicle Detection</li>
 
-            <li><i class="fas fa-check"></i> Object Detection</li>
+            <li class="feature-unavailable"><i class="fas fa-ban"></i> Object Detection unavailable</li>
 
             <li><i class="fas fa-check" style="color:#10b981"></i> <strong>Anomaly Detection (v4.3+)</strong></li>
 
@@ -499,7 +483,7 @@
 
             <th>Vehicle<br>Detection</th>
 
-            <th>Object<br>Detection</th>
+            <th class="feature-unavailable">Object<br>Detection<br>Unavailable</th>
 
             <th class="hi-col">Full<br>Bundle</th>
 

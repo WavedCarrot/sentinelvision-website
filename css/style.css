@@ -21,6 +21,43 @@
   --shadow:       0 4px 24px rgba(0,0,0,0.45);
 }
 
+.feature-unavailable,
+.unavailable-notice {
+  color: #ef4444 !important;
+  font-weight: 800;
+}
+
+.unavailable-notice {
+  display: inline-block;
+  margin-top: .65rem;
+  padding: .35rem .65rem;
+  border: 1px solid rgba(239,68,68,.45);
+  border-radius: 5px;
+  background: rgba(239,68,68,.1);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: .78rem;
+}
+
+.feature-card.is-unavailable,
+.price-card.is-unavailable {
+  border-color: rgba(239,68,68,.55) !important;
+  opacity: .9;
+}
+
+.unavailable-button {
+  display: block;
+  width: 100%;
+  padding: .75rem 1rem;
+  border: 1px solid rgba(239,68,68,.55);
+  border-radius: 6px;
+  background: rgba(239,68,68,.1);
+  color: #ef4444;
+  font-weight: 800;
+  text-align: center;
+  cursor: not-allowed;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {

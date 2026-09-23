@@ -67,7 +67,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 
 // ── Pricing page: duration toggle ────────────────────────
 // Prices per duration index (0=1mo, 1=3mo, 2=12mo)
-const INDIVIDUAL_TOTALS = [700, 1950, 6000]; // sum of all 5 individual features (zone+loitering, weapon, people, vehicle, object)
+const INDIVIDUAL_TOTALS = [600, 1650, 5100]; // available individual features only
 const BUNDLE_PRICES     = [500, 1400, 4500];
 const BUNDLE_SAVINGS    = INDIVIDUAL_TOTALS.map((t, i) => t - BUNDLE_PRICES[i]); // [100, 250, 600]
 const DUR_LABELS        = ['1 month', '3 months', '12 months'];
@@ -110,7 +110,6 @@ const PRICES = {
   'weapon_detection':  [200,  550, 1800],
   'people_counting':   [150,  400, 1200],
   'vehicle_detection': [100,  300,  900],
-  'object_detection':  [100,  300,  900],
   'all':               [500, 1400, 4500],
 };
 
@@ -119,7 +118,6 @@ const LICENSE_NAMES = {
   'weapon_detection':  'Weapon Detection (Beta)',
   'people_counting':   'People Counting & Analytics',
   'vehicle_detection': 'Vehicle Detection',
-  'object_detection':  'Object Detection (Beta)',
   'all':               'Full Feature Bundle',
 };
 
@@ -179,7 +177,6 @@ if (licenseSelect) {
       'weapon_detection':    'weapon_detection',
       'people_counting':     'people_counting',
       'vehicle_detection':   'vehicle_detection',
-      'object_detection':    'object_detection',
       'full_bundle':         'all',
       'all':                 'all',
     };
@@ -309,6 +306,12 @@ function setupForm(formId, resultId, submitId) {
     const lastName  = ((document.getElementById('o-lname')   || {}).value || '').trim();
     const email     = ((document.getElementById('o-email')   || {}).value || '').trim();
     const phone     = ((document.getElementById('o-phone')   || {}).value || '').trim();
+
+    if (licenseEl && licenseEl.value === 'object_detection') {
+      result.className = 'form-result error';
+      result.innerHTML = '<i class="fas fa-ban"></i> Object Detection is currently unavailable and cannot be purchased.';
+      return;
+    }
 
     if (!serial) {
       result.className = 'form-result error';
