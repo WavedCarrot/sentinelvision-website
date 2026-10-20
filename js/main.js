@@ -2,6 +2,29 @@
    SentinelVision Pro — Website JavaScript
    ═══════════════════════════════════════════════════════════ */
 
+const IS_LOCAL_PREVIEW =
+  window.location.protocol === 'file:' ||
+  ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+
+if (IS_LOCAL_PREVIEW) {
+  document.addEventListener('submit', (event) => {
+    const form = event.target;
+    if (!(form instanceof HTMLFormElement)) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    let notice = form.querySelector('[data-local-preview-notice]');
+    if (!notice) {
+      notice = document.createElement('p');
+      notice.className = 'local-preview-message';
+      notice.setAttribute('data-local-preview-notice', '');
+      notice.setAttribute('role', 'status');
+      form.appendChild(notice);
+    }
+    notice.textContent = 'Local preview only — this form does not send information or start a payment.';
+  }, true);
+}
+
 // ── Navbar scroll effect ─────────────────────────────────
 const navbar = document.getElementById('navbar');
 if (navbar) {
@@ -67,7 +90,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 
 // ── Pricing page: duration toggle ────────────────────────
 // Prices per duration index (0=1mo, 1=3mo, 2=12mo)
-const INDIVIDUAL_TOTALS = [600, 1650, 5100]; // available individual features only
+const INDIVIDUAL_TOTALS = [600, 1650, 5100]; // sum of currently available individual features
 const BUNDLE_PRICES     = [500, 1400, 4500];
 const BUNDLE_SAVINGS    = INDIVIDUAL_TOTALS.map((t, i) => t - BUNDLE_PRICES[i]); // [100, 250, 600]
 const DUR_LABELS        = ['1 month', '3 months', '12 months'];
@@ -290,7 +313,9 @@ function setupForm(formId, resultId, submitId) {
 
   // Silently ping the license server as soon as the order page loads
   // so it is warm by the time the user finishes paying (~1-3 min later)
-  fetch(LICENSING_BACKEND + '/api/health', { method: 'GET', mode: 'no-cors' }).catch(function(){});
+  if (!IS_LOCAL_PREVIEW) {
+    fetch(LICENSING_BACKEND + '/api/health', { method: 'GET', mode: 'no-cors' }).catch(function(){});
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -309,7 +334,7 @@ function setupForm(formId, resultId, submitId) {
 
     if (licenseEl && licenseEl.value === 'object_detection') {
       result.className = 'form-result error';
-      result.innerHTML = '<i class="fas fa-ban"></i> Object Detection is currently unavailable and cannot be purchased.';
+      result.textContent = 'Object Detection is under maintenance and cannot be ordered.';
       return;
     }
 
